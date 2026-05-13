@@ -11,13 +11,13 @@ const Header = () => {
     }`;
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full z-[100] bg-white border-b border-slate-200 h-[100px] flex items-center shadow-sm">
+    <header className="fixed top-0 left-0 right-0 w-full z-[100] bg-white border-b border-slate-200 h-[80px] flex items-center shadow-sm">
       <nav className="container flex justify-between items-center w-full">
         <Link to="/" className="flex items-center group">
           <img 
             src="/rehab-factory-logo.webp" 
             alt="Rehab Factory" 
-            className="h-16 md:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-300" 
+            className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300" 
           />
         </Link>
         
@@ -40,7 +40,7 @@ const Header = () => {
             href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:block bg-primary text-white font-black text-[13px] tracking-[0.2em] px-14 py-6 rounded-[25px] hover:bg-secondary hover:text-primary transition-all active:scale-95 no-underline uppercase shadow-xl"
+            className="hidden sm:block bg-primary text-white font-black text-[12px] tracking-[0.2em] px-8 py-3 rounded-full hover:bg-secondary hover:text-primary transition-all active:scale-95 no-underline uppercase shadow-lg"
           >
             BOOK NOW
           </a>
@@ -55,7 +55,7 @@ const Header = () => {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="absolute top-[100px] left-0 w-full bg-white border-b border-slate-200 p-8 flex flex-col gap-6 md:hidden animate-fadeUp shadow-xl">
+        <div className="absolute top-[80px] left-0 w-full bg-white border-b border-slate-200 p-8 flex flex-col gap-6 md:hidden animate-fadeUp shadow-xl">
           <NavLink className="font-medium text-sm tracking-widest text-primary" to="/about" onClick={() => setIsMenuOpen(false)}>ABOUT</NavLink>
           <NavLink className="font-medium text-sm tracking-widest text-primary" to="/services" onClick={() => setIsMenuOpen(false)}>SERVICES</NavLink>
           <NavLink className="font-medium text-sm tracking-widest text-primary" to="/insights" onClick={() => setIsMenuOpen(false)}>INSIGHTS</NavLink>
@@ -64,7 +64,7 @@ const Header = () => {
             href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary text-white font-black text-center py-6 rounded-[25px] tracking-widest"
+            className="bg-primary text-white font-black text-center py-4 rounded-full tracking-widest"
             onClick={() => setIsMenuOpen(false)}
           >
             BOOK NOW
