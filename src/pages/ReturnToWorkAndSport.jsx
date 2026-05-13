@@ -182,7 +182,7 @@ const ReturnToWorkAndSport = () => {
       {/* Other Services */}
       <section className="py-section-gap bg-white overflow-hidden">
         <div className="container">
-          <div className="mb-16 reveal">
+          <div className="mb-10 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">EXPLORE MORE</span>
             <h2 className="text-5xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">Other services.</h2>
           </div>
