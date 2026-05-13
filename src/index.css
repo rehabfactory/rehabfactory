@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Outfit:ital,wght@0,100..900;1,100..900&family=Instrument+Sans:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Outfit:ital,wght@0,100..900;1,100..900&family=Barlow:wght@400..900&display=swap');
 
 :root {
   /* Colors - High Performance Palette */
@@ -13,10 +13,10 @@
   --color-text-muted: #64748B;
   
   /* Typography - Swiss & Technical */
-  --font-headline: 'Instrument Sans', sans-serif;
+  --font-headline: 'Barlow', sans-serif;
   --font-body: 'Outfit', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --font-display: 'Instrument Sans', sans-serif;
+  --font-display: 'Barlow', sans-serif;
 
   /* Spacing System - Precise & Rational */
   --max-width: 1440px;
