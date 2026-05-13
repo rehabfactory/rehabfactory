@@ -6,8 +6,12 @@ import {
   ShieldCheck, 
   Activity, 
   CheckCircle2,
-  TrendingUp
+  TrendingUp,
+  Dumbbell,
+  HandHelping,
+  Bandage
 } from 'lucide-react';
+import heroWebp from '../assets/return-to-sport.webp';
 
 const ReturnToWorkAndSport = () => {
   useEffect(() => {
@@ -33,9 +37,11 @@ const ReturnToWorkAndSport = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2000&auto=format&fit=crop" 
+            src={heroWebp} 
             alt="Return to Work and Sport" 
             className="w-full h-full object-cover opacity-100"
+            loading="eager"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/60 to-transparent"></div>
         </div>
@@ -87,7 +93,7 @@ const ReturnToWorkAndSport = () => {
       {/* Two Pathways Section */}
       <section className="py-section-gap bg-white overflow-hidden">
         <div className="container">
-          <div className="mb-24 reveal">
+          <div className="mb-24 reveal max-w-3xl">
             <span className="text-[12px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">TWO PATHWAYS</span>
             <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">Return to sport or <br />return to work.</h2>
           </div>
@@ -145,7 +151,7 @@ const ReturnToWorkAndSport = () => {
       {/* The Process Section */}
       <section className="py-section-gap bg-primary text-white relative overflow-hidden">
         <div className="container relative z-10">
-          <div className="mb-24 reveal text-center max-w-3xl mx-auto">
+          <div className="mb-24 reveal max-w-3xl">
             <span className="text-[12px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">HOW IT WORKS</span>
             <h2 className="text-5xl md:text-7xl font-display text-white tracking-tight leading-[0.9] uppercase">A structured pathway, <br />every step.</h2>
           </div>
@@ -171,6 +177,55 @@ const ReturnToWorkAndSport = () => {
           </div>
         </div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-secondary opacity-5 blur-[250px] rounded-full pointer-events-none"></div>
+      </section>
+
+      {/* Other Services */}
+      <section className="py-section-gap bg-white overflow-hidden">
+        <div className="container">
+          <div className="mb-16 reveal">
+            <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">EXPLORE MORE</span>
+            <h2 className="text-5xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">Other services.</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Dumbbell size={24} />,
+                title: 'Individualised Exercise',
+                link: '/services/individualised-exercise-therapy',
+                desc: 'A personalised exercise programme designed around your body and goals.'
+              },
+              {
+                icon: <HandHelping size={24} />,
+                title: 'Manual Therapy',
+                link: '/services/manual-therapy',
+                desc: 'Hands-on techniques used to reduce pain and restore movement.'
+              },
+              {
+                icon: <Bandage size={24} />,
+                title: 'Sports Taping',
+                link: '/services/sports-taping',
+                desc: 'Protective and supportive taping applied to help manage joint stress.'
+              }
+            ].map((service, i) => (
+              <Link
+                key={i}
+                to={service.link}
+                className="group p-10 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 hover:bg-white hover:shadow-2xl transition-all duration-500 reveal-fade-up"
+                style={{ transitionDelay: `${i * 0.1}s` }}
+              >
+                <div className="w-12 h-12 bg-white text-secondary flex items-center justify-center rounded-[15px] mb-8 shadow-sm group-hover:bg-secondary group-hover:text-white transition-all duration-500">
+                  {service.icon}
+                </div>
+                <h3 className="text-2xl font-display font-bold text-primary mb-4 uppercase tracking-wide group-hover:text-secondary transition-colors duration-500">{service.title}</h3>
+                <p className="text-slate-500 font-poppins text-sm leading-relaxed mb-8">{service.desc}</p>
+                <span className="inline-flex items-center gap-2 text-primary font-black text-[10px] tracking-widest uppercase group-hover:text-secondary transition-colors">
+                  VIEW SERVICE <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Final CTA */}

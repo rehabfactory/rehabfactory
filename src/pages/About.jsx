@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Target, Zap, ShieldCheck } from 'lucide-react';
+import aboutHero from '../assets/about_hero.webp';
+import aboutTrenches from '../assets/about_trenches.webp';
 
 const About = () => {
   useEffect(() => {
@@ -26,9 +28,11 @@ const About = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=2000&auto=format&fit=crop" 
+            src={aboutHero} 
             alt="About Rehab Factory" 
             className="w-full h-full object-cover opacity-100"
+            loading="eager"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/60 to-transparent"></div>
         </div>
@@ -129,7 +133,7 @@ const About = () => {
               </div>
             </div>
             <div className="aspect-video bg-slate-800 rounded-[25px] overflow-hidden reveal shadow-2xl border border-white/5">
-               <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop" alt="Gym Space" className="w-full h-full object-cover opacity-50" />
+               <img src={aboutTrenches} alt="Gym Space" className="w-full h-full object-cover opacity-50" />
             </div>
           </div>
         </div>

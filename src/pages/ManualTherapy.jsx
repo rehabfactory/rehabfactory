@@ -6,8 +6,12 @@ import {
   CheckCircle2,
   Zap,
   ShieldCheck,
-  Target
+  Target,
+  Dumbbell,
+  Activity,
+  Bandage
 } from 'lucide-react';
+import manualTherapyImg from '../assets/manual-therapy.webp';
 
 const ManualTherapy = () => {
   useEffect(() => {
@@ -33,7 +37,7 @@ const ManualTherapy = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=2000&auto=format&fit=crop" 
+            src={manualTherapyImg} 
             alt="Manual Therapy" 
             className="w-full h-full object-cover opacity-100"
           />
@@ -87,7 +91,7 @@ const ManualTherapy = () => {
       {/* Techniques We Use Section */}
       <section className="py-section-gap bg-white overflow-hidden">
         <div className="container">
-          <div className="mb-24 reveal text-center max-w-3xl mx-auto">
+          <div className="mb-24 reveal max-w-3xl">
             <span className="text-[12px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">OUR TECHNIQUES</span>
             <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">What manual therapy <br />includes.</h2>
           </div>
@@ -143,6 +147,80 @@ const ManualTherapy = () => {
           </div>
         </div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary opacity-5 blur-[200px] rounded-full pointer-events-none"></div>
+      </section>
+
+      {/* The Process Section */}
+      <section className="py-section-gap bg-slate-50 overflow-hidden">
+        <div className="container">
+          <div className="mb-24 reveal max-w-3xl">
+            <span className="text-[12px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">HOW IT WORKS</span>
+            <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">From assessment <br />to movement.</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {[
+              { step: 'Step 1', title: 'Initial Assessment', desc: 'We take the time to understand your injury, your history, and your goals before any treatment begins.' },
+              { step: 'Step 2', title: 'Technique Selection', desc: 'Your physiotherapist selects the most appropriate manual therapy techniques based on your assessment findings.' },
+              { step: 'Step 3', title: 'Treatment Application', desc: 'Hands-on care is applied to reduce pain, restore joint mobility, and improve tissue health.' },
+              { step: 'Step 4', title: 'Exercise Integration', desc: 'We bridge the gap between hands-on care and the gym floor to ensure long-term recovery.' }
+            ].map((item, i) => (
+              <div key={i} className="reveal-fade-up p-10 bg-white border border-slate-100 rounded-[25px] hover:border-secondary/30 transition-all duration-500" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <span className="text-secondary font-black text-sm tracking-widest uppercase block mb-6">{item.step}</span>
+                <h3 className="text-2xl font-display font-bold text-primary mb-6 uppercase tracking-wide leading-tight">{item.title}</h3>
+                <p className="text-slate-500 font-poppins font-normal leading-tight">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Other Services */}
+      <section className="py-section-gap bg-white overflow-hidden">
+        <div className="container">
+          <div className="mb-16 reveal">
+            <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">EXPLORE MORE</span>
+            <h2 className="text-5xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">Other services.</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Dumbbell size={24} />,
+                title: 'Individualised Exercise',
+                link: '/services/individualised-exercise-therapy',
+                desc: 'A personalised exercise programme designed around your body and goals.'
+              },
+              {
+                icon: <Activity size={24} />,
+                title: 'Return to Work and Sport',
+                link: '/services/return-to-work-and-sport',
+                desc: 'A structured, staged pathway back to your workplace or sport.'
+              },
+              {
+                icon: <Bandage size={24} />,
+                title: 'Sports Taping',
+                link: '/services/sports-taping',
+                desc: 'Protective and supportive taping applied to help manage joint stress.'
+              }
+            ].map((service, i) => (
+              <Link
+                key={i}
+                to={service.link}
+                className="group p-10 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 hover:bg-white hover:shadow-2xl transition-all duration-500 reveal-fade-up"
+                style={{ transitionDelay: `${i * 0.1}s` }}
+              >
+                <div className="w-12 h-12 bg-white text-secondary flex items-center justify-center rounded-[15px] mb-8 shadow-sm group-hover:bg-secondary group-hover:text-white transition-all duration-500">
+                  {service.icon}
+                </div>
+                <h3 className="text-2xl font-display font-bold text-primary mb-4 uppercase tracking-wide group-hover:text-secondary transition-colors duration-500">{service.title}</h3>
+                <p className="text-slate-500 font-poppins text-sm leading-relaxed mb-8">{service.desc}</p>
+                <span className="inline-flex items-center gap-2 text-primary font-black text-[10px] tracking-widest uppercase group-hover:text-secondary transition-colors">
+                  VIEW SERVICE <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Final CTA */}

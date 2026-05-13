@@ -17,6 +17,11 @@ import {
   Target,
   ShieldCheck
 } from 'lucide-react';
+import serviceHero from '../assets/service_hero.webp';
+import individualisedExercise from '../assets/individualised-exercise.webp';
+import manualTherapyImg from '../assets/manual-therapy.webp';
+import returnToSport from '../assets/return-to-sport.webp';
+import sportsTaping from '../assets/sports-taping.webp';
 
 const Services = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -43,28 +48,28 @@ const Services = () => {
       title: 'Individualised Exercise Therapy',
       desc: 'A structured, personalised exercise programme designed around your injury, your body, and your goals. This is the foundation of everything we do.',
       link: '/services/individualised-exercise-therapy',
-      img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop'
+      img: individualisedExercise
     },
     {
       icon: <HandHelping size={32} />,
       title: 'Manual Therapy',
       desc: 'Soft tissue massage, dry needling, joint mobilisation and manipulation, and trigger point release, used to reduce pain and restore movement.',
       link: '/services/manual-therapy',
-      img: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1000&auto=format&fit=crop'
+      img: manualTherapyImg
     },
     {
       icon: <Activity size={32} />,
       title: 'Return to Work and Sport',
       desc: 'A staged, structured pathway back to your workplace or sport. We work with you to help ensure you return feeling prepared, not just symptom-free.',
       link: '/services/return-to-work-and-sport',
-      img: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1000&auto=format&fit=crop'
+      img: returnToSport
     },
     {
       icon: <Bandage size={32} />,
       title: 'Sports Taping',
       desc: 'Protective and supportive taping techniques applied to help manage joint stress during activity and competition. Discuss with our team whether taping suits your situation.',
       link: '/services/sports-taping',
-      img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop'
+      img: sportsTaping
     }
   ];
 
@@ -101,9 +106,11 @@ const Services = () => {
       <section className="relative min-h-[70vh] flex items-center pt-48 lg:pt-64 pb-32 lg:pb-48 bg-primary overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=2000&auto=format&fit=crop"
+            src={serviceHero}
             alt="Rehab Factory Services"
             className="w-full h-full object-cover opacity-100"
+            loading="eager"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/60 to-transparent"></div>
         </div>

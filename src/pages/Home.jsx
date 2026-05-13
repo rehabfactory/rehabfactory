@@ -12,7 +12,12 @@ import {
   Target,
   CheckCircle2
 } from 'lucide-react';
-import heroImg from '../assets/hero_premium.png';
+import heroImg from '../assets/hero_premium.webp';
+import individualisedExercise from '../assets/individualised-exercise.webp';
+import manualTherapyImg from '../assets/manual-therapy.webp';
+import returnToSport from '../assets/return-to-sport.webp';
+import sportsTaping from '../assets/sports-taping.webp';
+import differenceHero from '../assets/the-difference-hero.webp';
 
 const Home = () => {
   const [activeService, setActiveService] = useState(0);
@@ -43,28 +48,28 @@ const Home = () => {
       title: 'Individualised Exercise Therapy',
       desc: 'Following your clinical assessment, we design and supervise a structured exercise programme built entirely around your body, your injury, and where you want to get to.',
       link: '/services/individualised-exercise-therapy',
-      img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop'
+      img: individualisedExercise
     },
     {
       icon: <HandHelping size={40} />,
       title: 'Manual Therapy',
       desc: 'Soft tissue massage, dry needling, joint mobilisation and manipulation, and trigger point release. Used to reduce pain and restore movement so you can train.',
       link: '/services/manual-therapy',
-      img: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1000&auto=format&fit=crop'
+      img: manualTherapyImg
     },
     {
       icon: <Activity size={40} />,
       title: 'Return to Work and Sport',
       desc: 'A staged, objective return-to-sport or return-to-work pathway. We use functional testing and sport-specific screening to help assess your readiness before you return.',
       link: '/services/return-to-work-and-sport',
-      img: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1000&auto=format&fit=crop'
+      img: returnToSport
     },
     {
       icon: <Bandage size={40} />,
       title: 'Sports Taping',
       desc: 'Protective and supportive taping applied to help manage joint stress during training and competition. Speak to our team about whether taping is right for your injury.',
       link: '/services/sports-taping',
-      img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop'
+      img: sportsTaping
     }
   ];
 
@@ -157,7 +162,7 @@ const Home = () => {
               <div className="lg:col-span-5">
                 <div className="aspect-square bg-slate-100 overflow-hidden shadow-2xl reveal-fade-up rounded-[25px]">
                   <img 
-                    src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop" 
+                    src={differenceHero} 
                     alt="The Rehab Factory Difference" 
                     className="w-full h-full object-cover"
                   />

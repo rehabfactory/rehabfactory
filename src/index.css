@@ -20,16 +20,16 @@
 
   /* Spacing System - Precise & Rational */
   --max-width: 1440px;
-  --section-gap: 60px;
+  --section-gap: 40px;
   --container-padding: 32px;
   --grid-gap: 32px;
-  --cta-gap: 100px;
+  --cta-gap: 60px;
 }
 
 @media (min-width: 768px) {
   :root {
-    --section-gap: 100px;
-    --cta-gap: 150px;
+    --section-gap: 70px;
+    --cta-gap: 100px;
     --container-padding: 48px;
     --grid-gap: 32px;
   }
