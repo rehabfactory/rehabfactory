@@ -77,7 +77,7 @@ const Home = () => {
             <div className="lg:col-span-8 reveal-fade-up">
               <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">PHYSIOTHERAPY / NARRE WARREN, VIC</span>
 
-              <h1 className="text-5xl md:text-7xl lg:text-[100px] font-display font-extrabold text-primary tracking-tight mb-12 uppercase leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-[100px] font-display font-bold text-primary tracking-tight mb-16 uppercase leading-[1.1]">
                 Your <span className="text-secondary">REHAB</span> <br />
                 starts on the <br />
                 <span className="text-secondary">gym</span> floor.
@@ -106,7 +106,13 @@ const Home = () => {
 
             <div className="hidden lg:block lg:col-span-4 relative h-[65vh] reveal-fade-up">
               <div className="absolute inset-0 bg-slate-100 rounded-[25px] overflow-hidden">
-                <img src={heroImg} alt="Elite Performance Clinic" className="w-full h-full object-cover transition-all duration-1000" />
+                <img 
+                  src={heroImg} 
+                  alt="Elite Performance Clinic" 
+                  className="w-full h-full object-cover transition-all duration-1000" 
+                  loading="eager"
+                  fetchpriority="high"
+                />
               </div>
             </div>
           </div>
@@ -166,13 +172,13 @@ const Home = () => {
               { title: 'Your programme is built for you, not copied from a template.', desc: 'Every patient at Rehab Factory receives an individualised exercise programme. No generic plans. No one-size-fits-all approaches. Your programme evolves as your recovery progresses.' },
               { title: 'Returning to function is a milestone, not the finish line.', desc: 'We do not consider your rehabilitation complete when symptoms settle. We work with you until you are stronger, more capable, and more confident than you were before your injury.' }
             ].map((feature, i) => (
-              <div key={i} className="reveal-fade-up p-12 border-r border-slate-200 last:border-r-0 hover:bg-slate-50 transition-all group flex flex-col h-full" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="min-h-[120px] mb-6">
-                  <h3 className="text-2xl font-display font-extrabold text-primary uppercase tracking-wide leading-tight group-hover:text-secondary transition-colors">
+              <div key={i} className="reveal-fade-up p-16 border-r border-slate-200 last:border-r-0 hover:bg-slate-50 transition-all group flex flex-col h-full" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="min-h-[140px] mb-8">
+                  <h3 className="text-2xl font-display font-bold text-primary uppercase tracking-wider leading-tight group-hover:text-secondary transition-colors">
                     {feature.title}
                   </h3>
                 </div>
-                <p className="text-slate-500 font-poppins font-normal leading-relaxed text-lg">{feature.desc}</p>
+                <p className="text-slate-500 font-poppins font-normal leading-relaxed text-xl">{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -184,7 +190,7 @@ const Home = () => {
         <div className="container">
           <div className="mb-20 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHAT WE DO</span>
-            <h2 className="text-5xl md:text-7xl font-display font-extrabold text-primary tracking-tight leading-[0.9] uppercase">
+            <h2 className="text-5xl md:text-7xl font-display font-bold text-primary tracking-tight leading-[1.1] uppercase mb-12">
               Four services. One goal:<br /><span className="text-secondary">get you back stronger.</span>
             </h2>
             <p className="text-2xl text-slate-500 font-poppins font-normal leading-tight max-w-2xl mt-10">
@@ -205,13 +211,13 @@ const Home = () => {
                     {service.icon}
                   </div>
                 </div>
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="min-h-[80px] mb-6">
-                    <h3 className="text-2xl font-display font-extrabold text-primary uppercase tracking-wide group-hover:text-secondary transition-colors duration-500 leading-tight">
+                <div className="p-10 flex flex-col flex-grow">
+                  <div className="min-h-[100px] mb-8">
+                    <h3 className="text-2xl font-display font-bold text-primary uppercase tracking-wider group-hover:text-secondary transition-colors duration-500 leading-tight">
                       {service.title}
                     </h3>
                   </div>
-                  <p className="text-slate-500 font-poppins leading-relaxed mb-10 text-base">
+                  <p className="text-slate-500 font-poppins leading-relaxed mb-12 text-lg">
                     {service.desc}
                   </p>
                   <div className="mt-auto">
@@ -231,7 +237,7 @@ const Home = () => {
         <div className="container">
           <div className="mb-20 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHO WE WORK WITH</span>
-            <h2 className="text-5xl md:text-7xl font-display font-extrabold text-primary tracking-tight leading-[0.9] uppercase">
+            <h2 className="text-5xl md:text-7xl font-display font-bold text-primary tracking-tight leading-[1.1] uppercase mb-12">
               From junior athletes to <br />weekend warriors to <br /><span className="text-secondary">WorkCover patients.</span>
             </h2>
             <p className="text-2xl text-slate-500 font-poppins font-normal leading-tight max-w-2xl mt-10">
@@ -245,11 +251,11 @@ const Home = () => {
               { title: 'Active Adults and Weekend Warriors', desc: 'Injured playing social footy? Tweaked your back at the gym? You do not have to be an elite athlete to deserve a proper rehabilitation programme.', tags: ['Injury Recovery', 'Chronic Pain', 'Exercise Therapy'] },
               { title: 'WorkCover and TAC Patients', desc: 'We work with patients recovering from workplace and motor vehicle injuries, supporting a structured and sustainable return to full work capacity.', tags: ['WorkCover', 'TAC', 'Return to Work'] }
             ].map((item, i) => (
-              <div key={i} className="bg-white p-12 border border-slate-200 rounded-[25px] hover:border-secondary/30 transition-all reveal-fade-up shadow-sm flex flex-col" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="min-h-[80px] mb-6">
-                  <h3 className="text-3xl font-display font-extrabold text-primary uppercase tracking-wide leading-tight">{item.title}</h3>
+              <div key={i} className="bg-white p-14 border border-slate-200 rounded-[25px] hover:border-secondary/30 transition-all reveal-fade-up shadow-sm flex flex-col" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="min-h-[100px] mb-8">
+                  <h3 className="text-3xl font-display font-bold text-primary uppercase tracking-wider leading-tight">{item.title}</h3>
                 </div>
-                <p className="text-slate-500 font-poppins font-normal leading-relaxed mb-8 text-lg">{item.desc}</p>
+                <p className="text-slate-500 font-poppins font-normal leading-relaxed mb-10 text-xl">{item.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {item.tags.map((tag, j) => (
                     <span key={j} className="text-[10px] font-black tracking-widest uppercase py-2 px-3 bg-slate-50 text-slate-400 rounded-[25px] border border-slate-100">{tag}</span>
@@ -266,7 +272,7 @@ const Home = () => {
         <div className="container">
           <div className="mb-16 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">HOW WE CAN HELP</span>
-            <h2 className="text-5xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">The conditions and challenges <br />our team works with every day.</h2>
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-primary tracking-tight leading-[1.1] uppercase mb-12">The conditions and challenges <br />our team works with every day.</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -276,13 +282,15 @@ const Home = () => {
               { title: 'Patient Education and Self-Management', desc: 'Understanding your injury is part of recovering from it. We give every patient the knowledge and tools they need to take an active role in their own health and long-term wellbeing.' },
               { title: 'Sports Performance and Injury Prevention', desc: 'For athletes looking to build capacity and reduce injury risk, we provide individualised assessment and targeted exercise programmes designed around the demands of your sport.' }
             ].map((item, i) => (
-              <div key={i} className="flex gap-8 group reveal">
-                <div className="w-12 h-12 bg-slate-50 rounded-[25px] flex items-center justify-center shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors border border-slate-100 text-secondary">
-                  <CheckCircle2 size={24} />
+              <div key={i} className="flex gap-10 group reveal">
+                <div className="w-14 h-14 bg-slate-50 rounded-[25px] flex items-center justify-center shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors border border-slate-100 text-secondary">
+                  <CheckCircle2 size={28} />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-display font-bold text-primary mb-4 uppercase tracking-wide">{item.title}</h3>
-                  <p className="text-slate-500 font-poppins font-normal leading-tight">{item.desc}</p>
+                  <div className="min-h-[70px] mb-6">
+                    <h3 className="text-2xl font-display font-bold text-primary uppercase tracking-wider leading-tight group-hover:text-secondary transition-colors">{item.title}</h3>
+                  </div>
+                  <p className="text-slate-500 font-poppins font-normal leading-relaxed text-xl">{item.desc}</p>
                 </div>
               </div>
             ))}
