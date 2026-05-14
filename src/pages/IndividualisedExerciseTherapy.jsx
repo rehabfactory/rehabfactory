@@ -8,7 +8,6 @@ import {
   Dumbbell,
   ShieldCheck,
   HandHelping,
-  Activity,
   Bandage
 } from 'lucide-react';
 import heroWebp from '../assets/individualised-exercise.webp';
