@@ -118,12 +118,12 @@ const Services = () => {
         <div className="container relative z-10">
           <div className="max-w-[1000px] reveal-fade-up text-white">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">OUR SERVICES</span>
-            <h1 className="text-6xl md:text-8xl lg:text-[100px] font-display tracking-tight leading-[0.9] uppercase mb-12">
+            <h1 className="text-4xl md:text-8xl lg:text-[100px] font-display tracking-tight leading-[0.95] md:leading-[0.9] uppercase mb-8 md:mb-12">
               Everything we do <br />
-              is built <br />
+              is built <br className="hidden md:block" />
               <span className="text-secondary">around you.</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-slate-300 font-poppins font-normal leading-tight max-w-3xl">
+            <p className="text-lg md:text-3xl text-slate-300 font-poppins font-normal leading-tight max-w-3xl">
               From your first assessment to your return to sport, we work with you every step of the way.
             </p>
           </div>
@@ -133,7 +133,7 @@ const Services = () => {
       {/* Our Approach */}
       <section className="py-section-gap bg-slate-50 relative">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16 items-start">
             <div className="lg:col-span-5 reveal">
               <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">OUR APPROACH</span>
               <h2 className="text-4xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">
@@ -141,13 +141,13 @@ const Services = () => {
               </h2>
             </div>
             <div className="lg:col-span-7 space-y-8 text-slate-500 font-poppins text-lg leading-tight reveal-fade-up">
-              <p className="text-2xl text-primary font-bold">
+              <p className="text-xl md:text-2xl text-primary font-bold">
                 At Rehab Factory, every service starts with a thorough clinical assessment. We take the time to understand your injury, your history, your goals, and your lifestyle before designing your programme.
               </p>
-              <p>
+              <p className="text-base md:text-lg">
                 Hands-on treatment is part of the plan, but exercise rehabilitation is the foundation. We use manual therapy to reduce pain and restore movement so you can get back to the work that supports your recovery.
               </p>
-              <p>
+              <p className="text-base md:text-lg">
                 We do not believe in passive treatment. We believe in building you up. That means every service we offer is connected to a broader plan, and every plan is built around you as an individual.
               </p>
             </div>
@@ -177,14 +177,14 @@ const Services = () => {
                     {service.icon}
                   </div>
                 </div>
-                <div className="p-12">
-                  <h3 className="text-3xl font-display font-bold text-primary mb-6 uppercase tracking-wide group-hover:text-secondary transition-colors duration-500 leading-tight">
+                <div className="p-8 md:p-12">
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-primary mb-4 md:mb-6 uppercase tracking-wide group-hover:text-secondary transition-colors duration-500 leading-tight">
                     {service.title}
                   </h3>
-                  <p className="text-slate-500 font-poppins leading-tight mb-10 text-lg">
+                  <p className="text-slate-500 font-poppins leading-relaxed mb-8 md:mb-10 text-base md:text-lg">
                     {service.desc}
                   </p>
-                  <span className="inline-flex items-center gap-3 text-secondary font-black text-xs tracking-[0.2em] uppercase group-hover:text-primary transition-colors duration-500">
+                  <span className="inline-flex items-center gap-3 text-secondary font-black text-[10px] md:text-xs tracking-[0.2em] uppercase group-hover:text-primary transition-colors duration-500">
                     LEARN MORE <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-500" />
                   </span>
                 </div>
@@ -201,7 +201,7 @@ const Services = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
               <div className="lg:col-span-8">
                 <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHY CHOOSE US</span>
-                <h2 className="text-5xl md:text-8xl font-display tracking-tight leading-[0.9] uppercase">What makes us <br /><span className="text-secondary">different.</span></h2>
+                <h2 className="text-4xl md:text-8xl font-display tracking-tight leading-[0.9] uppercase mb-6">What makes us <br /><span className="text-secondary">different.</span></h2>
               </div>
               <div className="lg:col-span-4 lg:text-right">
                 <p className="text-xl text-slate-400 font-poppins leading-tight">
@@ -235,12 +235,12 @@ const Services = () => {
                 desc: 'From junior athletes and weekend warriors to WorkCover patients and people managing long-term musculoskeletal conditions, we build programmes suited to where you are and what you need.'
               }
             ].map((item, i) => (
-              <div key={i} className="p-10 bg-white/5 border border-white/10 rounded-[25px] hover:border-secondary transition-all group reveal-fade-up" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="w-12 h-12 bg-secondary text-primary flex items-center justify-center rounded-[25px] mb-8 group-hover:scale-110 transition-transform">
+              <div key={i} className="p-8 md:p-10 bg-white/5 border border-white/10 rounded-[25px] hover:border-secondary transition-all group reveal-fade-up" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="w-12 h-12 bg-secondary text-primary flex items-center justify-center rounded-[25px] mb-6 md:mb-8 group-hover:scale-110 transition-transform">
                   <ShieldCheck size={24} />
                 </div>
-                <h3 className="text-2xl font-display font-bold mb-6 uppercase tracking-wide leading-tight">{item.title}</h3>
-                <p className="text-slate-400 font-poppins leading-tight">{item.desc}</p>
+                <h3 className="text-xl md:text-2xl font-display font-bold mb-4 md:mb-6 uppercase tracking-wide leading-tight">{item.title}</h3>
+                <p className="text-slate-400 font-poppins leading-relaxed text-base">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -253,10 +253,10 @@ const Services = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5 reveal">
               <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">YOUR FIRST VISIT</span>
-              <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase mb-8">
-                Here is what <br />happens when <br /><span className="text-secondary">you come in.</span>
+              <h2 className="text-4xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase mb-8">
+                Here is what <br />happens when <br className="hidden md:block" /><span className="text-secondary">you come in.</span>
               </h2>
-              <p className="text-xl text-slate-500 font-poppins leading-tight">
+              <p className="text-lg md:text-xl text-slate-500 font-poppins leading-relaxed">
                 We've designed our process to be thorough, transparent, and focused entirely on your progress.
               </p>
             </div>
@@ -267,11 +267,11 @@ const Services = () => {
                 { step: '03', title: 'You Get to Work', desc: 'Sessions take place in the clinic gym. Your physiotherapist supervises and guides you through your programme, progressing it as you develop strength and confidence.' },
                 { step: '04', title: 'We Reassess and Evolve', desc: 'Your programme is reviewed regularly. As your capacity improves, we adjust your programme to keep you progressing and working towards your goals.' }
               ].map((item, i) => (
-                <div key={i} className="flex gap-10 group">
+                <div key={i} className="flex gap-6 md:gap-10 group">
                   <span className="text-4xl md:text-6xl font-display font-black text-slate-100 group-hover:text-secondary/20 transition-colors shrink-0">{item.step}</span>
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-display font-bold text-primary mb-4 uppercase tracking-wide">{item.title}</h3>
-                    <p className="text-lg text-slate-500 font-poppins leading-tight">{item.desc}</p>
+                    <h3 className="text-xl md:text-3xl font-display font-bold text-primary mb-3 md:mb-4 uppercase tracking-wide">{item.title}</h3>
+                    <p className="text-base md:text-lg text-slate-500 font-poppins leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -285,7 +285,7 @@ const Services = () => {
         <div className="container">
           <div className="mb-20 reveal text-center">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHO WE SEE</span>
-            <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">Rehab Factory is for <br />anyone who wants to <br /><span className="text-secondary">recover properly.</span></h2>
+            <h2 className="text-4xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase mb-6">Rehab Factory is for <br className="hidden md:block" />anyone who wants to <br className="hidden md:block" /><span className="text-secondary">recover properly.</span></h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -295,12 +295,12 @@ const Services = () => {
               { title: 'WorkCover and TAC Patients', desc: 'We work with patients recovering from workplace and motor vehicle injuries, supporting a structured and sustainable return to full work capacity. We work alongside your treating practitioners and case managers throughout the process.' },
               { title: 'People Managing Chronic Conditions', desc: 'If you are living with ongoing musculoskeletal pain or a long-term condition, we work with you to improve your movement, build strength, and support a better quality of daily life.' }
             ].map((item, i) => (
-              <div key={i} className="bg-white p-12 rounded-[25px] border border-slate-200 hover:border-secondary/30 transition-all reveal-fade-up group">
-                <div className="w-14 h-14 bg-slate-50 rounded-[25px] flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:text-white transition-all text-secondary">
-                  <Users size={28} />
+              <div key={i} className="bg-white p-8 md:p-12 rounded-[25px] border border-slate-200 hover:border-secondary/30 transition-all reveal-fade-up group">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-slate-50 rounded-[20px] md:rounded-[25px] flex items-center justify-center mb-6 md:mb-8 group-hover:bg-secondary group-hover:text-white transition-all text-secondary">
+                  <Users size={24} />
                 </div>
-                <h3 className="text-2xl font-display font-bold text-primary mb-6 uppercase tracking-wide leading-tight">{item.title}</h3>
-                <p className="text-lg text-slate-500 font-poppins leading-tight">{item.desc}</p>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-primary mb-4 md:mb-6 uppercase tracking-wide leading-tight">{item.title}</h3>
+                <p className="text-base md:text-lg text-slate-500 font-poppins leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -313,7 +313,7 @@ const Services = () => {
           <div className="max-w-4xl mx-auto">
             <div className="mb-12 reveal">
               <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4">FAQS</span>
-              <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">Common questions <br /><span className="text-secondary">about our services.</span></h2>
+              <h2 className="text-4xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">Common questions <br className="hidden md:block" /><span className="text-secondary">about our services.</span></h2>
             </div>
 
             <div className="space-y-2 reveal-fade-up">
@@ -343,20 +343,20 @@ const Services = () => {
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto reveal text-center">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">GETTING STARTED</span>
-            <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase mb-10">Not sure which <br />service is <br /><span className="text-secondary">right for you?</span></h2>
-            <p className="text-2xl text-slate-500 font-poppins font-normal leading-tight mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase mb-8 md:mb-10">Not sure which <br className="hidden md:block" />service is <br className="hidden md:block" /><span className="text-secondary">right for you?</span></h2>
+            <p className="text-lg md:text-2xl text-slate-500 font-poppins font-normal leading-relaxed mb-10 md:mb-16 max-w-2xl mx-auto">
               Book an initial assessment and we will work with you to understand your needs and design the right plan. You do not need to know exactly what you need before you come in. That is what the assessment is for.
             </p>
-            <div className="flex flex-col sm:flex-row gap-8 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-8 justify-center">
               <a 
                 href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary text-white px-16 py-8 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-secondary hover:text-primary transition-all shadow-xl shadow-primary/10 text-center"
+                className="bg-primary text-white px-8 md:px-16 py-5 md:py-8 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-secondary hover:text-primary transition-all shadow-xl shadow-primary/10 text-center"
               >
                 BOOK AN ASSESSMENT
               </a>
-              <Link to="/contact" className="border-2 border-primary text-primary px-16 py-8 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-primary hover:text-white transition-all text-center">
+              <Link to="/contact" className="border-2 border-primary text-primary px-8 md:px-16 py-5 md:py-8 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-primary hover:text-white transition-all text-center">
                 CONTACT US
               </Link>
             </div>

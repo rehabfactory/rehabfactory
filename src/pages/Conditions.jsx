@@ -55,7 +55,7 @@ const Conditions = () => {
         <div className="container relative z-10">
           <div className="max-w-[1000px] reveal-fade-up text-white">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">CONDITIONS</span>
-            <h1 className="text-6xl md:text-8xl lg:text-[90px] font-display tracking-tight leading-[0.9] uppercase mb-12">
+            <h1 className="text-[42px] leading-[0.95] md:text-8xl lg:text-[90px] font-display tracking-tight uppercase mb-8 md:mb-12">
               We work with patients <br />
               managing a wide <br />
               <span className="text-secondary">range of conditions.</span>
@@ -70,11 +70,11 @@ const Conditions = () => {
       {/* Disclaimer Note */}
       <section className="py-12 bg-slate-50 border-b border-slate-200">
         <div className="container">
-          <div className="flex items-center gap-6 p-8 bg-white border border-slate-200 rounded-[25px] reveal">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 p-6 md:p-8 bg-white border border-slate-200 rounded-[25px] reveal">
             <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center shrink-0 text-secondary">
               <Info size={24} />
             </div>
-            <p className="text-slate-500 font-poppins text-lg italic leading-tight">
+            <p className="text-slate-500 font-poppins text-base md:text-lg italic leading-tight">
               <strong>Disclaimer Note:</strong> The information below describes conditions our physiotherapists commonly work with. It is not intended as medical advice. Please book an assessment so we can properly evaluate your individual presentation.
             </p>
           </div>
@@ -84,18 +84,18 @@ const Conditions = () => {
       {/* Conditions Grid */}
       <section className="py-section-gap bg-white overflow-hidden">
         <div className="container">
-          <div className="mb-24 reveal">
-            <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHAT WE WORK WITH</span>
-            <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">Conditions our <br />team has experience <br />working with.</h2>
+          <div className="mb-12 md:mb-24 reveal">
+            <span className="text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4 md:mb-6">WHAT WE WORK WITH</span>
+            <h2 className="text-3xl md:text-7xl font-display text-primary tracking-tight leading-[0.95] md:leading-[0.9] uppercase">Conditions our <br className="hidden md:block" />team has experience <br className="hidden md:block" />working with.</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
             {conditionList.map((item, i) => (
-              <div key={i} className="group reveal-fade-up p-12 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 hover:bg-white hover:shadow-2xl transition-all duration-700" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <h3 className="text-3xl font-display font-bold text-primary mb-6 uppercase tracking-wide group-hover:text-secondary transition-colors duration-500 leading-tight">
+              <div key={i} className="group reveal-fade-up p-8 md:p-12 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 hover:bg-white hover:shadow-2xl transition-all duration-700" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <h3 className="text-xl md:text-3xl font-display font-bold text-primary mb-3 md:mb-6 uppercase tracking-wide group-hover:text-secondary transition-colors duration-500 leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-slate-500 font-poppins font-normal leading-tight text-lg">
+                <p className="text-slate-500 font-poppins font-normal leading-tight text-base md:text-lg">
                   {item.desc}
                 </p>
               </div>
@@ -107,15 +107,15 @@ const Conditions = () => {
       {/* Not Listed Section */}
       <section className="py-section-gap bg-slate-50 relative border-y border-slate-200">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             <div className="lg:col-span-5 reveal">
-              <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">NOT LISTED</span>
-              <h2 className="text-4xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">
-                Do not see your <br /><span className="text-secondary">condition listed?</span>
+              <span className="text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4 md:mb-6">NOT LISTED</span>
+              <h2 className="text-3xl md:text-6xl font-display text-primary tracking-tight leading-[0.95] md:leading-[0.9] uppercase">
+                Do not see your <br className="hidden md:block" /><span className="text-secondary">condition listed?</span>
               </h2>
             </div>
             <div className="lg:col-span-7 space-y-8 text-slate-500 font-poppins text-lg leading-tight reveal-fade-up">
-              <p className="text-2xl text-primary font-bold">
+              <p className="text-lg md:text-2xl text-primary font-bold">
                 Our team works with a broad range of musculoskeletal presentations. Get in touch and we will let you know how we may be able to help.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 pt-6">
@@ -140,15 +140,15 @@ const Conditions = () => {
       <section className="py-cta-gap bg-primary text-white relative text-center overflow-hidden">
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto reveal">
-            <h2 className="text-5xl md:text-8xl font-display tracking-tight leading-[0.9] uppercase mb-10 text-white">Take the <br /><span className="text-secondary">first step.</span></h2>
-            <p className="text-2xl text-slate-400 font-poppins font-normal leading-tight mb-16 max-w-2xl mx-auto">
+            <h2 className="text-[40px] leading-[0.95] md:text-8xl font-display tracking-tight uppercase mb-8 md:mb-10 text-white">Take the <br className="hidden md:block" /><span className="text-secondary">first step.</span></h2>
+            <p className="text-xl md:text-2xl text-slate-400 font-poppins font-normal leading-tight mb-12 md:mb-16 max-w-2xl mx-auto">
               Book your initial assessment and let us understand what you are working through.
             </p>
             <a 
               href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-secondary text-primary px-16 py-8 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-white transition-all shadow-2xl shadow-secondary/20"
+              className="bg-secondary text-primary px-8 md:px-16 py-5 md:py-8 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-white transition-all shadow-2xl shadow-secondary/20"
             >
               BOOK AN ASSESSMENT
             </a>

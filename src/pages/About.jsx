@@ -40,12 +40,12 @@ const About = () => {
         <div className="container relative z-10">
           <div className="max-w-[1000px] reveal-fade-up text-white">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">ABOUT US</span>
-            <h1 className="text-6xl md:text-8xl lg:text-[100px] font-display tracking-tight leading-[0.9] uppercase mb-12">
+            <h1 className="text-4xl md:text-8xl lg:text-[100px] font-display tracking-tight leading-[0.95] md:leading-[0.9] uppercase mb-8 md:mb-12">
               Meet the Team <br />
-              Behind the <br />
+              Behind the <br className="hidden md:block" />
               <span className="text-secondary">Rehab.</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-slate-300 font-poppins font-normal leading-tight max-w-2xl">
+            <p className="text-lg md:text-3xl text-slate-300 font-poppins font-normal leading-tight max-w-2xl">
               We are physiotherapists who believe in doing the work.
             </p>
           </div>
@@ -63,13 +63,13 @@ const About = () => {
               </h2>
             </div>
             <div className="lg:col-span-7 space-y-8 text-slate-500 font-poppins text-lg leading-tight reveal-fade-up">
-              <p className="text-2xl text-primary font-bold">
+              <p className="text-xl md:text-2xl text-primary font-bold">
                 Rehab Factory Physiotherapy was founded on a simple belief: exercise is medicine. Most clinics focus on the treatment bed. We built a gym.
               </p>
-              <p>
+              <p className="text-base md:text-lg">
                 Our approach centres on individualised exercise rehabilitation. We use hands-on therapy to reduce pain and restore movement, then we get patients working. Hard, structured, and goal-driven. Because the most sustainable recoveries are built on the gym floor.
               </p>
-              <p>
+              <p className="text-base md:text-lg">
                 Based in Narre Warren, we work with patients of all ages and activity levels, from junior athletes and weekend sport participants to WorkCover patients and people managing long-term musculoskeletal conditions.
               </p>
             </div>
@@ -82,8 +82,8 @@ const About = () => {
         <div className="container">
           <div className="mb-20 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">THE TEAM</span>
-            <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase mb-6">Your practitioners.</h2>
-            <p className="text-xl text-slate-500 font-poppins font-normal uppercase tracking-widest">
+            <h2 className="text-4xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase mb-4 md:mb-6">Your practitioners.</h2>
+            <p className="text-sm md:text-xl text-slate-500 font-poppins font-normal uppercase tracking-widest leading-relaxed">
               All practitioners are registered with the Physiotherapy Board of Australia.
             </p>
           </div>
@@ -104,12 +104,12 @@ const About = () => {
               }
             ].map((practitioner, i) => (
               <div key={i} className="group reveal-fade-up" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="aspect-[4/5] bg-slate-100 mb-8 rounded-[25px] overflow-hidden relative shadow-lg group-hover:shadow-2xl transition-all duration-700">
+                <div className="aspect-[4/5] bg-slate-100 mb-6 md:mb-8 rounded-[25px] overflow-hidden relative shadow-lg group-hover:shadow-2xl transition-all duration-700">
                    <img src={practitioner.img} alt={practitioner.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
                 </div>
-                <h3 className="text-3xl font-display font-bold text-primary mb-2 uppercase tracking-wide group-hover:text-secondary transition-colors">{practitioner.name}</h3>
-                <p className="text-secondary font-black text-sm tracking-widest uppercase mb-6">{practitioner.role}</p>
-                <p className="text-slate-500 font-poppins leading-tight text-lg">{practitioner.bio}</p>
+                <h3 className="text-xl md:text-3xl font-display font-bold text-primary mb-2 uppercase tracking-wide group-hover:text-secondary transition-colors leading-tight">{practitioner.name}</h3>
+                <p className="text-secondary font-black text-xs md:text-sm tracking-widest uppercase mb-4 md:mb-6">{practitioner.role}</p>
+                <p className="text-slate-500 font-poppins leading-relaxed text-base md:text-lg">{practitioner.bio}</p>
               </div>
             ))}
           </div>
@@ -122,12 +122,12 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="reveal">
               <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">OUR SPACE</span>
-              <h2 className="text-5xl md:text-7xl font-display text-white tracking-tight leading-[0.9] uppercase mb-8">Where Recovery <br />Gets to Work.</h2>
-              <p className="text-2xl text-slate-400 font-poppins font-normal leading-tight mb-12">
+              <h2 className="text-4xl md:text-7xl font-display text-white tracking-tight leading-[0.9] uppercase mb-6 md:mb-8">Where Recovery <br />Gets to Work.</h2>
+              <p className="text-lg md:text-2xl text-slate-400 font-poppins font-normal leading-relaxed mb-8 md:mb-12">
                 Our clinic is built around a fully equipped gym. This is where the real rehabilitation happens.
               </p>
-              <div className="border-l-4 border-secondary pl-8 py-4">
-                <blockquote className="text-3xl font-display font-bold text-white uppercase tracking-tight leading-tight italic">
+              <div className="border-l-4 border-secondary pl-6 md:pl-8 py-3 md:py-4">
+                <blockquote className="text-xl md:text-3xl font-display font-bold text-white uppercase tracking-tight leading-tight italic">
                   "Returning to function is a milestone, not the finish line."
                 </blockquote>
               </div>
@@ -145,7 +145,7 @@ const About = () => {
         <div className="container">
           <div className="mb-24 reveal text-center max-w-3xl mx-auto">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHAT WE STAND FOR</span>
-            <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">The way we work.</h2>
+            <h2 className="text-4xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">The way we work.</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
@@ -156,8 +156,8 @@ const About = () => {
             ].map((value, i) => (
               <div key={i} className="text-center reveal-fade-up" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <div className="flex justify-center">{value.icon}</div>
-                <h3 className="text-3xl font-display font-bold text-primary mb-6 uppercase tracking-wide leading-tight">{value.title}</h3>
-                <p className="text-slate-500 font-poppins font-normal leading-tight">{value.desc}</p>
+                <h3 className="text-xl md:text-3xl font-display font-bold text-primary mb-4 md:mb-6 uppercase tracking-wide leading-tight">{value.title}</h3>
+                <p className="text-slate-500 font-poppins font-normal leading-relaxed text-base md:text-lg">{value.desc}</p>
               </div>
             ))}
           </div>
@@ -167,15 +167,15 @@ const About = () => {
       {/* Final CTA */}
       <section className="py-cta-gap bg-slate-50 border-t border-slate-200 text-center">
         <div className="container reveal">
-          <h2 className="text-5xl md:text-8xl font-display text-primary tracking-tight leading-[0.9] uppercase mb-12">Come and see <br /><span className="text-secondary">the difference.</span></h2>
-          <p className="text-2xl text-slate-500 font-poppins font-normal mb-16 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-8xl font-display text-primary tracking-tight leading-[0.9] uppercase mb-8 md:mb-12">Come and see <br /><span className="text-secondary">the difference.</span></h2>
+          <p className="text-lg md:text-2xl text-slate-500 font-poppins font-normal mb-10 md:mb-16 max-w-2xl mx-auto leading-relaxed">
             Book your first appointment at Rehab Factory Physiotherapy.
           </p>
           <a 
             href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary text-white px-16 py-8 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-secondary hover:text-primary transition-all shadow-xl inline-block"
+            className="bg-primary text-white px-8 md:px-16 py-5 md:py-8 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-secondary hover:text-primary transition-all shadow-xl inline-block"
           >
             BOOK AN APPOINTMENT
           </a>

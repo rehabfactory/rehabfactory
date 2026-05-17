@@ -54,7 +54,7 @@ const ArticleDetail = () => {
             <span className="text-[13px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8 reveal">
               {article.category}
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display tracking-tight leading-[0.95] uppercase mb-12 reveal-fade-up">
+            <h1 className="text-[42px] leading-[0.95] md:text-7xl lg:text-8xl font-display tracking-tight uppercase mb-8 md:mb-12 reveal-fade-up">
               {article.title}
             </h1>
             
@@ -76,9 +76,9 @@ const ArticleDetail = () => {
       </header>
 
       {/* Main Content Area */}
-      <section className="py-24 bg-white">
+      <section className="py-12 md:py-24 bg-white">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
             
             {/* Sidebar / Info */}
             <aside className="lg:col-span-4 order-2 lg:order-1">
@@ -99,7 +99,7 @@ const ArticleDetail = () => {
                 </div>
 
                 <div className="p-10 bg-primary text-white rounded-[25px] shadow-2xl reveal-fade-up">
-                  <h4 className="font-display font-bold text-2xl uppercase tracking-tight leading-tight mb-6">Ready to start your <br /><span className="text-secondary">recovery?</span></h4>
+                  <h4 className="font-display font-bold text-xl md:text-2xl uppercase tracking-tight leading-tight mb-4 md:mb-6">Ready to start your <br className="hidden md:block" /><span className="text-secondary">recovery?</span></h4>
                   <p className="text-slate-400 font-poppins text-sm leading-tight mb-10">
                     Book an initial assessment with our team in Narre Warren today.
                   </p>
@@ -107,7 +107,7 @@ const ArticleDetail = () => {
                     href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full bg-secondary text-primary py-5 rounded-[20px] font-black text-xs tracking-widest uppercase text-center hover:bg-white transition-all"
+                    className="block w-full bg-secondary text-primary py-5 rounded-full md:rounded-[20px] font-black text-xs tracking-widest uppercase text-center hover:bg-white transition-all shadow-lg"
                   >
                     BOOK APPOINTMENT
                   </a>
@@ -128,13 +128,13 @@ const ArticleDetail = () => {
                 <img src={article.img} alt={article.title} className="w-full h-full object-cover" />
               </div>
 
-              <div className="max-w-none prose prose-slate prose-lg lg:prose-xl font-poppins text-slate-600 leading-tight">
+              <div className="max-w-none prose prose-slate md:prose-lg lg:prose-xl font-poppins text-slate-600 leading-tight">
                 {article.content.map((block, idx) => {
                   if (block.type === 'intro') {
-                    return <p key={idx} className="text-2xl md:text-3xl text-primary font-normal leading-tight mb-12 border-l-4 border-secondary pl-10 reveal">{block.text}</p>;
+                    return <p key={idx} className="text-xl md:text-3xl text-primary font-normal leading-tight mb-12 border-l-4 border-secondary pl-6 md:pl-10 reveal">{block.text}</p>;
                   }
                   if (block.type === 'heading') {
-                    return <h3 key={idx} className="text-3xl md:text-4xl font-display font-bold text-primary mt-20 mb-8 uppercase tracking-wide reveal">{block.text}</h3>;
+                    return <h3 key={idx} className="text-2xl md:text-4xl font-display font-bold text-primary mt-16 md:mt-20 mb-6 md:mb-8 uppercase tracking-wide reveal">{block.text}</h3>;
                   }
                   if (block.type === 'paragraph') {
                     return <p key={idx} className="mb-10 reveal-fade-up">{block.text}</p>;
@@ -144,16 +144,16 @@ const ArticleDetail = () => {
               </div>
 
               {/* Final CTA within flow */}
-              <div className="mt-24 p-16 bg-slate-50 border border-slate-200 rounded-[25px] text-center reveal">
-                <h3 className="text-3xl md:text-5xl font-display font-bold text-primary mb-8 uppercase tracking-tight">HAVE QUESTIONS?</h3>
-                <p className="text-xl text-slate-500 mb-12 max-w-xl mx-auto">
+              <div className="mt-16 md:mt-24 p-8 md:p-16 bg-slate-50 border border-slate-200 rounded-[25px] text-center reveal">
+                <h3 className="text-3xl md:text-5xl font-display font-bold text-primary mb-6 md:mb-8 uppercase tracking-tight">HAVE QUESTIONS?</h3>
+                <p className="text-lg md:text-xl text-slate-500 mb-8 md:mb-12 max-w-xl mx-auto">
                   You do not need a referral to book with us. Start your journey today.
                 </p>
                 <a 
                   href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-primary text-white px-16 py-8 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-secondary hover:text-primary transition-all shadow-xl"
+                  className="inline-block bg-primary text-white px-8 md:px-16 py-5 md:py-8 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-secondary hover:text-primary transition-all shadow-xl"
                 >
                   BOOK YOUR ASSESSMENT
                 </a>
@@ -165,9 +165,9 @@ const ArticleDetail = () => {
       </section>
 
       {/* Other Articles */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-16 md:py-24 bg-slate-50">
         <div className="container">
-          <div className="flex justify-between items-end mb-16 reveal">
+          <div className="flex justify-between items-end mb-12 md:mb-16 reveal">
             <div>
               <span className="text-[13px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4">KEEP READING</span>
               <h2 className="text-4xl md:text-6xl font-display text-primary tracking-tight uppercase">Recent Insights</h2>
@@ -187,7 +187,7 @@ const ArticleDetail = () => {
                   <span className="text-secondary">{other.category}</span>
                   <span>{other.readTime} READ</span>
                 </div>
-                <h3 className="text-2xl font-display font-bold text-primary uppercase tracking-wide group-hover:text-secondary transition-colors leading-tight">
+                <h3 className="text-xl md:text-2xl font-display font-bold text-primary uppercase tracking-wide group-hover:text-secondary transition-colors leading-tight">
                   {other.title}
                 </h3>
               </Link>

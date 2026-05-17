@@ -13,6 +13,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import heroImg from '../assets/hero_premium.webp';
+import heroVideo from '../assets/rehab-factory-hero.mp4';
 import individualisedExercise from '../assets/individualised-exercise.webp';
 import manualTherapyImg from '../assets/manual-therapy.webp';
 import returnToSport from '../assets/return-to-sport.webp';
@@ -76,70 +77,72 @@ const Home = () => {
   return (
     <div className="home-page overflow-x-hidden">
       {/* Hero Section */}
-      <section className="min-h-[95vh] flex items-center relative pt-32 lg:pt-40 bg-white">
-        <div className="container relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-8 reveal-fade-up">
-              <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">PHYSIOTHERAPY / NARRE WARREN, VIC</span>
+      <section className="min-h-[100dvh] flex flex-col relative pt-32 lg:pt-0 bg-primary overflow-hidden">
+        {/* Background Video */}
+        <div className="absolute inset-0 z-0">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className="w-full h-full object-cover opacity-60"
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-primary/20"></div>
+        </div>
 
-              <h1 className="text-5xl md:text-7xl lg:text-[100px] font-display font-bold text-primary tracking-tight mb-16 uppercase leading-[1.1]">
-                Your <span className="text-secondary">REHAB</span> <br />
-                starts on the <br />
-                <span className="text-secondary">gym</span> floor.
-              </h1>
+        <div className="container relative z-10 flex-grow flex flex-col justify-center pb-12 md:pb-0">
+          <div className="max-w-[1000px] reveal-fade-up text-white mt-auto md:mt-0">
+            <span className="text-[12px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6 md:mb-10">GYM-BASED PHYSIOTHERAPY</span>
 
-              <div className="max-w-2xl">
-                <p className="text-xl md:text-2xl text-slate-500 font-poppins font-normal leading-tight mb-12">
-                  At Rehab Factory, the gym is the treatment room. We use hands-on physiotherapy to get you moving, then we put you to work. Hard, structured, goal-driven exercise rehabilitation designed to build lasting strength and function.
-                </p>
+            <h1 className="text-[46px] leading-[0.95] md:text-8xl lg:text-[110px] font-display font-bold text-white tracking-tight mb-8 md:mb-16 uppercase md:leading-[0.9]">
+              Your <span className="text-secondary">REHAB</span> <br className="hidden md:block" />
+              starts on the <br className="hidden md:block" />
+              <span className="text-secondary">gym</span> floor.
+            </h1>
 
-                <div className="flex flex-col sm:flex-row gap-6">
-                  <a 
-                    href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-primary text-white px-12 py-6 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-secondary hover:text-primary transition-all active:scale-95 text-center shadow-xl"
-                  >
-                    BOOK YOUR ASSESSMENT
-                  </a>
-                  <Link to="/services" className="border-2 border-primary text-primary px-12 py-6 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-primary hover:text-white transition-all text-center">
-                    SEE HOW WE WORK
-                  </Link>
+            <div className="max-w-2xl">
+              <p className="text-xl md:text-3xl text-slate-300 font-poppins font-normal leading-tight mb-10 md:mb-16">
+                At Rehab Factory, the gym is the treatment room. We use hands-on physiotherapy to get you moving, then we put you to work.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
+                <a 
+                  href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-secondary text-primary px-8 md:px-14 py-5 md:py-6 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-white transition-all active:scale-95 text-center shadow-2xl shadow-secondary/20"
+                >
+                  BOOK YOUR ASSESSMENT
+                </a>
+                <Link to="/services" className="border-2 border-white/30 text-white px-8 md:px-14 py-5 md:py-6 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-white hover:text-primary hover:border-white transition-all text-center">
+                  SEE HOW WE WORK
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Floating Trust Bar Overlay */}
+        <div className="relative md:absolute bottom-0 left-0 w-full z-20 py-8 md:py-10 bg-[#020C1B] md:bg-gradient-to-t md:from-primary md:to-transparent mt-0 md:mt-0 border-t border-white/5 md:border-t-0">
+          <div className="container">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-center text-center">
+              {[
+                { icon: <Target className="text-secondary mx-auto mb-3 md:mb-4" size={24} />, title: 'Gym-Based Rehabilitation' },
+                { icon: <ShieldCheck className="text-secondary mx-auto mb-3 md:mb-4" size={24} />, title: 'Athlete and Patient Focused' },
+                { icon: <Zap className="text-secondary mx-auto mb-3 md:mb-4" size={24} />, title: 'AHPRA Registered Practitioners' }
+              ].map((item, i) => (
+                <div key={i} className="reveal-fade-up" style={{ transitionDelay: `${0.5 + i * 0.1}s` }}>
+                  {item.icon}
+                  <span className="text-white font-display font-bold text-[11px] md:text-base uppercase tracking-[0.2em] block whitespace-nowrap opacity-90">{item.title}</span>
                 </div>
-              </div>
-            </div>
-
-            <div className="hidden lg:block lg:col-span-4 relative h-[65vh] reveal-fade-up">
-              <div className="absolute inset-0 bg-slate-100 rounded-[25px] overflow-hidden">
-                <img 
-                  src={heroImg} 
-                  alt="Elite Performance Clinic" 
-                  className="w-full h-full object-cover transition-all duration-1000" 
-                  loading="eager"
-                  fetchpriority="high"
-                />
-              </div>
+              ))}
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Trust Bar */}
-      <section className="bg-primary py-12 border-y border-slate-800">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center text-center">
-            {[
-              { icon: <Target className="text-secondary mx-auto mb-4" size={32} />, title: 'Gym-Based Rehabilitation' },
-              { icon: <ShieldCheck className="text-secondary mx-auto mb-4" size={32} />, title: 'Athlete and Patient Focused' },
-              { icon: <Zap className="text-secondary mx-auto mb-4" size={32} />, title: 'AHPRA Registered Practitioners' }
-            ].map((item, i) => (
-              <div key={i} className="reveal">
-                {item.icon}
-                <span className="text-white font-display font-bold text-lg md:text-xl uppercase tracking-widest block whitespace-nowrap">{item.title}</span>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* The Difference Section */}
@@ -149,13 +152,13 @@ const Home = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
               <div className="lg:col-span-7">
                 <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8">THE DIFFERENCE</span>
-                <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[1.0] uppercase mb-10">
+                <h2 className="text-4xl md:text-7xl font-display text-primary tracking-tight leading-[1.0] uppercase mb-8 md:mb-10">
                   Most clinics focus on the <br />
                   <span className="text-secondary">treatment bed.</span> <br />
                   We focus on the <br />
                   <span className="text-secondary">gym floor.</span>
                 </h2>
-                <p className="text-xl md:text-2xl text-slate-500 font-poppins font-normal leading-tight max-w-xl">
+                <p className="text-lg md:text-2xl text-slate-500 font-poppins font-normal leading-tight max-w-xl">
                   Hands-on treatment has its place. But it is just the start. The real work happens in the gym, and that is where we spend most of our time with you.
                 </p>
               </div>
@@ -177,13 +180,13 @@ const Home = () => {
               { title: 'Your programme is built for you, not copied from a template.', desc: 'Every patient at Rehab Factory receives an individualised exercise programme. No generic plans. No one-size-fits-all approaches. Your programme evolves as your recovery progresses.' },
               { title: 'Returning to function is a milestone, not the finish line.', desc: 'We do not consider your rehabilitation complete when symptoms settle. We work with you until you are stronger, more capable, and more confident than you were before your injury.' }
             ].map((feature, i) => (
-              <div key={i} className="reveal-fade-up p-16 border-r border-slate-200 last:border-r-0 hover:bg-slate-50 transition-all group flex flex-col h-full" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="min-h-[140px] mb-8">
-                  <h3 className="text-2xl font-display font-bold text-primary uppercase tracking-wider leading-tight group-hover:text-secondary transition-colors">
+              <div key={i} className="reveal-fade-up p-8 md:p-16 border-b md:border-b-0 md:border-r border-slate-200 last:border-b-0 last:border-r-0 hover:bg-slate-50 transition-all group flex flex-col h-full" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="min-h-0 md:min-h-[140px] mb-4 md:mb-8">
+                  <h3 className="text-xl md:text-2xl font-display font-bold text-primary uppercase tracking-wider leading-tight group-hover:text-secondary transition-colors">
                     {feature.title}
                   </h3>
                 </div>
-                <p className="text-slate-500 font-poppins font-normal leading-relaxed text-xl">{feature.desc}</p>
+                <p className="text-slate-500 font-poppins font-normal leading-relaxed text-base md:text-xl">{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -195,10 +198,10 @@ const Home = () => {
         <div className="container">
           <div className="mb-20 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHAT WE DO</span>
-            <h2 className="text-5xl md:text-7xl font-display font-bold text-primary tracking-tight leading-[1.1] uppercase mb-12">
+            <h2 className="text-4xl md:text-7xl font-display font-bold text-primary tracking-tight leading-[1.1] uppercase mb-8 md:mb-12">
               Four services. One goal:<br /><span className="text-secondary">get you back stronger.</span>
             </h2>
-            <p className="text-2xl text-slate-500 font-poppins font-normal leading-tight max-w-2xl mt-10">
+            <p className="text-lg md:text-2xl text-slate-500 font-poppins font-normal leading-tight max-w-2xl mt-6 md:mt-10">
               Every service at Rehab Factory is connected. Manual therapy prepares the body. Exercise rehabilitation rebuilds it.
             </p>
           </div>
@@ -216,17 +219,17 @@ const Home = () => {
                     {service.icon}
                   </div>
                 </div>
-                <div className="p-10 flex flex-col flex-grow">
-                  <div className="min-h-[100px] mb-8">
-                    <h3 className="text-2xl font-display font-bold text-primary uppercase tracking-wider group-hover:text-secondary transition-colors duration-500 leading-tight">
+                <div className="p-8 md:p-10 flex flex-col flex-grow">
+                  <div className="min-h-0 md:min-h-[100px] mb-6 md:mb-8">
+                    <h3 className="text-xl md:text-2xl font-display font-bold text-primary uppercase tracking-wider group-hover:text-secondary transition-colors duration-500 leading-tight">
                       {service.title}
                     </h3>
                   </div>
-                  <p className="text-slate-500 font-poppins leading-relaxed mb-12 text-lg">
+                  <p className="text-slate-500 font-poppins leading-relaxed mb-8 md:mb-12 text-base md:text-lg">
                     {service.desc}
                   </p>
                   <div className="mt-auto">
-                    <Link to={service.link} className="inline-flex items-center gap-3 text-primary font-black text-[11px] tracking-[0.2em] uppercase group-hover:text-secondary transition-colors duration-500">
+                    <Link to={service.link} className="inline-flex items-center gap-3 text-primary font-black text-[10px] md:text-[11px] tracking-[0.2em] uppercase group-hover:text-secondary transition-colors duration-500">
                       LEARN MORE <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform duration-500" />
                     </Link>
                   </div>
@@ -242,10 +245,10 @@ const Home = () => {
         <div className="container">
           <div className="mb-20 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHO WE WORK WITH</span>
-            <h2 className="text-5xl md:text-7xl font-display font-bold text-primary tracking-tight leading-[1.1] uppercase mb-12">
-              From junior athletes to <br />weekend warriors to <br /><span className="text-secondary">WorkCover patients.</span>
+            <h2 className="text-4xl md:text-7xl font-display font-bold text-primary tracking-tight leading-[1.1] uppercase mb-8 md:mb-12">
+              From junior athletes to <br className="hidden md:block" />weekend warriors to <br className="hidden md:block" /><span className="text-secondary">WorkCover patients.</span>
             </h2>
-            <p className="text-2xl text-slate-500 font-poppins font-normal leading-tight max-w-2xl mt-10">
+            <p className="text-lg md:text-2xl text-slate-500 font-poppins font-normal leading-tight max-w-2xl mt-6 md:mt-10">
               Rehab Factory is not just for elite athletes. It is for anyone who wants to recover properly and work towards coming back stronger.
             </p>
           </div>
@@ -256,12 +259,12 @@ const Home = () => {
               { title: 'Active Adults and Weekend Warriors', desc: 'Injured playing social footy? Tweaked your back at the gym? You do not have to be an elite athlete to deserve a proper rehabilitation programme.', tags: ['Injury Recovery', 'Chronic Pain', 'Exercise Therapy'] },
               { title: 'WorkCover and TAC Patients', desc: 'We work with patients recovering from workplace and motor vehicle injuries, supporting a structured and sustainable return to full work capacity.', tags: ['WorkCover', 'TAC', 'Return to Work'] }
             ].map((item, i) => (
-              <div key={i} className="bg-white p-14 border border-slate-200 rounded-[25px] hover:border-secondary/30 transition-all reveal-fade-up shadow-sm flex flex-col" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="min-h-[100px] mb-8">
-                  <h3 className="text-3xl font-display font-bold text-primary uppercase tracking-wider leading-tight">{item.title}</h3>
+              <div key={i} className="bg-white p-8 md:p-14 border border-slate-200 rounded-[25px] hover:border-secondary/30 transition-all reveal-fade-up shadow-sm flex flex-col" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="min-h-0 md:min-h-[100px] mb-4 md:mb-8">
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-primary uppercase tracking-wider leading-tight">{item.title}</h3>
                 </div>
-                <p className="text-slate-500 font-poppins font-normal leading-relaxed mb-10 text-xl">{item.desc}</p>
-                <div className="flex flex-wrap gap-2">
+                <p className="text-slate-500 font-poppins font-normal leading-relaxed mb-8 md:mb-10 text-base md:text-xl">{item.desc}</p>
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {item.tags.map((tag, j) => (
                     <span key={j} className="text-[10px] font-black tracking-widest uppercase py-2 px-3 bg-slate-50 text-slate-400 rounded-[25px] border border-slate-100">{tag}</span>
                   ))}
@@ -277,7 +280,7 @@ const Home = () => {
         <div className="container">
           <div className="mb-16 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">HOW WE CAN HELP</span>
-            <h2 className="text-5xl md:text-6xl font-display font-bold text-primary tracking-tight leading-[1.1] uppercase mb-12">The conditions and challenges <br />our team works with every day.</h2>
+            <h2 className="text-3xl md:text-6xl font-display font-bold text-primary tracking-tight leading-[1.1] uppercase mb-8 md:mb-12">The conditions and challenges <br className="hidden md:block" />our team works with every day.</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -288,14 +291,14 @@ const Home = () => {
               { title: 'Sports Performance and Injury Prevention', desc: 'For athletes looking to build capacity and reduce injury risk, we provide individualised assessment and targeted exercise programmes designed around the demands of your sport.' }
             ].map((item, i) => (
               <div key={i} className="flex gap-10 group reveal">
-                <div className="w-14 h-14 bg-slate-50 rounded-[25px] flex items-center justify-center shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors border border-slate-100 text-secondary">
-                  <CheckCircle2 size={28} />
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-slate-50 rounded-[20px] md:rounded-[25px] flex items-center justify-center shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors border border-slate-100 text-secondary">
+                  <CheckCircle2 size={24} />
                 </div>
                 <div>
-                  <div className="min-h-[70px] mb-6">
-                    <h3 className="text-2xl font-display font-bold text-primary uppercase tracking-wider leading-tight group-hover:text-secondary transition-colors">{item.title}</h3>
+                  <div className="min-h-0 md:min-h-[70px] mb-4 md:mb-6">
+                    <h3 className="text-xl md:text-2xl font-display font-bold text-primary uppercase tracking-wider leading-tight group-hover:text-secondary transition-colors">{item.title}</h3>
                   </div>
-                  <p className="text-slate-500 font-poppins font-normal leading-relaxed text-xl">{item.desc}</p>
+                  <p className="text-slate-500 font-poppins font-normal leading-relaxed text-base md:text-xl">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -314,11 +317,11 @@ const Home = () => {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div className="reveal">
-              <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">FIND US</span>
-              <h2 className="text-6xl md:text-8xl font-display text-primary tracking-tight leading-[0.9] uppercase mb-10">Based in <br />Narre Warren, <br /><span className="text-secondary">Victoria.</span></h2>
-              <div className="flex items-center gap-4 text-slate-500 mb-10">
-                <MapPin size={24} className="text-secondary" />
-                <span className="font-poppins font-bold tracking-widest text-sm uppercase">Serving the South East, Victoria.</span>
+              <span className="text-[12px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4 md:mb-6">FIND US</span>
+              <h2 className="text-[40px] md:text-8xl font-display text-primary tracking-tight leading-[0.9] uppercase mb-6 md:mb-10">Based in <br className="hidden md:block" />Narre Warren, <br /><span className="text-secondary">Victoria.</span></h2>
+              <div className="flex items-center gap-4 text-slate-500 mb-8 md:mb-10">
+                <MapPin size={24} className="text-secondary shrink-0" />
+                <span className="font-poppins font-bold tracking-widest text-[11px] md:text-sm uppercase">Serving the South East, Victoria.</span>
               </div>
               <a href="https://maps.google.com/?q=9/25-35+Narre+Warren+-+Cranbourne+Road" target="_blank" rel="noopener noreferrer" className="bg-primary text-white px-10 py-5 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-secondary hover:text-primary transition-all inline-block shadow-xl">
                 GET DIRECTIONS
@@ -343,20 +346,20 @@ const Home = () => {
       <section className="py-cta-gap bg-primary text-white relative text-center overflow-hidden">
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto reveal">
-            <h2 className="text-6xl md:text-9xl font-display tracking-tight leading-[0.85] uppercase mb-12">Your recovery <br /><span className="text-secondary">starts here.</span></h2>
-            <p className="text-2xl text-slate-400 font-poppins font-normal leading-tight mb-16 max-w-2xl mx-auto">
+            <h2 className="text-5xl md:text-9xl font-display tracking-tight leading-[0.85] uppercase mb-8 md:mb-12">Your recovery <br /><span className="text-secondary">starts here.</span></h2>
+            <p className="text-lg md:text-2xl text-slate-400 font-poppins font-normal leading-tight mb-10 md:mb-16 max-w-2xl mx-auto">
               Book your initial assessment at Rehab Factory Physiotherapy in Narre Warren and let us build your programme.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-8 mb-20">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-8 mb-12 md:20">
               <a 
                 href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-secondary text-primary px-16 py-8 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-white transition-all shadow-2xl shadow-secondary/20"
+                className="bg-secondary text-primary px-8 md:px-12 py-5 md:py-6 rounded-full md:rounded-[25px] font-black text-sm md:text-base tracking-[0.2em] uppercase hover:bg-white transition-all shadow-2xl shadow-secondary/20"
               >
                 BOOK YOUR ASSESSMENT
               </a>
-              <Link to="/services" className="border-2 border-slate-700 text-white px-16 py-8 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-white hover:text-primary hover:border-white transition-all">
+              <Link to="/services" className="border-2 border-slate-700 text-white px-8 md:px-12 py-5 md:py-6 rounded-full md:rounded-[25px] font-black text-sm md:text-base tracking-[0.2em] uppercase hover:bg-white hover:text-primary hover:border-white transition-all">
                 VIEW OUR SERVICES
               </Link>
             </div>

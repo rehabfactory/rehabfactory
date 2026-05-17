@@ -35,11 +35,11 @@ const Contact = () => {
         <div className="container relative z-10">
           <div className="max-w-[1000px] reveal-fade-up text-white">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">ENQUIRY</span>
-            <h1 className="text-6xl md:text-8xl lg:text-[100px] font-display tracking-tight leading-[0.9] uppercase mb-12">
+            <h1 className="text-4xl md:text-8xl lg:text-[100px] font-display tracking-tight leading-[0.95] md:leading-[0.9] uppercase mb-8 md:mb-12">
               Book your <br />
               <span className="text-secondary">assessment.</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-slate-300 font-poppins font-normal leading-tight max-w-3xl">
+            <p className="text-lg md:text-3xl text-slate-300 font-poppins font-normal leading-tight max-w-3xl">
               Ready to start your recovery? Get in touch and let our team build your treatment plan.
             </p>
           </div>
@@ -60,7 +60,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <span className="block text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase mb-2">LOCATION</span>
-                      <p className="text-xl font-display font-bold text-primary uppercase leading-tight">
+                      <p className="text-lg md:text-xl font-display font-bold text-primary uppercase leading-tight">
                         9/25-35 Cranbourne Road,<br />Narre Warren VIC 3805
                       </p>
                     </div>
@@ -72,7 +72,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <span className="block text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase mb-2">PHONE</span>
-                      <p className="text-xl font-display font-bold text-primary uppercase leading-tight">
+                      <p className="text-lg md:text-xl font-display font-bold text-primary uppercase leading-tight">
                         (03) 9704 6111
                       </p>
                     </div>
@@ -84,7 +84,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <span className="block text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase mb-2">EMAIL</span>
-                      <p className="text-xl font-display font-bold text-primary uppercase leading-tight">
+                      <p className="text-lg md:text-xl font-display font-bold text-primary uppercase leading-tight">
                         admin@rehabfactory.com.au
                       </p>
                     </div>
@@ -114,7 +114,7 @@ const Contact = () => {
               <div className="bg-white p-10 md:p-16 rounded-sm border border-slate-200 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 -translate-y-16 translate-x-16 rounded-full blur-3xl"></div>
                 
-                <h3 className="text-4xl font-display font-bold text-primary mb-12 uppercase tracking-tight">Send an enquiry</h3>
+                <h3 className="text-3xl md:text-4xl font-display font-bold text-primary mb-8 md:mb-12 uppercase tracking-tight">Send an enquiry</h3>
                 
                 <form className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -130,12 +130,12 @@ const Contact = () => {
 
                   <div className="space-y-2">
                     <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">EMAIL ADDRESS</label>
-                    <input type="email" className="w-full bg-slate-50 border border-slate-100 p-5 focus:outline-none focus:border-secondary transition-colors font-poppins" placeholder="Your Email" />
+                    <input type="email" className="w-full bg-slate-50 border border-slate-100 p-4 md:p-5 focus:outline-none focus:border-secondary transition-colors font-poppins" placeholder="Your Email" />
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">PREFERRED SERVICE</label>
-                    <select className="w-full bg-slate-50 border border-slate-100 p-5 focus:outline-none focus:border-secondary transition-colors font-poppins appearance-none">
+                    <select className="w-full bg-slate-50 border border-slate-100 p-4 md:p-5 focus:outline-none focus:border-secondary transition-colors font-poppins appearance-none">
                       <option>Select a service</option>
                       <option>Individualised Exercise Therapy</option>
                       <option>Manual Therapy</option>
@@ -150,7 +150,7 @@ const Contact = () => {
                     <textarea rows="5" className="w-full bg-slate-50 border border-slate-100 p-5 focus:outline-none focus:border-secondary transition-colors font-poppins" placeholder="How can we help?"></textarea>
                   </div>
 
-                  <button type="submit" className="w-full bg-primary text-white py-6 rounded-[25px] font-black text-sm tracking-[0.3em] uppercase hover:bg-secondary hover:text-primary transition-all flex items-center justify-center gap-4 shadow-xl">
+                  <button type="submit" className="w-full bg-primary text-white py-5 md:py-6 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.3em] uppercase hover:bg-secondary hover:text-primary transition-all flex items-center justify-center gap-4 shadow-xl">
                     SUBMIT ENQUIRY <Send size={18} />
                   </button>
                 </form>

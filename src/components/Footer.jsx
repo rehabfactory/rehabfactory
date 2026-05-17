@@ -4,7 +4,7 @@ import { Send, Globe, Mail, Phone, ArrowRight } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="bg-[#020C1B] w-full pt-24 pb-12 text-white">
-      <div className="container swiss-grid gap-y-12">
+      <div className="w-full px-6 md:px-12 lg:px-20 2xl:px-32 swiss-grid gap-y-12">
         <div className="col-span-12 lg:col-span-4">
           <Link to="/" className="inline-block mb-8">
             <img 
@@ -13,12 +13,12 @@ const Footer = () => {
               className="h-16 md:h-20 w-auto object-contain" 
             />
           </Link>
-          <p className="text-slate-400 max-w-xs text-sm leading-tight mb-6 font-poppins">
+          <p className="text-slate-400 max-w-sm text-base md:text-lg leading-relaxed mb-8 font-poppins">
             Built for peak performance.<br />
             Gym-based physiotherapy and rehabilitation.
           </p>
           <div className="mb-8">
-            <h5 className="text-[10px] tracking-[0.2em] font-bold text-secondary mb-2">LOCATION</h5>
+            <h5 className="text-[12px] md:text-[15px] tracking-[0.2em] font-bold text-secondary mb-2">LOCATION</h5>
             <p className="text-sm text-slate-300 font-poppins">9/25-35 Cranbourne Road, Narre Warren 3805</p>
           </div>
           <div className="flex gap-4">
@@ -35,12 +35,11 @@ const Footer = () => {
         </div>
 
         <div className="col-span-12 lg:col-span-2">
-          <h4 className="font-bold text-[10px] tracking-[0.2em] uppercase mb-8 text-secondary">SERVICES</h4>
-          <ul className="space-y-4">
+          <h4 className="font-bold text-[12px] md:text-[15px] tracking-[0.2em] uppercase mb-8 text-secondary">SERVICES</h4>
+          <ul className="space-y-2">
             {['Individualised Exercise Therapy', 'Manual Therapy', 'Return to Work and Sport', 'Sports Taping'].map((item) => (
               <li key={item}>
-                <Link className="text-slate-400 hover:text-white transition-all text-xs uppercase tracking-wider flex items-center gap-2 group font-poppins" to="/services">
-                  <div className="w-1 h-1 bg-secondary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <Link className="text-slate-400 hover:text-white transition-colors text-[13px] md:text-sm uppercase tracking-wider block font-poppins leading-tight" to="/services">
                   {item}
                 </Link>
               </li>
@@ -49,12 +48,11 @@ const Footer = () => {
         </div>
 
         <div className="col-span-12 lg:col-span-2">
-          <h4 className="font-bold text-[10px] tracking-[0.2em] uppercase mb-8 text-secondary">RESOURCES</h4>
-          <ul className="space-y-4">
+          <h4 className="font-bold text-[12px] md:text-[15px] tracking-[0.2em] uppercase mb-8 text-secondary">RESOURCES</h4>
+          <ul className="space-y-2">
             {['Insights', 'Conditions', 'About Us', 'Contact', 'Privacy Policy', 'Terms and Conditions'].map((item) => (
               <li key={item}>
-                <Link className="text-slate-400 hover:text-white transition-all text-xs uppercase tracking-wider flex items-center gap-2 group font-poppins" to={`/${item.toLowerCase().replace(' ', '-')}`}>
-                  <div className="w-1 h-1 bg-secondary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <Link className="text-slate-400 hover:text-white transition-colors text-[13px] md:text-sm uppercase tracking-wider block font-poppins leading-tight" to={`/${item.toLowerCase().replace(' ', '-')}`}>
                   {item}
                 </Link>
               </li>
@@ -63,7 +61,7 @@ const Footer = () => {
         </div>
 
         <div className="col-span-12 lg:col-span-4">
-          <h4 className="font-bold text-[10px] tracking-[0.2em] uppercase mb-8 text-secondary">CONTACT</h4>
+          <h4 className="font-bold text-[12px] md:text-[15px] tracking-[0.2em] uppercase mb-8 text-secondary">CONTACT</h4>
           <div className="bg-white/5 p-6 rounded-lg border border-white/10 mb-6">
             <p className="text-slate-400 text-xs tracking-widest uppercase mb-2">TALK TO OUR TEAM TODAY:</p>
             <p className="text-2xl font-display font-bold text-white uppercase tracking-tight">(03) 9704 6111</p>
@@ -82,7 +80,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="w-full px-6 md:px-12 lg:px-20 2xl:px-32 mt-8 md:mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
         <p className="text-[10px] text-slate-500 tracking-widest uppercase text-center md:text-left leading-relaxed">
           Copyright © {new Date().getFullYear()} Rehab Factory Physiotherapy PTY LTD - All Rights Reserved. <span className="hidden md:inline mx-2">|</span> <span className="block md:inline mt-2 md:mt-0">ABN 47 279 025 634</span>
         </p>

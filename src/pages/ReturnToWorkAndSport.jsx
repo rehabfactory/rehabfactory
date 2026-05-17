@@ -49,7 +49,7 @@ const ReturnToWorkAndSport = () => {
         <div className="container relative z-10">
           <div className="max-w-[1000px] reveal-fade-up text-white">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">OUR SERVICES</span>
-            <h1 className="text-6xl md:text-8xl lg:text-[90px] font-display tracking-tight leading-[0.9] uppercase mb-12">
+            <h1 className="text-[40px] leading-[0.95] md:text-8xl lg:text-[90px] font-display tracking-tight uppercase mb-8 md:mb-12">
               Return to <br />
               <span className="text-secondary">Work & Sport.</span>
             </h1>
@@ -60,7 +60,7 @@ const ReturnToWorkAndSport = () => {
               href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-secondary text-primary px-14 py-6 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-white transition-all active:scale-95 text-center shadow-2xl shadow-secondary/20 inline-block"
+              className="bg-secondary text-primary px-8 md:px-14 py-5 md:py-6 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-white transition-all active:scale-95 text-center shadow-2xl shadow-secondary/20 inline-block"
             >
               BOOK AN ASSESSMENT
             </a>
@@ -71,15 +71,15 @@ const ReturnToWorkAndSport = () => {
       {/* Philosophy Section */}
       <section className="py-section-gap bg-slate-50 relative">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             <div className="lg:col-span-5 reveal">
               <span className="text-[12px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">OUR APPROACH</span>
-              <h2 className="text-4xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">
-                Working towards <br />more than <br /><span className="text-secondary">symptom relief.</span>
+              <h2 className="text-3xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">
+                Working towards <br className="hidden md:block" />more than <br className="hidden md:block" /><span className="text-secondary">symptom relief.</span>
               </h2>
             </div>
             <div className="lg:col-span-7 space-y-8 text-slate-500 font-poppins text-lg leading-tight reveal-fade-up">
-              <p className="text-2xl text-primary font-bold">
+              <p className="text-lg md:text-2xl text-primary font-bold">
                 At Rehab Factory, we do not consider a rehabilitation programme complete when a patient's symptoms have settled. Our goal is to work with you towards returning to your workplace or sport feeling more prepared and physically capable than before your injury.
               </p>
               <p>
@@ -95,16 +95,16 @@ const ReturnToWorkAndSport = () => {
         <div className="container">
           <div className="mb-24 reveal max-w-3xl">
             <span className="text-[12px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">TWO PATHWAYS</span>
-            <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">Return to sport or <br />return to work.</h2>
+            <h2 className="text-4xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">Return to sport or <br />return to work.</h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Return to Sport */}
             <div className="reveal-fade-up p-12 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 transition-all duration-700 group">
-              <div className="w-16 h-16 bg-white flex items-center justify-center rounded-[25px] mb-10 shadow-sm group-hover:bg-secondary group-hover:text-white transition-colors">
+              <div className="w-16 h-16 bg-white flex items-center justify-center rounded-full md:rounded-[25px] mb-8 md:mb-10 shadow-sm group-hover:bg-secondary group-hover:text-white transition-colors">
                 <Target size={32} className="text-secondary group-hover:text-white" />
               </div>
-              <h3 className="text-4xl font-display font-bold text-primary mb-8 uppercase tracking-wide">Return to Sport</h3>
+              <h3 className="text-2xl md:text-4xl font-display font-bold text-primary mb-6 md:mb-8 uppercase tracking-wide">Return to Sport</h3>
               <p className="text-slate-500 font-poppins leading-tight text-lg mb-10">
                 We work with athletes recovering from injury to build a structured, staged return to training and competition.
               </p>
@@ -124,10 +124,10 @@ const ReturnToWorkAndSport = () => {
 
             {/* Return to Work */}
             <div className="reveal-fade-up p-12 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 transition-all duration-700 group" style={{ transitionDelay: '0.1s' }}>
-              <div className="w-16 h-16 bg-white flex items-center justify-center rounded-[25px] mb-10 shadow-sm group-hover:bg-secondary group-hover:text-white transition-colors">
+              <div className="w-16 h-16 bg-white flex items-center justify-center rounded-full md:rounded-[25px] mb-8 md:mb-10 shadow-sm group-hover:bg-secondary group-hover:text-white transition-colors">
                 <ShieldCheck size={32} className="text-secondary group-hover:text-white" />
               </div>
-              <h3 className="text-4xl font-display font-bold text-primary mb-8 uppercase tracking-wide">Return to Work</h3>
+              <h3 className="text-2xl md:text-4xl font-display font-bold text-primary mb-6 md:mb-8 uppercase tracking-wide">Return to Work</h3>
               <p className="text-slate-500 font-poppins leading-tight text-lg mb-10">
                 We work with patients recovering from workplace or motor vehicle injuries to support a structured return to full work capacity.
               </p>
@@ -153,10 +153,10 @@ const ReturnToWorkAndSport = () => {
         <div className="container relative z-10">
           <div className="mb-24 reveal max-w-3xl">
             <span className="text-[12px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">HOW IT WORKS</span>
-            <h2 className="text-5xl md:text-7xl font-display text-white tracking-tight leading-[0.9] uppercase">A structured pathway, <br />every step.</h2>
+            <h2 className="text-4xl md:text-7xl font-display text-white tracking-tight leading-[0.9] uppercase">A structured pathway, <br />every step.</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
             {[
               { num: '01', title: 'Assessment', desc: 'We assess your current capacity against the physical demands of your sport or workplace.' },
               { num: '02', title: 'Programme Design', desc: 'A targeted return-to-sport or return-to-work programme is developed around your assessment findings.' },
@@ -184,7 +184,7 @@ const ReturnToWorkAndSport = () => {
         <div className="container">
           <div className="mb-10 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">EXPLORE MORE</span>
-            <h2 className="text-5xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">Other services.</h2>
+            <h2 className="text-4xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">Other services.</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -211,13 +211,13 @@ const ReturnToWorkAndSport = () => {
               <Link
                 key={i}
                 to={service.link}
-                className="group p-10 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 hover:bg-white hover:shadow-2xl transition-all duration-500 reveal-fade-up"
+                className="group p-8 md:p-10 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 hover:bg-white hover:shadow-2xl transition-all duration-500 reveal-fade-up"
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
-                <div className="w-12 h-12 bg-white text-secondary flex items-center justify-center rounded-[15px] mb-8 shadow-sm group-hover:bg-secondary group-hover:text-white transition-all duration-500">
+                <div className="w-12 h-12 bg-white text-secondary flex items-center justify-center rounded-[15px] mb-6 md:mb-8 shadow-sm group-hover:bg-secondary group-hover:text-white transition-all duration-500">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-display font-bold text-primary mb-4 uppercase tracking-wide group-hover:text-secondary transition-colors duration-500">{service.title}</h3>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-primary mb-3 md:mb-4 uppercase tracking-wide group-hover:text-secondary transition-colors duration-500">{service.title}</h3>
                 <p className="text-slate-500 font-poppins text-sm leading-relaxed mb-8">{service.desc}</p>
                 <span className="inline-flex items-center gap-2 text-primary font-black text-[10px] tracking-widest uppercase group-hover:text-secondary transition-colors">
                   VIEW SERVICE <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -232,15 +232,15 @@ const ReturnToWorkAndSport = () => {
       <section className="py-cta-gap bg-white text-center overflow-hidden">
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto reveal">
-            <h2 className="text-5xl md:text-8xl font-display tracking-tight leading-[0.9] uppercase mb-10 text-primary">Let us help you <br />work towards <br /><span className="text-secondary">getting back stronger.</span></h2>
-            <p className="text-2xl text-slate-500 font-poppins font-normal leading-tight mb-16 max-w-2xl mx-auto">
+            <h2 className="text-[40px] leading-[0.95] md:text-8xl font-display tracking-tight uppercase mb-8 md:mb-10 text-primary">Let us help you <br />work towards <br /><span className="text-secondary">getting back stronger.</span></h2>
+            <p className="text-xl md:text-2xl text-slate-500 font-poppins font-normal leading-tight mb-12 md:mb-16 max-w-2xl mx-auto">
               Book your initial assessment and take the first step.
             </p>
             <a 
               href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-primary text-white px-16 py-8 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-secondary hover:text-primary transition-all shadow-xl shadow-primary/10"
+              className="bg-primary text-white px-8 md:px-16 py-5 md:py-8 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-secondary hover:text-primary transition-all shadow-xl shadow-primary/10"
             >
               BOOK AN ASSESSMENT
             </a>

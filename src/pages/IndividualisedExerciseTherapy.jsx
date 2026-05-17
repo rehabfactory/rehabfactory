@@ -48,7 +48,7 @@ const IndividualisedExerciseTherapy = () => {
         <div className="container relative z-10">
           <div className="max-w-[1000px] reveal-fade-up text-white">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">OUR SERVICES</span>
-            <h1 className="text-6xl md:text-8xl lg:text-[90px] font-display tracking-tight leading-[0.9] uppercase mb-12">
+            <h1 className="text-[40px] leading-[0.95] md:text-8xl lg:text-[90px] font-display tracking-tight uppercase mb-8 md:mb-12">
               Individualised <br />
               <span className="text-secondary">Exercise Therapy.</span>
             </h1>
@@ -59,7 +59,7 @@ const IndividualisedExerciseTherapy = () => {
               href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-secondary text-primary px-14 py-6 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-white transition-all active:scale-95 text-center shadow-2xl shadow-secondary/20 inline-block"
+              className="bg-secondary text-primary px-8 md:px-14 py-5 md:py-6 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-white transition-all active:scale-95 text-center shadow-2xl shadow-secondary/20 inline-block"
             >
               BOOK AN ASSESSMENT
             </a>
@@ -70,15 +70,15 @@ const IndividualisedExerciseTherapy = () => {
       {/* What It Is Section */}
       <section className="py-section-gap bg-slate-50 relative">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             <div className="lg:col-span-5 reveal">
               <span className="text-[12px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHAT IS IT</span>
-              <h2 className="text-4xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">
-                Built around <br />you from <br /><span className="text-secondary">day one.</span>
+              <h2 className="text-3xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">
+                Built around <br className="hidden md:block" />you from <br className="hidden md:block" /><span className="text-secondary">day one.</span>
               </h2>
             </div>
             <div className="lg:col-span-7 space-y-8 text-slate-500 font-poppins text-lg leading-tight reveal-fade-up">
-              <p className="text-2xl text-primary font-bold">
+              <p className="text-lg md:text-2xl text-primary font-bold">
                 Individualised exercise therapy is the foundation of everything we do at Rehab Factory. After a thorough clinical assessment, your treating physiotherapist will design a structured exercise programme tailored specifically to your injury, your body, and your goals.
               </p>
               <p>
@@ -97,19 +97,19 @@ const IndividualisedExerciseTherapy = () => {
         <div className="container">
           <div className="mb-24 reveal max-w-3xl">
             <span className="text-[12px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">HOW IT WORKS</span>
-            <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">From assessment <br />to recovery.</h2>
+            <h2 className="text-4xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">From assessment <br />to recovery.</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {[
               { step: 'Step 1', title: 'Initial Assessment', desc: 'We take the time to understand your injury, your history, and your goals before any treatment begins.' },
               { step: 'Step 2', title: 'Programme Design', desc: 'Your physiotherapist designs a structured exercise programme tailored to your specific needs and presentation.' },
               { step: 'Step 3', title: 'Supervised Sessions', desc: 'You work through your programme in the clinic gym under physiotherapist guidance and supervision.' },
               { step: 'Step 4', title: 'Progress and Evolve', desc: 'Your programme is reviewed and progressed regularly to reflect your recovery and keep you challenged.' }
             ].map((item, i) => (
-              <div key={i} className="reveal-fade-up p-10 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 transition-all duration-500" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <span className="text-secondary font-black text-sm tracking-widest uppercase block mb-6">{item.step}</span>
-                <h3 className="text-2xl font-display font-bold text-primary mb-6 uppercase tracking-wide leading-tight">{item.title}</h3>
+              <div key={i} className="reveal-fade-up p-8 md:p-10 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 transition-all duration-500" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <span className="text-secondary font-black text-xs md:text-sm tracking-widest uppercase block mb-4 md:mb-6">{item.step}</span>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-primary mb-4 md:mb-6 uppercase tracking-wide leading-tight">{item.title}</h3>
                 <p className="text-slate-500 font-poppins font-normal leading-tight">{item.desc}</p>
               </div>
             ))}
@@ -122,18 +122,18 @@ const IndividualisedExerciseTherapy = () => {
         <div className="container">
           <div className="mb-20 reveal max-w-3xl">
             <span className="text-[12px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHO IT IS FOR</span>
-            <h2 className="text-5xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase mb-6">Designed for patients <br />at every level.</h2>
+            <h2 className="text-4xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase mb-6">Designed for patients <br />at every level.</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {[
               { icon: <Target className="text-secondary" size={32} />, title: 'Athletes Working Towards a Return to Sport', desc: 'We work with athletes at all levels to rebuild strength and function and support a structured return to training and competition.' },
               { icon: <ShieldCheck className="text-secondary" size={32} />, title: 'WorkCover and TAC Patients', desc: 'We work alongside treating practitioners to support patients recovering from workplace or motor vehicle injuries through structured exercise rehabilitation.' },
               { icon: <Dumbbell className="text-secondary" size={32} />, title: 'Everyday Active People', desc: 'Whether you play sport recreationally or simply want to move better, our exercise programmes are designed to meet you where you are.' }
             ].map((item, i) => (
-              <div key={i} className="group reveal-fade-up p-12 bg-white border border-slate-200 rounded-[25px] hover:border-secondary/30 hover:shadow-2xl transition-all duration-700" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="mb-8">{item.icon}</div>
-                <h3 className="text-2xl font-display font-bold text-primary mb-6 uppercase tracking-wide group-hover:text-secondary transition-colors duration-500 leading-tight">
+              <div key={i} className="group reveal-fade-up p-8 md:p-12 bg-white border border-slate-200 rounded-[25px] hover:border-secondary/30 hover:shadow-2xl transition-all duration-700" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="mb-6 md:mb-8">{item.icon}</div>
+                <h3 className="text-xl md:text-3xl font-display font-bold text-primary mb-4 md:mb-6 uppercase tracking-wide group-hover:text-secondary transition-colors duration-500 leading-tight">
                   {item.title}
                 </h3>
                 <p className="text-slate-500 font-poppins leading-tight font-normal">
@@ -150,7 +150,7 @@ const IndividualisedExerciseTherapy = () => {
         <div className="container">
           <div className="mb-10 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">EXPLORE MORE</span>
-            <h2 className="text-5xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">Other services.</h2>
+            <h2 className="text-4xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">Other services.</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -177,13 +177,13 @@ const IndividualisedExerciseTherapy = () => {
               <Link
                 key={i}
                 to={service.link}
-                className="group p-10 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 hover:bg-white hover:shadow-2xl transition-all duration-500 reveal-fade-up"
+                className="group p-8 md:p-10 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 hover:bg-white hover:shadow-2xl transition-all duration-500 reveal-fade-up"
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
-                <div className="w-12 h-12 bg-white text-secondary flex items-center justify-center rounded-[15px] mb-8 shadow-sm group-hover:bg-secondary group-hover:text-white transition-all duration-500">
+                <div className="w-12 h-12 bg-white text-secondary flex items-center justify-center rounded-[15px] mb-6 md:mb-8 shadow-sm group-hover:bg-secondary group-hover:text-white transition-all duration-500">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-display font-bold text-primary mb-4 uppercase tracking-wide group-hover:text-secondary transition-colors duration-500">{service.title}</h3>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-primary mb-3 md:mb-4 uppercase tracking-wide group-hover:text-secondary transition-colors duration-500">{service.title}</h3>
                 <p className="text-slate-500 font-poppins text-sm leading-relaxed mb-8">{service.desc}</p>
                 <span className="inline-flex items-center gap-2 text-primary font-black text-[10px] tracking-widest uppercase group-hover:text-secondary transition-colors">
                   VIEW SERVICE <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -198,15 +198,15 @@ const IndividualisedExerciseTherapy = () => {
       <section className="py-cta-gap bg-primary text-white relative text-center overflow-hidden">
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto reveal">
-            <h2 className="text-5xl md:text-8xl font-display tracking-tight leading-[0.9] uppercase mb-10">Start your recovery <br /><span className="text-secondary">the right way.</span></h2>
-            <p className="text-2xl text-slate-400 font-poppins font-normal leading-tight mb-16 max-w-2xl mx-auto">
+            <h2 className="text-[40px] leading-[0.95] md:text-8xl font-display tracking-tight uppercase mb-8 md:mb-10">Start your recovery <br /><span className="text-secondary">the right way.</span></h2>
+            <p className="text-xl md:text-2xl text-slate-400 font-poppins font-normal leading-tight mb-12 md:mb-16 max-w-2xl mx-auto">
               Book an initial assessment and let us build your programme.
             </p>
             <a 
               href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-secondary text-primary px-16 py-8 rounded-[25px] font-black text-sm tracking-[0.2em] uppercase hover:bg-white transition-all shadow-2xl shadow-secondary/20"
+              className="bg-secondary text-primary px-8 md:px-16 py-5 md:py-8 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-white transition-all shadow-2xl shadow-secondary/20"
             >
               BOOK AN ASSESSMENT
             </a>
