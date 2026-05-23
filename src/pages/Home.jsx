@@ -312,8 +312,55 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Team Section */}
+      <section className="py-section-gap bg-slate-50 border-t border-slate-200">
+        <div className="container">
+          <div className="mb-20 reveal">
+            <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">OUR PRACTITIONERS</span>
+            <h2 className="text-4xl md:text-7xl font-display font-bold text-primary tracking-tight leading-[1.1] uppercase mb-8 md:mb-12">
+              Meet our <br className="hidden md:block" />
+              <span className="text-secondary">clinical team.</span>
+            </h2>
+            <p className="text-lg md:text-2xl text-slate-500 font-poppins font-normal leading-tight max-w-2xl mt-6 md:mt-10">
+              Experienced, AHPRA-registered physiotherapists dedicated to bridging the gap between injury and peak performance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-5xl">
+            {[
+              {
+                name: 'Abdelrahman Elsamman',
+                role: 'Physiotherapist',
+                img: '/team/abdelrahman-elsamman.webp',
+                bio: 'Abdelrahman has a strong focus on sports and musculoskeletal physiotherapy, working with athletes and everyday patients through injuries, work claims, DVA and NDIS. With additional qualifications in strength and conditioning, he builds progressive, goal-driven programs to restore function and performance. Off the court, he is a passionate basketball player and professional referee.'
+              },
+              {
+                name: 'Amr Elsamman',
+                role: 'Physiotherapist',
+                img: '/team/amr-elsamman.webp',
+                bio: 'Amr brings a multidisciplinary background in biomedical sciences, strength and conditioning and disability studies to every patient he sees. Passionate about sports and musculoskeletal rehabilitation, he takes a holistic, evidence-based approach to help patients return to the activities they love. Trilingual in English, Arabic and Japanese, Amr is also a Big V basketball referee.'
+              }
+            ].map((practitioner, i) => (
+              <div key={i} className="group reveal-fade-up flex flex-col h-full bg-white p-8 md:p-12 border border-slate-200 rounded-[25px] hover:shadow-2xl hover:border-secondary/20 transition-all duration-700" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="aspect-[4/5] bg-slate-100 mb-6 md:mb-8 rounded-[20px] overflow-hidden relative shadow-lg group-hover:shadow-xl transition-all duration-700">
+                   <img src={practitioner.img} alt={practitioner.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                </div>
+                <h3 className="text-xl md:text-3xl font-display font-bold text-primary mb-2 uppercase tracking-wide group-hover:text-secondary transition-colors leading-tight">{practitioner.name}</h3>
+                <p className="text-secondary font-black text-xs md:text-sm tracking-widest uppercase mb-6">{practitioner.role}</p>
+                <p className="text-slate-500 font-poppins leading-relaxed text-base md:text-lg mb-8 flex-grow">{practitioner.bio}</p>
+                <div className="mt-auto">
+                  <Link to="/about" className="inline-flex items-center gap-3 text-primary font-black text-xs tracking-[0.2em] uppercase group-hover:text-secondary transition-colors duration-500">
+                    READ FULL BIO <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform duration-500" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Location Section */}
-      <section className="py-section-gap bg-slate-50 border-y border-slate-200">
+      <section className="py-section-gap bg-white border-t border-slate-200">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div className="reveal">

@@ -94,22 +94,59 @@ const About = () => {
                 name: 'Abdelrahman Elsamman',
                 role: 'Physiotherapist',
                 img: '/team/abdelrahman-elsamman.webp',
-                bio: 'Specialising in musculoskeletal rehabilitation and sports-specific strength and conditioning. Abdelrahman focuses on high-performance recovery pathways and functional testing.'
+                bioParagraphs: [
+                  'Abdelrahman is a physiotherapist who completed his studies at Monash and Swinburne University, with additional qualifications in strength and conditioning through the Australian Strength and Conditioning Association. He works closely with local and semi-professional athletes across a range of sports, specialising in ankle, hamstring, knee, tendon and hip injuries. Abdelrahman also supports patients through work injuries, vehicle accidents, DVA and NDIS, helping them restore function and return to full capacity.'
+                ],
+                servicesTitle: 'His services include:',
+                services: [
+                  'Detailed exercise programs with progressive return to sport and work capacity pathways',
+                  'Manual therapy',
+                  'Dry needling',
+                  'Mobilisations and manipulations',
+                  'Taping'
+                ],
+                footerParagraph: 'Outside the clinic, Abdelrahman referees basketball professionally, plays the sport himself and holds a strong personal interest in strength and conditioning.'
               },
               {
                 name: 'Amr Elsamman',
                 role: 'Physiotherapist',
                 img: '/team/amr-elsamman.webp',
-                bio: 'Expertise in clinical assessment and individualised exercise therapy. Amr works closely with patients to bridge the gap between initial injury and returning to full physical capacity.'
+                bioParagraphs: [
+                  'Amr is a physiotherapist with a multidisciplinary background spanning biomedical sciences, strength and conditioning, sports training and disability studies. With a strong focus on sports and musculoskeletal injuries, he works with athletes, both junior and senior, suffering from various injuries. Amr also works with people who have had road accidents, work injuries, disabilities under NDIS and DVA. Amr is a trilingual, fluent in English, Arabic and Japanese, allowing him to connect meaningfully with patients from diverse backgrounds.',
+                  "Committed to helping individuals return to work, sport and everyday life at their pre-injury level, Amr's approach goes beyond treatment. He empowers patients with the knowledge, tools and strategies to confidently self-manage their long-term health and wellbeing."
+                ],
+                footerParagraph: 'Outside the clinic, Amr is an active basketball player and a Big V basketball referee, travelling across Victoria on weekends to officiate games.'
               }
             ].map((practitioner, i) => (
-              <div key={i} className="group reveal-fade-up" style={{ transitionDelay: `${i * 0.1}s` }}>
+              <div key={i} className="group reveal-fade-up flex flex-col h-full" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <div className="aspect-[4/5] bg-slate-100 mb-6 md:mb-8 rounded-[25px] overflow-hidden relative shadow-lg group-hover:shadow-2xl transition-all duration-700">
                    <img src={practitioner.img} alt={practitioner.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
                 </div>
                 <h3 className="text-xl md:text-3xl font-display font-bold text-primary mb-2 uppercase tracking-wide group-hover:text-secondary transition-colors leading-tight">{practitioner.name}</h3>
                 <p className="text-secondary font-black text-xs md:text-sm tracking-widest uppercase mb-4 md:mb-6">{practitioner.role}</p>
-                <p className="text-slate-500 font-poppins leading-relaxed text-base md:text-lg">{practitioner.bio}</p>
+                <div className="text-slate-500 font-poppins leading-relaxed text-base md:text-lg space-y-4 flex-grow">
+                  {practitioner.bioParagraphs.map((paragraph, idx) => (
+                    <p key={idx}>{paragraph}</p>
+                  ))}
+                  
+                  {practitioner.services && (
+                    <div className="mt-6">
+                      <p className="font-bold text-primary mb-3 font-display uppercase tracking-wider text-sm md:text-base">{practitioner.servicesTitle}</p>
+                      <ul className="space-y-3 pl-1">
+                        {practitioner.services.map((service, idx) => (
+                          <li key={idx} className="flex items-start gap-3">
+                            <span className="text-secondary mt-2 shrink-0 block w-2 h-2 rounded-full bg-secondary"></span>
+                            <span className="text-slate-500 text-sm md:text-base leading-relaxed">{service}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {practitioner.footerParagraph && (
+                    <p className="pt-6 mt-6 border-t border-slate-100 italic text-slate-400 text-sm md:text-base">{practitioner.footerParagraph}</p>
+                  )}
+                </div>
               </div>
             ))}
           </div>
