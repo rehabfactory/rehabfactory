@@ -93,7 +93,7 @@ const About = () => {
               {
                 name: 'Abdelrahman Elsamman',
                 role: 'Physiotherapist',
-                img: '/team/abdelrahman-elsamman.webp',
+                img: '/team/practitioner-abdelrahman-elsamman.webp',
                 bioParagraphs: [
                   'Abdelrahman is a physiotherapist who completed his studies at Monash and Swinburne University, with additional qualifications in strength and conditioning through the Australian Strength and Conditioning Association. He works closely with local and semi-professional athletes across a range of sports, specialising in ankle, hamstring, knee, tendon and hip injuries. Abdelrahman also supports patients through work injuries, vehicle accidents, DVA and NDIS, helping them restore function and return to full capacity.'
                 ],
@@ -110,7 +110,7 @@ const About = () => {
               {
                 name: 'Amr Elsamman',
                 role: 'Physiotherapist',
-                img: '/team/amr-elsamman.webp',
+                img: '/team/practitioner-amr-elsamman.webp',
                 bioParagraphs: [
                   'Amr is a physiotherapist with a multidisciplinary background spanning biomedical sciences, strength and conditioning, sports training and disability studies. With a strong focus on sports and musculoskeletal injuries, he works with athletes, both junior and senior, suffering from various injuries. Amr also works with people who have had road accidents, work injuries, disabilities under NDIS and DVA. Amr is a trilingual, fluent in English, Arabic and Japanese, allowing him to connect meaningfully with patients from diverse backgrounds.',
                   "Committed to helping individuals return to work, sport and everyday life at their pre-injury level, Amr's approach goes beyond treatment. He empowers patients with the knowledge, tools and strategies to confidently self-manage their long-term health and wellbeing."

@@ -89,8 +89,8 @@ const ArticleDetail = () => {
                     Rehab Factory's clinical team, led by Abdelrahman and Amr Elsamman, provides evidence-based information to support your recovery and performance.
                   </p>
                   <div className="flex -space-x-3 mb-6">
-                    <img src="/team/abdelrahman-elsamman.webp" alt="Abdelrahman Elsamman" className="w-12 h-12 rounded-full border-2 border-white object-cover" />
-                    <img src="/team/amr-elsamman.webp" alt="Amr Elsamman" className="w-12 h-12 rounded-full border-2 border-white object-cover" />
+                    <img src="/team/practitioner-abdelrahman-elsamman.webp" alt="Abdelrahman Elsamman" className="w-12 h-12 rounded-full border-2 border-white object-cover" />
+                    <img src="/team/practitioner-amr-elsamman.webp" alt="Amr Elsamman" className="w-12 h-12 rounded-full border-2 border-white object-cover" />
                   </div>
                   <div>
                     <div className="text-primary font-bold text-sm uppercase tracking-wider">REHAB FACTORY</div>

@@ -331,13 +331,13 @@ const Home = () => {
               {
                 name: 'Abdelrahman Elsamman',
                 role: 'Physiotherapist',
-                img: '/team/abdelrahman-elsamman.webp',
+                img: '/team/practitioner-abdelrahman-elsamman.webp',
                 bio: 'Abdelrahman has a strong focus on sports and musculoskeletal physiotherapy, working with athletes and everyday patients through injuries, work claims, DVA and NDIS. With additional qualifications in strength and conditioning, he builds progressive, goal-driven programs to restore function and performance. Off the court, he is a passionate basketball player and professional referee.'
               },
               {
                 name: 'Amr Elsamman',
                 role: 'Physiotherapist',
-                img: '/team/amr-elsamman.webp',
+                img: '/team/practitioner-amr-elsamman.webp',
                 bio: 'Amr brings a multidisciplinary background in biomedical sciences, strength and conditioning and disability studies to every patient he sees. Passionate about sports and musculoskeletal rehabilitation, he takes a holistic, evidence-based approach to help patients return to the activities they love. Trilingual in English, Arabic and Japanese, Amr is also a Big V basketball referee.'
               }
             ].map((practitioner, i) => (
