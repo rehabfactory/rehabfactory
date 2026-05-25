@@ -1,7 +1,21 @@
-import { useEffect } from 'react';
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { MapPin, Phone, Mail, Clock, Send, Check, AlertCircle } from 'lucide-react';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    service: 'Select a service',
+    message: ''
+  });
+
+  const [status, setStatus] = useState({
+    submitting: false,
+    success: false,
+    error: null
+  });
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -17,6 +31,81 @@ const Contact = () => {
     elements.forEach((el) => observer.observe(el));
     return () => elements.forEach((el) => observer.unobserve(el));
   }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!formData.name.trim()) {
+      setStatus({ submitting: false, success: false, error: 'Please enter your full name.' });
+      return;
+    }
+    if (!formData.email.trim()) {
+      setStatus({ submitting: false, success: false, error: 'Please enter your email address.' });
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setStatus({ submitting: false, success: false, error: 'Please enter a valid email address.' });
+      return;
+    }
+    if (!formData.message.trim()) {
+      setStatus({ submitting: false, success: false, error: 'Please enter your message.' });
+      return;
+    }
+
+    setStatus({ submitting: true, success: false, error: null });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service === 'Select a service' ? '' : formData.service,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus({ submitting: false, success: true, error: null });
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          service: 'Select a service',
+          message: ''
+        });
+      } else {
+        setStatus({
+          submitting: false,
+          success: false,
+          error: data.error || 'There was a problem sending your message. Please try again.'
+        });
+      }
+    } catch (err) {
+      console.error('Submission error:', err);
+      setStatus({
+        submitting: false,
+        success: false,
+        error: 'Network error. Please check your connection and try again.'
+      });
+    }
+  };
+
 
   return (
     <div className="contact-page overflow-x-hidden">
@@ -114,46 +203,118 @@ const Contact = () => {
               <div className="bg-white p-10 md:p-16 rounded-sm border border-slate-200 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 -translate-y-16 translate-x-16 rounded-full blur-3xl"></div>
                 
-                <h3 className="text-3xl md:text-4xl font-display font-bold text-primary mb-8 md:mb-12 uppercase tracking-tight">Send an enquiry</h3>
-                
-                <form className="space-y-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">FULL NAME</label>
-                      <input type="text" className="w-full bg-slate-50 border border-slate-100 p-5 focus:outline-none focus:border-secondary transition-colors font-poppins" placeholder="Your Name" />
+                {status.success ? (
+                  <div className="text-center py-12 px-4 space-y-6">
+                    <div className="w-20 h-20 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Check className="w-10 h-10 animate-bounce" />
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">PHONE NUMBER</label>
-                      <input type="tel" className="w-full bg-slate-50 border border-slate-100 p-5 focus:outline-none focus:border-secondary transition-colors font-poppins" placeholder="Your Phone" />
-                    </div>
+                    <h3 className="text-3xl md:text-4xl font-display font-bold text-primary uppercase tracking-tight">Message Sent</h3>
+                    <p className="text-slate-500 font-poppins leading-relaxed max-w-md mx-auto">
+                      Thank you for reaching out! We have received your enquiry and a confirmation email has been sent. One of our team members will get back to you shortly.
+                    </p>
+                    <button 
+                      onClick={() => setStatus({ submitting: false, success: false, error: null })} 
+                      className="mt-8 px-10 py-5 bg-primary text-white rounded-full md:rounded-[25px] font-black text-xs tracking-widest uppercase hover:bg-secondary hover:text-primary transition-all duration-300 shadow-lg"
+                    >
+                      Send Another Message
+                    </button>
                   </div>
+                ) : (
+                  <>
+                    <h3 className="text-3xl md:text-4xl font-display font-bold text-primary mb-8 md:mb-12 uppercase tracking-tight">Send an enquiry</h3>
+                    
+                    <form onSubmit={handleSubmit} className="space-y-8">
+                      {status.error && (
+                        <div className="p-5 bg-red-50 border-l-4 border-red-500 text-red-700 text-sm font-poppins rounded-sm flex items-start gap-3">
+                          <AlertCircle className="shrink-0 text-red-500 mt-0.5" size={18} />
+                          <span>{status.error}</span>
+                        </div>
+                      )}
 
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">EMAIL ADDRESS</label>
-                    <input type="email" className="w-full bg-slate-50 border border-slate-100 p-4 md:p-5 focus:outline-none focus:border-secondary transition-colors font-poppins" placeholder="Your Email" />
-                  </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">FULL NAME</label>
+                          <input 
+                            type="text" 
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            disabled={status.submitting}
+                            className="w-full bg-slate-50 border border-slate-100 p-5 focus:outline-none focus:border-secondary transition-colors font-poppins disabled:opacity-50" 
+                            placeholder="Your Name" 
+                            required
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">PHONE NUMBER</label>
+                          <input 
+                            type="tel" 
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            disabled={status.submitting}
+                            className="w-full bg-slate-50 border border-slate-100 p-5 focus:outline-none focus:border-secondary transition-colors font-poppins disabled:opacity-50" 
+                            placeholder="Your Phone" 
+                          />
+                        </div>
+                      </div>
 
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">PREFERRED SERVICE</label>
-                    <select className="w-full bg-slate-50 border border-slate-100 p-4 md:p-5 focus:outline-none focus:border-secondary transition-colors font-poppins appearance-none">
-                      <option>Select a service</option>
-                      <option>Individualised Exercise Therapy</option>
-                      <option>Manual Therapy</option>
-                      <option>Return to Work and Sport</option>
-                      <option>Sports Taping</option>
-                      <option>Other Enquiry</option>
-                    </select>
-                  </div>
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">EMAIL ADDRESS</label>
+                        <input 
+                          type="email" 
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          disabled={status.submitting}
+                          className="w-full bg-slate-50 border border-slate-100 p-4 md:p-5 focus:outline-none focus:border-secondary transition-colors font-poppins disabled:opacity-50" 
+                          placeholder="Your Email" 
+                          required
+                        />
+                      </div>
 
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">YOUR MESSAGE</label>
-                    <textarea rows="5" className="w-full bg-slate-50 border border-slate-100 p-5 focus:outline-none focus:border-secondary transition-colors font-poppins" placeholder="How can we help?"></textarea>
-                  </div>
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">PREFERRED SERVICE</label>
+                        <select 
+                          name="service"
+                          value={formData.service}
+                          onChange={handleChange}
+                          disabled={status.submitting}
+                          className="w-full bg-slate-50 border border-slate-100 p-4 md:p-5 focus:outline-none focus:border-secondary transition-colors font-poppins appearance-none disabled:opacity-50"
+                        >
+                          <option>Select a service</option>
+                          <option>Individualised Exercise Therapy</option>
+                          <option>Manual Therapy</option>
+                          <option>Return to Work and Sport</option>
+                          <option>Sports Taping</option>
+                          <option>Other Enquiry</option>
+                        </select>
+                      </div>
 
-                  <button type="submit" className="w-full bg-primary text-white py-5 md:py-6 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.3em] uppercase hover:bg-secondary hover:text-primary transition-all flex items-center justify-center gap-4 shadow-xl">
-                    SUBMIT ENQUIRY <Send size={18} />
-                  </button>
-                </form>
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">YOUR MESSAGE</label>
+                        <textarea 
+                          rows="5" 
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
+                          disabled={status.submitting}
+                          className="w-full bg-slate-50 border border-slate-100 p-5 focus:outline-none focus:border-secondary transition-colors font-poppins disabled:opacity-50" 
+                          placeholder="How can we help?"
+                          required
+                        ></textarea>
+                      </div>
+
+                      <button 
+                        type="submit" 
+                        disabled={status.submitting}
+                        className="w-full bg-primary text-white py-5 md:py-6 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.3em] uppercase hover:bg-secondary hover:text-primary transition-all flex items-center justify-center gap-4 shadow-xl disabled:opacity-50"
+                      >
+                        {status.submitting ? 'SENDING...' : 'SUBMIT ENQUIRY'} <Send size={18} />
+                      </button>
+                    </form>
+                  </>
+                )}
               </div>
             </div>
           </div>
