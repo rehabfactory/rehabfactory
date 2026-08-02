@@ -195,13 +195,12 @@ app.post('/api/subscribe', async (req, res) => {
   const formId  = process.env.KIT_FORM_ID;
 
   if (!apiKey || !formId) {
-    console.log(`📬  Newsletter signup (mock): ${email}`);
+    console.log(`📬 Newsletter signup (mock - KIT_API_KEY/KIT_FORM_ID missing in .env): ${email}`);
     return res.json({ success: true, mock: true });
   }
 
   try {
-    // Try ConvertKit v3 API (standard form subscribe)
-    let response = await fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
+    const response = await fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -210,27 +209,14 @@ app.post('/api/subscribe', async (req, res) => {
       }),
     });
 
-    if (!response.ok) {
-      const v3Error = await response.text();
-      console.warn('⚠️ ConvertKit v3 endpoint status:', response.status, v3Error);
+    const data = await response.json();
 
-      response = await fetch(`https://api.kit.com/v4/forms/${formId}/subscribers`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Kit-Api-Key': apiKey,
-        },
-        body: JSON.stringify({ email_address: email }),
-      });
+    if (!response.ok || data.error) {
+      console.error('❌ Kit.com subscriber API error:', response.status, data);
+      return res.status(400).json({ success: false, error: data.message || 'Subscription failed. Please try again.' });
     }
 
-    if (!response.ok) {
-      const errText = await response.text();
-      console.error('❌ Kit.com subscriber API error:', response.status, errText);
-      return res.status(400).json({ success: false, error: 'Subscription failed. Please try again.' });
-    }
-
-    console.log(`✅  Newsletter subscriber added: ${email}`);
+    console.log(`✅  Newsletter subscriber added to Kit.com: ${email}`);
     return res.json({ success: true });
 
   } catch (err) {
