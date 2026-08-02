@@ -4,7 +4,7 @@ import { ShieldCheck, Target, MapPin } from 'lucide-react';
 
 const CTA = () => {
   return (
-    <section className="py-16 md:py-24 bg-primary text-white relative text-center overflow-hidden mb-16 md:mb-24 rounded-[30px] md:rounded-[40px] mx-4 lg:mx-8">
+    <section className="py-16 md:py-24 bg-primary text-white relative text-center overflow-hidden mt-16 md:mt-24 mb-16 md:mb-24 rounded-[30px] md:rounded-[40px] mx-4 lg:mx-8">
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto reveal">
           <h2 className="text-4xl md:text-7xl font-display tracking-normal leading-[0.85] uppercase mb-6 md:mb-10">

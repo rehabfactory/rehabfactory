@@ -267,7 +267,7 @@ const Services = () => {
       {/* What to Expect */}
       <section className="py-section-gap bg-white overflow-hidden">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-5 reveal">
               <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">YOUR FIRST VISIT</span>
               <h2 className="text-4xl md:text-7xl font-display text-primary tracking-normal leading-[0.9] uppercase mb-8">
@@ -285,7 +285,7 @@ const Services = () => {
                 { step: '04', title: 'We Reassess and Evolve', desc: 'Your program is reviewed regularly. As your capacity improves, we adjust your program to keep you progressing and working towards your goals.' }
               ].map((item, i) => (
                 <div key={i} className="flex gap-6 md:gap-10 group">
-                  <span className="text-4xl md:text-6xl font-display font-black text-slate-100 group-hover:text-secondary/20 transition-colors shrink-0">{item.step}</span>
+                  <span className="text-4xl md:text-6xl font-display font-black text-transparent group-hover:text-secondary/30 transition-colors duration-500 shrink-0 select-none">{item.step}</span>
                   <div>
                     <h3 className="text-xl md:text-3xl font-display font-bold text-primary mb-3 md:mb-4 uppercase tracking-wide">{item.title}</h3>
                     <p className="text-base md:text-lg text-slate-500 font-poppins leading-relaxed">{item.desc}</p>

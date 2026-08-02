@@ -124,7 +124,7 @@ app.post('/api/contact', async (req, res) => {
       from: `"Rehab Factory Website" <${process.env.EMAIL_USER}>`,
       to: recipientEmail,
       replyTo: email,
-      subject: `New Enquiry from ${name} — Rehab Factory`,
+      subject: `New Enquiry from ${name} - Rehab Factory`,
       html: htmlBody,
     });
 
@@ -179,6 +179,51 @@ app.post('/api/contact', async (req, res) => {
       success: false,
       error: 'There was a problem sending your message. Please call us directly or try again later.'
     });
+  }
+});
+
+// ─── Newsletter Subscribe API (Kit.com) ──────────────────────────────────────
+
+app.post('/api/subscribe', async (req, res) => {
+  const { email } = req.body;
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ success: false, error: 'Please provide a valid email address.' });
+  }
+
+  const apiKey  = process.env.KIT_API_KEY;
+  const formId  = process.env.KIT_FORM_ID;
+
+  if (!apiKey || !formId) {
+    console.log(`📬  Newsletter signup (mock): ${email}`);
+    return res.json({ success: true, mock: true });
+  }
+
+  try {
+    const response = await fetch(
+      `https://api.kit.com/v4/forms/${formId}/subscribers`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Kit-Api-Key': apiKey,
+        },
+        body: JSON.stringify({ email_address: email }),
+      }
+    );
+
+    if (!response.ok) {
+      const err = await response.text();
+      console.error('❌  Kit.com error:', err);
+      return res.status(500).json({ success: false, error: 'Could not subscribe. Please try again.' });
+    }
+
+    console.log(`✅  Newsletter subscriber added: ${email}`);
+    return res.json({ success: true });
+
+  } catch (err) {
+    console.error('❌  Kit.com fetch failed:', err.message);
+    return res.status(500).json({ success: false, error: 'Could not subscribe. Please try again.' });
   }
 });
 

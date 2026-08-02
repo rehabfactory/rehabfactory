@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock, BookOpen, ChevronRight } from 'lucide-react';
 import { articles } from '../data/articles';
+import CTA from '../components/CTA';
 
 const Insights = () => {
   useEffect(() => {
@@ -122,27 +123,7 @@ const Insights = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-section-gap bg-primary text-white relative text-center overflow-hidden">
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto reveal">
-            <h2 className="text-[40px] leading-[0.95] md:text-8xl font-display tracking-normal uppercase mb-8 md:mb-10">
-              Need a plan for <br className="hidden md:block" /><span className="text-secondary">your recovery?</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-slate-400 font-poppins font-normal leading-tight mb-12 md:mb-16 max-w-2xl mx-auto">
-              Our Narre Warren clinic focuses on goal-driven rehabilitation. Book an assessment today.
-            </p>
-            <a 
-              href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-secondary text-white px-6 md:px-8 py-3 md:py-4 whitespace-nowrap rounded-full md:rounded-[25px] font-normal text-base md:text-lg tracking-[0.18em] uppercase hover:bg-white hover:text-primary transition-all shadow-2xl"
-            >
-              BOOK AN ASSESSMENT
-            </a>
-          </div>
-        </div>
-      </section>
+      <CTA />
     </div>
   );
 };

@@ -1,7 +1,35 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Send, Globe, Mail, Phone, ArrowRight } from 'lucide-react';
+import { Send, Globe, Mail, Phone, ArrowRight, CheckCircle, Loader } from 'lucide-react';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+    setStatus('loading');
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        setStatus('error');
+        setErrorMsg(data.error || 'Something went wrong.');
+      }
+    } catch {
+      setStatus('error');
+      setErrorMsg('Could not connect. Please try again.');
+    }
+  };
   return (
     <footer className="bg-black w-full pt-24 pb-12 text-white border-t border-white/10">
       <div className="w-full px-6 md:px-12 lg:px-20 2xl:px-32 swiss-grid gap-y-12">
@@ -80,16 +108,40 @@ const Footer = () => {
             </div>
           </div>
           <p className="text-slate-400 text-sm mb-6 font-poppins">Join our community for performance insights.</p>
-          <div className="flex gap-0 border-b border-white/10 pb-2 focus-within:border-secondary transition-colors">
-            <input 
-              className="bg-transparent border-none text-white text-xs w-full outline-none py-2 font-poppins" 
-              placeholder="YOUR EMAIL ADDRESS" 
-              type="email"
-            />
-            <button className="text-white hover:text-secondary transition-colors p-2">
-              <ArrowRight size={20} />
-            </button>
-          </div>
+
+          {status === 'success' ? (
+            <div className="flex items-center gap-3 text-secondary py-3">
+              <CheckCircle size={20} />
+              <span className="text-sm font-poppins">You're in! Check your inbox.</span>
+            </div>
+          ) : (
+            <form onSubmit={handleSubscribe}>
+              <div className="flex gap-0 border-b border-white/10 pb-2 focus-within:border-secondary transition-colors">
+                <input
+                  className="bg-transparent border-none text-white text-xs w-full outline-none py-2 font-poppins placeholder-slate-500"
+                  placeholder="YOUR EMAIL ADDRESS"
+                  type="email"
+                  value={email}
+                  onChange={(e) => { setEmail(e.target.value); setStatus('idle'); }}
+                  disabled={status === 'loading'}
+                  required
+                />
+                <button
+                  type="submit"
+                  className="text-white hover:text-secondary transition-colors p-2 disabled:opacity-50"
+                  disabled={status === 'loading'}
+                >
+                  {status === 'loading'
+                    ? <Loader size={20} className="animate-spin" />
+                    : <ArrowRight size={20} />
+                  }
+                </button>
+              </div>
+              {status === 'error' && (
+                <p className="text-red-400 text-xs mt-2 font-poppins">{errorMsg}</p>
+              )}
+            </form>
+          )}
         </div>
       </div>
 
