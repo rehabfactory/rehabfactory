@@ -46,13 +46,12 @@ const Header = () => {
               <Link to="/services/education" className="px-6 py-3 hover:bg-slate-50 hover:text-secondary text-primary font-display font-normal uppercase tracking-widest text-base transition-colors text-left border-t border-slate-100">
                 Education &amp; Sports Taping
               </Link>
+              <Link to="/conditions" className="px-6 py-3 hover:bg-slate-50 hover:text-secondary text-primary font-display font-normal uppercase tracking-widest text-base transition-colors text-left border-t border-slate-100">
+                Conditions We Manage
+              </Link>
             </div>
           </div>
 
-          <NavLink className={navLinkClass} to="/conditions">
-            CONDITIONS
-            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-secondary transition-all duration-300 group-hover:w-full"></span>
-          </NavLink>
           <NavLink className={navLinkClass} to="/insights">
             INSIGHTS
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-secondary transition-all duration-300 group-hover:w-full"></span>
@@ -140,13 +139,12 @@ const Header = () => {
               <NavLink className="text-sm font-display font-bold text-white/70 tracking-[0.2em] hover:text-white transition-colors" to="/services/education" onClick={() => setIsMenuOpen(false)}>
                 EDUCATION & SPORTS TAPING
               </NavLink>
+              <NavLink className="text-sm font-display font-bold text-white/70 tracking-[0.2em] hover:text-white transition-colors" to="/conditions" onClick={() => setIsMenuOpen(false)}>
+                CONDITIONS WE MANAGE
+              </NavLink>
             </div>
           </div>
 
-          <NavLink className="text-4xl font-display font-bold text-white tracking-[0.25em] hover:text-secondary transition-colors shrink-0" to="/conditions" onClick={() => setIsMenuOpen(false)}>
-            CONDITIONS
-          </NavLink>
-          
           <NavLink className="text-4xl font-display font-bold text-white tracking-[0.25em] hover:text-secondary transition-colors shrink-0" to="/insights" onClick={() => setIsMenuOpen(false)}>
             INSIGHTS
           </NavLink>
