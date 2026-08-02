@@ -1,20 +1,104 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Target, 
-  ShieldCheck, 
-  Activity, 
-  CheckCircle2,
-  TrendingUp,
-  Dumbbell,
-  HandHelping,
-  Bandage
-} from 'lucide-react';
-import heroWebp from '../assets/return-to-sport.webp';
+import { ArrowRight } from 'lucide-react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import heroNewWebp from '../assets/hero_new.webp';
+import returnSportWebp from '../assets/return-to-sport.webp';
+import diffHeroWebp from '../assets/the-difference-hero.webp';
+import indivWebp from '../assets/individualised-exercise.webp';
+import trenchesWebp from '../assets/about_trenches.webp';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const techniques = [
+  { num: '01', title: 'Task Analysis', focus: 'Breaking down the specific physical demands required for your workplace or sport.', img: returnSportWebp },
+  { num: '02', title: 'Capacity Building', focus: 'Progressive loading to match and eventually exceed the demands of your specific activities.', img: diffHeroWebp },
+  { num: '03', title: 'Simulation', focus: 'Replicating work or sport-specific movements in a controlled environment to ensure readiness.', img: indivWebp },
+  { num: '04', title: 'Graduated Return', focus: 'A structured, step-by-step reintroduction to full activity to prevent flare-ups and re-injury.', img: trenchesWebp },
+];
 
 const ReturnToWorkAndSport = () => {
+  const containerRef = useRef(null);
+
   useEffect(() => {
+    const ctx = gsap.context(() => {
+      // 1. Hero text animation on load (Smooth & Cinematic)
+      gsap.from('.hero-anim', {
+        opacity: 0,
+        y: 60,
+        duration: 1.5,
+        stagger: 0.2,
+        ease: 'expo.out'
+      });
+
+      // 2. APPLE-STYLE PINNED SCROLL
+      const pinContainer = containerRef.current.querySelector('.pin-wrapper');
+      const panels = gsap.utils.toArray('.slide-panel');
+      
+      // Initially show the first panel container
+      gsap.set(panels[0], { autoAlpha: 1 });
+
+      // First slide entrance animation
+      ScrollTrigger.create({
+        trigger: pinContainer,
+        start: 'top 70%',
+        onEnter: () => {
+          gsap.to(panels[0].querySelector('.anim-num'), { opacity: 1, y: 0, duration: 1.5, ease: 'power3.out' });
+          gsap.to(panels[0].querySelector('.anim-title'), { opacity: 1, y: 0, duration: 1.5, ease: 'power3.out', delay: 0.15 });
+          gsap.to(panels[0].querySelector('.anim-desc'), { opacity: 1, y: 0, duration: 1.5, ease: 'power3.out', delay: 0.3 });
+          gsap.to(panels[0].querySelector('.indicator-anim'), { opacity: 1, duration: 1, delay: 0.4 });
+          gsap.to(panels[0].querySelector('.slide-bg-img'), { scale: 1, duration: 2, ease: 'power3.out' });
+        },
+        once: true
+      });
+
+      // Scrubbed timeline for remaining slides
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: pinContainer,
+          start: 'top top',
+          end: '+=300%', // 3 transitions for 4 slides
+          pin: true,
+          scrub: true, // perfectly seamless to scroll
+        }
+      });
+
+      panels.forEach((panel, i) => {
+        if (i === 0) return;
+
+        const prevPanel = panels[i - 1];
+        const startLabel = `transition-${i}`;
+        tl.addLabel(startLabel);
+
+        // Crossfade panels
+        tl.to(prevPanel, { autoAlpha: 0, duration: 1 }, startLabel);
+        tl.to(panel, { autoAlpha: 1, duration: 1 }, startLabel);
+
+        // Slide up text of current panel
+        const num = panel.querySelector('.anim-num');
+        const title = panel.querySelector('.anim-title');
+        const desc = panel.querySelector('.anim-desc');
+        const img = panel.querySelector('.slide-bg-img');
+        const indicator = panel.querySelector('.indicator-anim');
+
+        tl.to(num, { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, startLabel + "+=0.2");
+        tl.to(title, { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, startLabel + "+=0.3");
+        tl.to(desc, { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, startLabel + "+=0.4");
+        tl.to(indicator, { opacity: 1, duration: 0.5 }, startLabel + "+=0.4");
+
+        // Subtle scale effect on the image
+        tl.to(img, { scale: 1, duration: 2, ease: "power2.out" }, startLabel);
+
+        if (i < panels.length - 1) {
+            tl.to({}, { duration: 0.8 }); // add a pause to read before the next transition
+        }
+      });
+
+      setTimeout(() => ScrollTrigger.refresh(), 200);
+    }, containerRef);
+
+    // Standard Intersection Observer for non-pinned sections
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -27,226 +111,169 @@ const ReturnToWorkAndSport = () => {
     );
     const elements = document.querySelectorAll('.reveal, .reveal-fade-up');
     elements.forEach((el) => observer.observe(el));
-    return () => elements.forEach((el) => observer.unobserve(el));
+
+    return () => {
+      ctx.revert();
+      elements.forEach((el) => observer.unobserve(el));
+    };
   }, []);
 
   return (
-    <div className="service-detail-page overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center pt-48 lg:pt-64 pb-32 lg:pb-48 bg-primary overflow-hidden">
-        {/* Background Image with Overlay */}
+    <div ref={containerRef} className="overflow-x-hidden bg-primary">
+
+      {/* ── 1. HERO SECTION ───────────────────────────────────── */}
+      <section className="relative min-h-[90vh] flex items-center bg-primary overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroWebp} 
-            alt="Return to Work and Sport" 
-            className="w-full h-full object-cover opacity-100"
-            loading="eager"
-            fetchpriority="high"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/60 to-transparent"></div>
+          <img src={heroNewWebp} alt="Return to Function Hero" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
         </div>
 
-        <div className="container relative z-10">
-          <div className="max-w-[1000px] reveal-fade-up text-white">
-            <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">OUR SERVICES</span>
-            <h1 className="text-[40px] leading-[0.95] md:text-8xl lg:text-[90px] font-display tracking-tight uppercase mb-8 md:mb-12">
-              Return to <br />
-              <span className="text-secondary">Work & Sport.</span>
+        <div className="container relative z-10 pt-24 md:pt-32">
+          <div className="max-w-3xl">
+            <span className="hero-anim text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6 drop-shadow-md">OUR SERVICES</span>
+            <h1 className="hero-anim font-display leading-[0.85] tracking-normal uppercase text-white mb-8" style={{ fontSize: 'clamp(54px, 9vw, 130px)' }}>
+              Return to<br /><span className="text-secondary">Function.</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-slate-300 font-poppins font-normal leading-tight max-w-3xl mb-16">
-              Returning to activity is a milestone, not the finish line. We work with you to go further.
+            <p className="hero-anim text-2xl md:text-3xl text-white/80 font-poppins font-light leading-relaxed max-w-2xl mb-12 drop-shadow-lg">
+              A structured, evidence-based pathway designed to safely transition you back into your workplace, sport, or daily life.
             </p>
-            <a 
-              href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-secondary text-primary px-8 md:px-14 py-5 md:py-6 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-white transition-all active:scale-95 text-center shadow-2xl shadow-secondary/20 inline-block"
-            >
-              BOOK AN ASSESSMENT
+            <a href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location" target="_blank" rel="noopener noreferrer"
+              className="hero-anim inline-block bg-secondary text-white px-6 md:px-8 py-3 md:py-4 whitespace-nowrap font-normal text-base md:text-lg tracking-[0.2em] uppercase hover:bg-white hover:text-primary transition-colors rounded-[16px] shadow-2xl">
+              BOOK AN APPOINTMENT
             </a>
           </div>
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section className="py-section-gap bg-slate-50 relative">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-            <div className="lg:col-span-5 reveal">
-              <span className="text-[12px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">OUR APPROACH</span>
-              <h2 className="text-3xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">
-                Working towards <br className="hidden md:block" />more than <br className="hidden md:block" /><span className="text-secondary">symptom relief.</span>
-              </h2>
-            </div>
-            <div className="lg:col-span-7 space-y-8 text-slate-500 font-poppins text-lg leading-tight reveal-fade-up">
-              <p className="text-lg md:text-2xl text-primary font-bold">
-                At Rehab Factory, we do not consider a rehabilitation programme complete when a patient's symptoms have settled. Our goal is to work with you towards returning to your workplace or sport feeling more prepared and physically capable than before your injury.
-              </p>
-              <p>
-                That means rebuilding strength, restoring movement quality, and working towards the physical capacity and confidence needed to perform at the level you want to reach.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Two Pathways Section */}
-      <section className="py-section-gap bg-white overflow-hidden">
-        <div className="container">
-          <div className="mb-24 reveal max-w-3xl">
-            <span className="text-[12px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">TWO PATHWAYS</span>
-            <h2 className="text-4xl md:text-7xl font-display text-primary tracking-tight leading-[0.9] uppercase">Return to sport or <br />return to work.</h2>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Return to Sport */}
-            <div className="reveal-fade-up p-12 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 transition-all duration-700 group">
-              <div className="w-16 h-16 bg-white flex items-center justify-center rounded-full md:rounded-[25px] mb-8 md:mb-10 shadow-sm group-hover:bg-secondary group-hover:text-white transition-colors">
-                <Target size={32} className="text-secondary group-hover:text-white" />
-              </div>
-              <h3 className="text-2xl md:text-4xl font-display font-bold text-primary mb-6 md:mb-8 uppercase tracking-wide">Return to Sport</h3>
-              <p className="text-slate-500 font-poppins leading-tight text-lg mb-10">
-                We work with athletes recovering from injury to build a structured, staged return to training and competition.
-              </p>
-              <ul className="space-y-6">
-                {[
-                  'Sport-specific movement screening',
-                  'Strength and functional testing',
-                  'Staged return-to-play programme'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-primary font-bold font-poppins uppercase tracking-widest text-sm">
-                    <CheckCircle2 size={20} className="text-secondary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Return to Work */}
-            <div className="reveal-fade-up p-12 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 transition-all duration-700 group" style={{ transitionDelay: '0.1s' }}>
-              <div className="w-16 h-16 bg-white flex items-center justify-center rounded-full md:rounded-[25px] mb-8 md:mb-10 shadow-sm group-hover:bg-secondary group-hover:text-white transition-colors">
-                <ShieldCheck size={32} className="text-secondary group-hover:text-white" />
-              </div>
-              <h3 className="text-2xl md:text-4xl font-display font-bold text-primary mb-6 md:mb-8 uppercase tracking-wide">Return to Work</h3>
-              <p className="text-slate-500 font-poppins leading-tight text-lg mb-10">
-                We work with patients recovering from workplace or motor vehicle injuries to support a structured return to full work capacity.
-              </p>
-              <ul className="space-y-6">
-                {[
-                  'Functional capacity assessment',
-                  'WorkCover and TAC case management support',
-                  'Graded return-to-work planning'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-primary font-bold font-poppins uppercase tracking-widest text-sm">
-                    <CheckCircle2 size={20} className="text-secondary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+      {/* ── 2. SEAMLESS TRANSITION BAND ──────────────────── */}
+      <section className="bg-primary py-24 md:py-32 relative z-20 border-b border-white/5">
+        <div className="container reveal">
+          <div className="max-w-5xl mx-auto text-center">
+            <span className="text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8">THE REHAB FACTORY WAY</span>
+            <h2 className="font-display text-5xl md:text-7xl lg:text-[100px] uppercase tracking-normal leading-[0.85] text-white mb-10">
+              Four Phases of <br className="hidden md:block" />
+              <span className="text-secondary">Return.</span>
+            </h2>
+            <p className="text-slate-400 font-poppins text-xl md:text-3xl leading-tight font-normal max-w-3xl mx-auto mb-16">
+              We don't just treat the pain. We condition your body specifically for the loads and demands you are returning to.
+            </p>
+            <div className="inline-flex flex-col items-center justify-center gap-4 opacity-70 hover:opacity-100 transition-opacity">
+              <span className="text-xs tracking-[0.3em] uppercase font-bold text-white">
+                SCROLL TO EXPLORE
+              </span>
+              <div className="w-[1px] h-[40px] bg-secondary"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The Process Section */}
-      <section className="py-section-gap bg-primary text-white relative overflow-hidden">
-        <div className="container relative z-10">
-          <div className="mb-24 reveal max-w-3xl">
-            <span className="text-[12px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">HOW IT WORKS</span>
-            <h2 className="text-4xl md:text-7xl font-display text-white tracking-tight leading-[0.9] uppercase">A structured pathway, <br />every step.</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
-            {[
-              { num: '01', title: 'Assessment', desc: 'We assess your current capacity against the physical demands of your sport or workplace.' },
-              { num: '02', title: 'Programme Design', desc: 'A targeted return-to-sport or return-to-work programme is developed around your assessment findings.' },
-              { num: '03', title: 'Supervised Training', desc: 'You progress through the programme in the clinic gym with physiotherapist oversight and guidance.' },
-              { num: '04', title: 'Functional Testing', desc: 'We use objective strength and movement benchmarks to help assess your progress and readiness.' },
-              { num: '05', title: 'Clearance', desc: 'We work collaboratively with your coach, employer, or treating practitioner to support your return.' }
-            ].map((item, i) => (
-              <div key={i} className="group reveal-fade-up p-8 bg-white/5 border border-white/10 rounded-[25px] hover:border-secondary/30 transition-all duration-500" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <span className="text-secondary font-display font-black text-6xl block mb-8 opacity-40 group-hover:opacity-100 transition-opacity">{item.num}</span>
-                <h3 className="text-xl font-display font-bold text-white mb-6 uppercase tracking-wide leading-tight group-hover:text-secondary transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-slate-400 font-poppins font-normal leading-tight text-sm">
-                  {item.desc}
-                </p>
+      {/* ── 3. APPLE-STYLE PINNED SCROLL ─────────────────────── */}
+      <section className="pin-wrapper relative h-screen w-full bg-primary overflow-hidden">
+        {techniques.map((t, idx) => {
+          return (
+            <div key={idx} className="slide-panel absolute inset-0 w-full h-full flex items-center justify-center overflow-hidden invisible opacity-0" style={{ zIndex: idx + 10 }}>
+              <div className="absolute inset-0 overflow-hidden">
+                <img src={t.img} alt={t.title} className="slide-bg-img w-full h-full object-cover scale-110" />
+                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40" />
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-secondary opacity-5 blur-[250px] rounded-full pointer-events-none"></div>
-      </section>
 
-      {/* Other Services */}
-      <section className="py-section-gap bg-white overflow-hidden">
-        <div className="container">
-          <div className="mb-10 reveal">
-            <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">EXPLORE MORE</span>
-            <h2 className="text-4xl md:text-6xl font-display text-primary tracking-tight leading-[0.9] uppercase">Other services.</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Dumbbell size={24} />,
-                title: 'Individualised Exercise',
-                link: '/services/individualised-exercise-therapy',
-                desc: 'A personalised exercise programme designed around your body and goals.'
-              },
-              {
-                icon: <HandHelping size={24} />,
-                title: 'Manual Therapy',
-                link: '/services/manual-therapy',
-                desc: 'Hands-on techniques used to reduce pain and restore movement.'
-              },
-              {
-                icon: <Bandage size={24} />,
-                title: 'Sports Taping',
-                link: '/services/sports-taping',
-                desc: 'Protective and supportive taping applied to help manage joint stress.'
-              }
-            ].map((service, i) => (
-              <Link
-                key={i}
-                to={service.link}
-                className="group p-8 md:p-10 bg-slate-50 border border-slate-100 rounded-[25px] hover:border-secondary/30 hover:bg-white hover:shadow-2xl transition-all duration-500 reveal-fade-up"
-                style={{ transitionDelay: `${i * 0.1}s` }}
-              >
-                <div className="w-12 h-12 bg-white text-secondary flex items-center justify-center rounded-[15px] mb-6 md:mb-8 shadow-sm group-hover:bg-secondary group-hover:text-white transition-all duration-500">
-                  {service.icon}
+              {/* Constrained layout for text block */}
+              <div className="relative z-10 flex w-full h-full items-center px-6 md:px-16 max-w-[1400px] mx-auto pt-24 md:pt-0">
+                <div className={`w-full lg:w-[55%] flex flex-col ${idx % 2 === 0 ? 'mr-auto items-start text-left' : 'ml-auto items-end text-right'}`}>
+                  <div className="anim-num font-display font-black text-secondary select-none mb-0 leading-none drop-shadow-lg opacity-0 whitespace-nowrap"
+                    style={{ 
+                      fontSize: 'clamp(100px, 15vw, 250px)', 
+                      lineHeight: 0.82,
+                      color: 'transparent',
+                      WebkitTextStroke: '2px currentColor',
+                      transform: `translateY(60px)`
+                    }}>
+                    {t.num}
+                  </div>
+                  <h2 className={`anim-title font-display text-white uppercase tracking-normal mt-2 mb-6 drop-shadow-md opacity-0 ${idx % 2 === 0 ? 'text-left' : 'text-right'}`}
+                    style={{ 
+                      fontSize: 'clamp(42px, 5.5vw, 90px)', 
+                      lineHeight: 0.9,
+                      transform: `translateY(40px)`
+                    }}>
+                    {t.title}
+                  </h2>
+                  <p className={`anim-desc text-white/80 font-poppins text-lg md:text-xl leading-relaxed drop-shadow-lg opacity-0 ${idx % 2 === 0 ? 'text-left' : 'text-right'}`}
+                    style={{ transform: `translateY(30px)` }}>
+                    {t.focus}
+                  </p>
                 </div>
-                <h3 className="text-xl md:text-2xl font-display font-bold text-primary mb-3 md:mb-4 uppercase tracking-wide group-hover:text-secondary transition-colors duration-500">{service.title}</h3>
-                <p className="text-slate-500 font-poppins text-sm leading-relaxed mb-8">{service.desc}</p>
-                <span className="inline-flex items-center gap-2 text-primary font-black text-[10px] tracking-widest uppercase group-hover:text-secondary transition-colors">
-                  VIEW SERVICE <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                </span>
+              </div>
+
+              {/* LARGER PROGRESS INDICATOR */}
+              <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-6 md:gap-8 z-10 bg-black/40 backdrop-blur-md px-6 py-3 md:px-10 md:py-5 rounded-full border border-white/10 indicator-anim opacity-0">
+                {techniques.map((item, i) => (
+                  <div key={i} className={`flex items-center gap-3 md:gap-4 text-base md:text-lg font-poppins transition-all duration-500 ${i === idx ? 'text-secondary font-bold' : 'text-white/40 font-medium'}`}>
+                    <span>{item.num}</span>
+                    {i === idx && <span className="hidden md:inline uppercase text-xs md:text-sm tracking-[0.2em] whitespace-nowrap">{item.title}</span>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </section>
+
+      {/* ── 4. CTA BRIDGE ─────────────────────────────────────── */}
+      <section className="bg-[#fcfaf8] pt-24 pb-12 md:pt-32 md:pb-16">
+        <div className="container reveal-fade-up">
+          <div className="max-w-5xl mx-auto bg-primary rounded-[32px] md:rounded-[64px] p-10 md:p-20 lg:p-24 text-center shadow-[0_30px_80px_rgba(0,0,0,0.2)] overflow-hidden relative">
+            
+            {/* Subtle glow effects inside the card */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/15 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
+
+            <div className="relative z-10">
+              <span className="text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">PERFORMANCE & RESILIENCE</span>
+              <h2 className="font-display text-4xl md:text-6xl lg:text-7xl uppercase tracking-normal leading-[0.9] mb-8 text-white">
+                Clear pathways to<br />full capability.
+              </h2>
+              <p className="text-white/70 font-poppins text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-12">
+                Return to your life with confidence, knowing your body is properly conditioned to handle the specific demands required.
+              </p>
+              <a href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location" target="_blank" rel="noopener noreferrer"
+                className="inline-block bg-secondary text-white px-6 md:px-8 py-3 md:py-4 whitespace-nowrap font-normal text-base md:text-lg tracking-[0.2em] uppercase hover:bg-white hover:text-primary transition-colors rounded-[16px] shadow-xl hover:shadow-2xl hover:-translate-y-1 transform duration-300">
+                BOOK AN APPOINTMENT
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. OTHER SERVICES (NICE CARDS) ────────────────────── */}
+      <section className="bg-[#fcfaf8] py-24 md:py-32 border-t border-black/10">
+        <div className="container">
+          <div className="mb-16 text-center reveal">
+            <span className="text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4">EXPLORE MORE</span>
+            <h2 className="font-display text-4xl md:text-6xl text-primary leading-[0.9] uppercase tracking-normal">Other services.</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 reveal-fade-up">
+            {[
+              { title: 'Manual Therapy', link: '/services/manual-therapy', desc: 'Hands-on techniques that reduce pain and restore movement.' },
+              { title: 'Individualised Exercise', link: '/services/individualised-exercise-therapy', desc: 'A personalised exercise program designed around your body and goals.' },
+              { title: 'Education', link: '/services/education', desc: 'Empowering you with knowledge about your body and recovery.' }
+            ].map((item, i) => (
+              <Link to={item.link} key={i} className="group p-10 md:p-12 flex flex-col justify-between bg-white rounded-[32px] border border-black/5 shadow-xl shadow-black/5 hover:border-secondary/30 hover:shadow-2xl hover:shadow-secondary/10 transition-all duration-500 overflow-hidden relative">
+                <div className="relative z-10">
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-primary uppercase tracking-wide mb-4 group-hover:text-secondary transition-colors">{item.title}</h3>
+                  <p className="text-primary/70 font-poppins text-sm leading-relaxed mb-10">{item.desc}</p>
+                </div>
+                <div className="inline-flex items-center gap-2 text-primary text-[10px] tracking-[0.25em] uppercase font-poppins font-bold group-hover:text-secondary transition-colors relative z-10">
+                  VIEW SERVICE <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-cta-gap bg-white text-center overflow-hidden">
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto reveal">
-            <h2 className="text-[40px] leading-[0.95] md:text-8xl font-display tracking-tight uppercase mb-8 md:mb-10 text-primary">Let us help you <br />work towards <br /><span className="text-secondary">getting back stronger.</span></h2>
-            <p className="text-xl md:text-2xl text-slate-500 font-poppins font-normal leading-tight mb-12 md:mb-16 max-w-2xl mx-auto">
-              Book your initial assessment and take the first step.
-            </p>
-            <a 
-              href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary text-white px-8 md:px-16 py-5 md:py-8 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-secondary hover:text-primary transition-all shadow-xl shadow-primary/10"
-            >
-              BOOK AN ASSESSMENT
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

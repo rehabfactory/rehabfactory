@@ -2,15 +2,15 @@
 
 :root {
   /* Colors - High Performance Palette */
-  --color-primary: #001637; /* Deep Navy */
-  --color-secondary: #3FA9F5; /* Performance Blue - Adjusted to match brand better */
-  --color-accent: #3FA9F5; /* Sky Blue */
+  --color-primary: #000000; /* Black */
+  --color-secondary: #FF8E4F; /* High Contrast Bright Bronze */
+  --color-accent: #FF8E4F; /* High Contrast Bright Bronze */
   --color-background: #ffffff;
   --color-surface: #F8F9FA;
   --color-border: #E2E8F0;
   --color-outline: #CBD5E1;
-  --color-text: #051937;
-  --color-text-muted: #64748B;
+  --color-text: #000000;
+  --color-text-muted: #9ea5a9; /* Gray */
   
   /* Typography - Swiss & Technical */
   --font-headline: 'Barlow', sans-serif;
@@ -20,18 +20,18 @@
 
   /* Spacing System - Fluid & Precise */
   --max-width: 1440px;
-  --section-gap: clamp(60px, 10vw, 120px);
+  --section-gap: clamp(48px, 6vw, 80px);
   --container-padding: clamp(20px, 5vw, 64px);
   --grid-gap: clamp(24px, 4vw, 48px);
-  --cta-gap: clamp(80px, 12vw, 160px);
+  --cta-gap: clamp(64px, 8vw, 100px);
 }
 
 @media (max-width: 768px) {
   :root {
-    --section-gap: 60px;
-    --cta-gap: 80px;
-    --container-padding: 24px;
-    --grid-gap: 24px;
+    --section-gap: 40px;
+    --cta-gap: 48px;
+    --container-padding: 20px;
+    --grid-gap: 20px;
   }
 }
 
@@ -64,6 +64,8 @@
 
 /* Structural Air */
 .py-section-gap { padding-top: var(--section-gap); padding-bottom: var(--section-gap); }
+.pt-section-gap { padding-top: var(--section-gap); }
+.pb-section-gap { padding-bottom: var(--section-gap); }
 .py-cta-gap { padding-top: var(--cta-gap); padding-bottom: var(--cta-gap); }
 .mb-stack-lg { margin-bottom: 48px; }
 .mb-stack-xl { margin-bottom: 80px; }
@@ -111,8 +113,8 @@ body {
   line-height: 1.3;
   overflow-anchor: none;
   background-image: 
-    radial-gradient(circle at 0% 0%, rgba(63, 169, 245, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 100% 100%, rgba(0, 96, 171, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 0% 0%, rgba(161, 97, 61, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(158, 165, 169, 0.03) 0%, transparent 50%);
   background-attachment: fixed;
 }
 
@@ -1859,7 +1861,7 @@ body {
 
 /* Footer v3 - Precision Match */
 .main-footer {
-  background: #020C1B; /* Very dark navy almost black */
+  background: #000000; /* Black */
   color: #ffffff;
   padding: 80px 0 40px;
 }
@@ -1986,8 +1988,10 @@ body {
   }
 
   /* Spacing Utilities */
-  .py-section-gap { padding-top: 60px !important; padding-bottom: 60px !important; }
-  .py-cta-gap { padding-top: 80px !important; padding-bottom: 80px !important; }
+  .py-section-gap { padding-top: 40px !important; padding-bottom: 40px !important; }
+  .pt-section-gap { padding-top: 40px !important; }
+  .pb-section-gap { padding-bottom: 40px !important; }
+  .py-cta-gap { padding-top: 64px !important; padding-bottom: 64px !important; }
   
 
   /* Layout Helpers */
@@ -2020,4 +2024,251 @@ html {
 ::selection {
   background: var(--color-secondary);
   color: #fff;
+}
+
+/* Shifa Services Stacked Layout */
+.services-stacked-theme {
+  --dark: #0a0a0a;
+  --gold: #E49E73;
+  --sage: #E49E73;
+  --white: #ffffff;
+  --ff-display: var(--font-display);
+}
+
+.services-stacked {
+  background: var(--dark);
+  overflow: hidden;
+}
+
+.services-stacked-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 6rem auto;
+  padding: 0 2rem;
+}
+
+.services-strips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Removed gap so frames sit flush */
+}
+
+.service-strip-wrapper {
+  width: 100vw;
+  height: 60vh;
+  min-height: 500px;
+  max-height: 700px;
+  position: relative;
+  /* NO overflow:hidden here - we need the strip to expose the section's black background! */
+}
+
+.service-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  will-change: transform;
+}
+
+.strip-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 65%; /* Bias crop towards the lower half to focus on the treatment/action area */
+  opacity: 0.85; /* Fade out image for text readability */
+}
+
+/* Base overlay from the gradient */
+.strip-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+}
+
+/* Extra darkening near the content so text pops */
+.strip-even .strip-dark-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+}
+.strip-odd .strip-dark-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+}
+
+.strip-content-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Align contents left for even, right for odd */
+.strip-even .strip-content-inner {
+  align-items: flex-start;
+  text-align: left;
+}
+.strip-odd .strip-content-inner {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.strip-top-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.strip-odd .strip-top-row {
+  flex-direction: row-reverse;
+}
+
+.strip-icon {
+  width: auto;
+  height: auto;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold); /* Replace with your brand color */
+  backdrop-filter: none;
+}
+
+.strip-icon svg {
+  width: 52px;
+  height: 52px;
+  stroke-width: 1.2px;
+  overflow: visible;
+}
+
+.strip-tag {
+  display: inline-block;
+  background: rgba(228, 158, 115, 0.15); /* Tinted to #E49E73 */
+  border: 1px solid rgba(228, 158, 115, 0.3);
+  color: var(--sage); /* Replace with your brand color */
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.strip-title {
+  font-family: var(--ff-display); /* Replace with your heading font */
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 700;
+  color: var(--white); /* Replace with your text color */
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.strip-desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem; /* Increased size */
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+}
+
+.strip-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 0;
+}
+
+.strip-bullets li {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem; /* Increased size */
+  color: rgba(255,255,255,0.9);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.strip-odd .strip-bullets li {
+  flex-direction: row-reverse;
+}
+
+.strip-bullets li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sage); /* Bullet point color */
+  flex-shrink: 0;
+}
+
+.strip-num {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--ff-display);
+  font-size: 16rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.03); /* Watermark style */
+  pointer-events: none;
+  z-index: -1;
+  line-height: 1;
+}
+.strip-even .strip-num { right: -6rem; }
+.strip-odd .strip-num { left: -6rem; }
+
+/* Mobile fallback */
+@media (max-width: 768px) {
+  .service-strip-wrapper {
+    height: auto;
+    min-height: auto;
+    max-height: none;
+  }
+  .service-strip {
+    position: relative;
+    padding: 4rem 0;
+    transform: none !important; /* Force disable parallax transform on mobile */
+  }
+  .strip-even .strip-content-inner,
+  .strip-odd .strip-content-inner {
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 2rem;
+  }
+  .strip-odd .strip-top-row,
+  .strip-odd .strip-bullets li {
+    flex-direction: row;
+  }
+  .strip-even .strip-num,
+  .strip-odd .strip-num {
+    right: -2rem;
+    left: auto;
+    font-size: 10rem;
+  }
+  .services-stacked-intro {
+    padding: 0 2rem;
+  }
+}
+
+
+
+/* Brighter Bronze on Dark Backgrounds */
+.bg-primary .text-secondary,
+.bg-black .text-secondary,
+.bg-\[\#08080a\] .text-secondary,
+.bg-\[\#111114\] .text-secondary,
+.bg-primary .text-\[\#E49E73\],
+.bg-black .text-\[\#E49E73\] {
+  color: #FFB88D !important;
 }

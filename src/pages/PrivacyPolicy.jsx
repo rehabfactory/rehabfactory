@@ -14,10 +14,10 @@ const PrivacyPolicy = () => {
           <span className="text-[13px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8 reveal">
             LEGAL
           </span>
-          <h1 className="text-5xl md:text-8xl font-display tracking-tight leading-[0.95] uppercase mb-12 reveal-fade-up">
+          <h1 className="text-5xl md:text-8xl font-display tracking-normal leading-[0.95] uppercase mb-12 reveal-fade-up">
             Privacy <span className="text-secondary">Policy</span>
           </h1>
-          <div className="flex items-center justify-center gap-4 text-slate-400 text-xs font-black tracking-widest uppercase reveal">
+          <div className="flex items-center justify-center gap-4 text-slate-400 text-xs font-black tracking-[0.25em] uppercase reveal">
             <Shield size={16} className="text-secondary" />
             Last updated: May 2026
           </div>
@@ -111,7 +111,7 @@ const PrivacyPolicy = () => {
               <p className="font-bold mt-8 mb-4 text-slate-800">Primary purposes (direct health care):</p>
               <ul>
                 <li>Providing physiotherapy assessment, treatment, and rehabilitation services</li>
-                <li>Designing, delivering, supervising, and progressing your individualised rehabilitation programme</li>
+                <li>Designing, delivering, supervising, and progressing your individualised rehabilitation program</li>
                 <li>Communicating with you about your appointments, treatment plan, and ongoing care</li>
                 <li>Communicating with other treating health professionals involved in your care</li>
                 <li>Managing referrals to and from other practitioners</li>

@@ -8,7 +8,7 @@ import Insights from './pages/Insights';
 import IndividualisedExerciseTherapy from './pages/IndividualisedExerciseTherapy';
 import ManualTherapy from './pages/ManualTherapy';
 import ReturnToWorkAndSport from './pages/ReturnToWorkAndSport';
-import SportsTaping from './pages/SportsTaping';
+import Education from './pages/Education';
 import Conditions from './pages/Conditions';
 import Contact from './pages/Contact';
 import ArticleDetail from './pages/ArticleDetail';
@@ -32,7 +32,7 @@ function App() {
             <Route path="/services/individualised-exercise-therapy" element={<IndividualisedExerciseTherapy />} />
             <Route path="/services/manual-therapy" element={<ManualTherapy />} />
             <Route path="/services/return-to-work-and-sport" element={<ReturnToWorkAndSport />} />
-            <Route path="/services/sports-taping" element={<SportsTaping />} />
+            <Route path="/services/education" element={<Education />} />
             <Route path="/about" element={<About />} />
             <Route path="/clinics" element={<About />} />
             <Route path="/philosophy" element={<About />} />

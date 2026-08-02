@@ -124,7 +124,7 @@ const Contact = () => {
         <div className="container relative z-10">
           <div className="max-w-[1000px] reveal-fade-up text-white">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">ENQUIRY</span>
-            <h1 className="text-4xl md:text-8xl lg:text-[100px] font-display tracking-tight leading-[0.95] md:leading-[0.9] uppercase mb-8 md:mb-12">
+            <h1 className="text-4xl md:text-8xl lg:text-[100px] font-display tracking-normal leading-[0.95] md:leading-[0.9] uppercase mb-8 md:mb-12">
               Book your <br />
               <span className="text-secondary">assessment.</span>
             </h1>
@@ -148,9 +148,11 @@ const Contact = () => {
                       <MapPin size={24} />
                     </div>
                     <div>
-                      <span className="block text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase mb-2">LOCATION</span>
+                      <span className="block text-[10px] font-black tracking-[0.25em] text-slate-400 uppercase mb-2">LOCATION</span>
                       <p className="text-lg md:text-xl font-display font-bold text-primary uppercase leading-tight">
-                        9/25-35 Cranbourne Road,<br />Narre Warren VIC 3805
+                        <a href="https://maps.google.com/?q=9/25-35+Narre+Warren+-+Cranbourne+Road" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">
+                          9/25-35 Cranbourne Road,<br />Narre Warren VIC 3805
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -160,9 +162,11 @@ const Contact = () => {
                       <Phone size={24} />
                     </div>
                     <div>
-                      <span className="block text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase mb-2">PHONE</span>
+                      <span className="block text-[10px] font-black tracking-[0.25em] text-slate-400 uppercase mb-2">PHONE</span>
                       <p className="text-lg md:text-xl font-display font-bold text-primary uppercase leading-tight">
-                        (03) 9704 6111
+                        <a href="tel:0428046819" className="hover:text-secondary transition-colors">
+                          0428 046 819
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -172,9 +176,11 @@ const Contact = () => {
                       <Mail size={24} />
                     </div>
                     <div>
-                      <span className="block text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase mb-2">EMAIL</span>
+                      <span className="block text-[10px] font-black tracking-[0.25em] text-slate-400 uppercase mb-2">EMAIL</span>
                       <p className="text-lg md:text-xl font-display font-bold text-primary uppercase leading-tight">
-                        admin@rehabfactory.com.au
+                        <a href="mailto:admin@rehabfactory.com.au" className="hover:text-secondary transition-colors">
+                          admin@rehabfactory.com.au
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -185,12 +191,13 @@ const Contact = () => {
                 <h3 className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">CLINIC HOURS</h3>
                 <div className="space-y-4">
                   {[
-                    { day: 'MON - FRI', hours: '8:00 AM – 7:00 PM' },
-                    { day: 'SATURDAY', hours: '9:00 AM – 1:00 PM' },
-                    { day: 'SUNDAY', hours: 'CLOSED' }
+                    { day: 'MONDAY', hours: '8:00 AM – 1:00 PM' },
+                    { day: 'FRIDAY', hours: '9:00 AM - 5:00 PM' },
+                    { day: 'SATURDAY', hours: '9:00 AM – 2:00 PM' },
+                    { day: 'SUNDAY', hours: '8:00 AM – 12:00 PM' }
                   ].map((item, i) => (
                     <div key={i} className="flex justify-between items-center py-4 border-b border-slate-200 last:border-0">
-                      <span className="font-poppins font-black text-[11px] tracking-widest uppercase text-slate-400">{item.day}</span>
+                      <span className="font-poppins font-normal text-[11px] tracking-[0.25em] uppercase text-slate-400">{item.day}</span>
                       <span className="font-display font-bold text-primary uppercase tracking-wide">{item.hours}</span>
                     </div>
                   ))}
@@ -208,20 +215,20 @@ const Contact = () => {
                     <div className="w-20 h-20 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-6">
                       <Check className="w-10 h-10 animate-bounce" />
                     </div>
-                    <h3 className="text-3xl md:text-4xl font-display font-bold text-primary uppercase tracking-tight">Message Sent</h3>
+                    <h3 className="text-3xl md:text-4xl font-display font-bold text-primary uppercase tracking-normal">Message Sent</h3>
                     <p className="text-slate-500 font-poppins leading-relaxed max-w-md mx-auto">
                       Thank you for reaching out! We have received your enquiry and a confirmation email has been sent. One of our team members will get back to you shortly.
                     </p>
                     <button 
                       onClick={() => setStatus({ submitting: false, success: false, error: null })} 
-                      className="mt-8 px-10 py-5 bg-primary text-white rounded-full md:rounded-[25px] font-black text-xs tracking-widest uppercase hover:bg-secondary hover:text-primary transition-all duration-300 shadow-lg"
+                      className="mt-8 px-6 md:px-8 py-3 md:py-4 whitespace-nowrap bg-primary text-white rounded-full md:rounded-[25px] font-normal text-base tracking-[0.18em] uppercase hover:bg-secondary hover:text-primary transition-all duration-300 shadow-lg"
                     >
                       Send Another Message
                     </button>
                   </div>
                 ) : (
                   <>
-                    <h3 className="text-3xl md:text-4xl font-display font-bold text-primary mb-8 md:mb-12 uppercase tracking-tight">Send an enquiry</h3>
+                    <h3 className="text-3xl md:text-4xl font-display font-bold text-primary mb-8 md:mb-12 uppercase tracking-normal">Send an enquiry</h3>
                     
                     <form onSubmit={handleSubmit} className="space-y-8">
                       {status.error && (
@@ -233,7 +240,7 @@ const Contact = () => {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="space-y-2">
-                          <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">FULL NAME</label>
+                          <label className="text-[10px] font-black tracking-[0.25em] text-slate-400 uppercase">FULL NAME</label>
                           <input 
                             type="text" 
                             name="name"
@@ -246,7 +253,7 @@ const Contact = () => {
                           />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">PHONE NUMBER</label>
+                          <label className="text-[10px] font-black tracking-[0.25em] text-slate-400 uppercase">PHONE NUMBER</label>
                           <input 
                             type="tel" 
                             name="phone"
@@ -260,7 +267,7 @@ const Contact = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">EMAIL ADDRESS</label>
+                        <label className="text-[10px] font-black tracking-[0.25em] text-slate-400 uppercase">EMAIL ADDRESS</label>
                         <input 
                           type="email" 
                           name="email"
@@ -274,7 +281,7 @@ const Contact = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">PREFERRED SERVICE</label>
+                        <label className="text-[10px] font-black tracking-[0.25em] text-slate-400 uppercase">PREFERRED SERVICE</label>
                         <select 
                           name="service"
                           value={formData.service}
@@ -292,7 +299,7 @@ const Contact = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">YOUR MESSAGE</label>
+                        <label className="text-[10px] font-black tracking-[0.25em] text-slate-400 uppercase">YOUR MESSAGE</label>
                         <textarea 
                           rows="5" 
                           name="message"
@@ -308,7 +315,7 @@ const Contact = () => {
                       <button 
                         type="submit" 
                         disabled={status.submitting}
-                        className="w-full bg-primary text-white py-5 md:py-6 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.3em] uppercase hover:bg-secondary hover:text-primary transition-all flex items-center justify-center gap-4 shadow-xl disabled:opacity-50"
+                        className="w-full bg-primary text-white py-3 md:py-4 whitespace-nowrap rounded-full md:rounded-[25px] font-normal text-base md:text-lg tracking-[0.18em] uppercase hover:bg-secondary hover:text-primary transition-all flex items-center justify-center gap-4 shadow-xl disabled:opacity-50"
                       >
                         {status.submitting ? 'SENDING...' : 'SUBMIT ENQUIRY'} <Send size={18} />
                       </button>

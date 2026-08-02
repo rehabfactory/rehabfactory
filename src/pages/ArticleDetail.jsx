@@ -30,7 +30,7 @@ const ArticleDetail = () => {
       <div className="min-h-screen flex items-center justify-center bg-white text-primary">
         <div className="text-center">
           <h1 className="text-4xl font-display mb-8">ARTICLE NOT FOUND</h1>
-          <Link to="/insights" className="text-secondary font-black tracking-widest uppercase hover:text-primary transition-colors">
+          <Link to="/insights" className="text-secondary font-black tracking-[0.25em] uppercase hover:text-primary transition-colors">
             BACK TO INSIGHTS
           </Link>
         </div>
@@ -45,7 +45,7 @@ const ArticleDetail = () => {
         <div className="container relative z-10">
           <Link 
             to="/insights" 
-            className="inline-flex items-center gap-3 text-secondary font-black text-xs tracking-[0.3em] uppercase mb-12 hover:text-white transition-colors group"
+            className="inline-flex items-center gap-3 text-secondary font-normal text-xs tracking-[0.3em] uppercase mb-12 hover:text-white transition-colors group"
           >
             <ArrowLeft size={16} className="group-hover:-translate-x-2 transition-transform" /> BACK TO INSIGHTS
           </Link>
@@ -54,11 +54,11 @@ const ArticleDetail = () => {
             <span className="text-[13px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8 reveal">
               {article.category}
             </span>
-            <h1 className="text-[42px] leading-[0.95] md:text-7xl lg:text-8xl font-display tracking-tight uppercase mb-8 md:mb-12 reveal-fade-up">
+            <h1 className="text-[42px] leading-[0.95] md:text-7xl lg:text-8xl font-display tracking-normal uppercase mb-8 md:mb-12 reveal-fade-up">
               {article.title}
             </h1>
             
-            <div className="flex flex-wrap items-center gap-8 text-slate-400 text-xs font-black tracking-widest uppercase reveal">
+            <div className="flex flex-wrap items-center gap-8 text-slate-400 text-xs font-black tracking-[0.25em] uppercase reveal">
               <div className="flex items-center gap-3">
                 <Clock size={16} className="text-secondary" />
                 {article.readTime} READ
@@ -84,7 +84,7 @@ const ArticleDetail = () => {
             <aside className="lg:col-span-4 order-2 lg:order-1">
               <div className="sticky top-32 space-y-12">
                 <div className="p-10 bg-slate-50 border border-slate-100 rounded-[25px] reveal">
-                  <h4 className="text-primary font-display font-bold text-xl uppercase tracking-wider mb-6">Clinical Expertise</h4>
+                  <h4 className="text-primary font-display font-bold text-xl uppercase tracking-[0.18em] mb-6">Clinical Expertise</h4>
                   <p className="text-slate-500 font-poppins leading-tight mb-8 text-sm">
                     Rehab Factory's clinical team, led by Abdelrahman and Amr Elsamman, provides evidence-based information to support your recovery and performance.
                   </p>
@@ -93,13 +93,13 @@ const ArticleDetail = () => {
                     <img src="/team/practitioner-amr-elsamman.webp" alt="Amr Elsamman" className="w-12 h-12 rounded-full border-2 border-white object-cover" />
                   </div>
                   <div>
-                    <div className="text-primary font-bold text-sm uppercase tracking-wider">REHAB FACTORY</div>
-                    <div className="text-secondary text-[10px] font-black tracking-widest uppercase">Clinical Team</div>
+                    <div className="text-primary font-bold text-sm uppercase tracking-[0.18em]">REHAB FACTORY</div>
+                    <div className="text-secondary text-[10px] font-black tracking-[0.25em] uppercase">Clinical Team</div>
                   </div>
                 </div>
 
                 <div className="p-10 bg-primary text-white rounded-[25px] shadow-2xl reveal-fade-up">
-                  <h4 className="font-display font-bold text-xl md:text-2xl uppercase tracking-tight leading-tight mb-4 md:mb-6">Ready to start your <br className="hidden md:block" /><span className="text-secondary">recovery?</span></h4>
+                  <h4 className="font-display font-bold text-xl md:text-2xl uppercase tracking-normal leading-tight mb-4 md:mb-6">Ready to start your <br className="hidden md:block" /><span className="text-secondary">recovery?</span></h4>
                   <p className="text-slate-400 font-poppins text-sm leading-tight mb-10">
                     Book an initial assessment with our team in Narre Warren today.
                   </p>
@@ -107,14 +107,14 @@ const ArticleDetail = () => {
                     href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full bg-secondary text-primary py-5 rounded-full md:rounded-[20px] font-black text-xs tracking-widest uppercase text-center hover:bg-white transition-all shadow-lg"
+                    className="block w-full bg-secondary text-white py-3 md:py-4 whitespace-nowrap rounded-full md:rounded-[20px] font-normal text-base tracking-[0.18em] uppercase text-center hover:bg-white hover:text-primary transition-all shadow-lg"
                   >
                     BOOK APPOINTMENT
                   </a>
                 </div>
 
                 <div className="flex items-center gap-6 reveal">
-                  <span className="text-[10px] font-black tracking-widest text-slate-400 uppercase">Share this article</span>
+                  <span className="text-[10px] font-black tracking-[0.25em] text-slate-400 uppercase">Share this article</span>
                   <div className="flex gap-4">
                     <button className="w-10 h-10 border border-slate-200 rounded-full flex items-center justify-center text-slate-400 hover:text-secondary hover:border-secondary transition-all"><Share2 size={16} /></button>
                   </div>
@@ -139,13 +139,22 @@ const ArticleDetail = () => {
                   if (block.type === 'paragraph') {
                     return <p key={idx} className="mb-10 reveal-fade-up">{block.text}</p>;
                   }
+                  if (block.type === 'list') {
+                    return (
+                      <ul key={idx} className="list-disc list-inside mb-10 reveal-fade-up space-y-2">
+                        {block.items.map((item, itemIdx) => (
+                          <li key={itemIdx}>{item}</li>
+                        ))}
+                      </ul>
+                    );
+                  }
                   return null;
                 })}
               </div>
 
               {/* Final CTA within flow */}
               <div className="mt-16 md:mt-24 p-8 md:p-16 bg-slate-50 border border-slate-200 rounded-[25px] text-center reveal">
-                <h3 className="text-3xl md:text-5xl font-display font-bold text-primary mb-6 md:mb-8 uppercase tracking-tight">HAVE QUESTIONS?</h3>
+                <h3 className="text-3xl md:text-5xl font-display font-bold text-primary mb-6 md:mb-8 uppercase tracking-normal">HAVE QUESTIONS?</h3>
                 <p className="text-lg md:text-xl text-slate-500 mb-8 md:mb-12 max-w-xl mx-auto">
                   You do not need a referral to book with us. Start your journey today.
                 </p>
@@ -153,7 +162,7 @@ const ArticleDetail = () => {
                   href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-primary text-white px-8 md:px-16 py-5 md:py-8 rounded-full md:rounded-[25px] font-black text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-secondary hover:text-primary transition-all shadow-xl"
+                  className="inline-block bg-primary text-white px-6 md:px-8 py-3 md:py-4 whitespace-nowrap rounded-full md:rounded-[25px] font-normal text-base md:text-lg tracking-[0.18em] uppercase hover:bg-secondary hover:text-primary transition-all shadow-xl"
                 >
                   BOOK YOUR ASSESSMENT
                 </a>
@@ -170,9 +179,9 @@ const ArticleDetail = () => {
           <div className="flex justify-between items-end mb-12 md:mb-16 reveal">
             <div>
               <span className="text-[13px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4">KEEP READING</span>
-              <h2 className="text-4xl md:text-6xl font-display text-primary tracking-tight uppercase">Recent Insights</h2>
+              <h2 className="text-4xl md:text-6xl font-display text-primary tracking-normal uppercase">Recent Insights</h2>
             </div>
-            <Link to="/insights" className="hidden md:flex items-center gap-3 text-secondary font-black text-xs tracking-widest uppercase hover:text-primary transition-colors">
+            <Link to="/insights" className="hidden md:flex items-center gap-3 text-secondary font-bold text-sm tracking-[0.18em] uppercase hover:text-primary transition-colors">
               VIEW ALL <BookOpen size={16} />
             </Link>
           </div>
@@ -183,7 +192,7 @@ const ArticleDetail = () => {
                 <div className="aspect-video rounded-[25px] overflow-hidden mb-8 shadow-lg group-hover:shadow-2xl transition-all duration-700">
                   <img src={other.img} alt={other.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
                 </div>
-                <div className="flex items-center gap-4 mb-4 text-[10px] font-black tracking-widest text-slate-400 uppercase">
+                <div className="flex items-center gap-4 mb-4 text-[10px] font-black tracking-[0.25em] text-slate-400 uppercase">
                   <span className="text-secondary">{other.category}</span>
                   <span>{other.readTime} READ</span>
                 </div>
