@@ -49,6 +49,10 @@ const Header = () => {
             </div>
           </div>
 
+          <NavLink className={navLinkClass} to="/conditions">
+            CONDITIONS
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-secondary transition-all duration-300 group-hover:w-full"></span>
+          </NavLink>
           <NavLink className={navLinkClass} to="/insights">
             INSIGHTS
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-secondary transition-all duration-300 group-hover:w-full"></span>

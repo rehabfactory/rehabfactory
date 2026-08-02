@@ -178,7 +178,7 @@ const Conditions = () => {
         {/* Icon Navigation Menu - Inside Hero */}
         <div className="absolute bottom-0 left-0 w-full z-20 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent pt-32 pb-8 lg:pb-12 border-b border-white/5">
           <div className="container max-w-7xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-x-4 gap-y-10">
+            <div className="hidden md:grid md:grid-cols-4 lg:grid-cols-8 gap-x-4 gap-y-10">
               {conditionList.map((item, idx) => {
                 const IconComponent = item.icon;
                 const sectionId = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
