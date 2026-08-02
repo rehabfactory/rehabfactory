@@ -132,7 +132,7 @@ const ManualTherapy = () => {
         <div className="container relative z-10 pt-24 md:pt-32">
           <div className="max-w-3xl">
             <span className="hero-anim text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6 drop-shadow-md">OUR SERVICES</span>
-            <h1 className="hero-anim font-display leading-[0.85] tracking-normal uppercase text-white mb-8" style={{ fontSize: 'clamp(64px, 11vw, 150px)' }}>
+            <h1 className="hero-anim font-display leading-[0.85] tracking-normal uppercase text-white mb-8" style={{ fontSize: 'clamp(42px, 11vw, 150px)' }}>
               Manual<br /><span className="text-secondary">Therapy.</span>
             </h1>
             <p className="hero-anim text-2xl md:text-3xl text-white/80 font-poppins font-light leading-relaxed max-w-2xl mb-12 drop-shadow-lg">

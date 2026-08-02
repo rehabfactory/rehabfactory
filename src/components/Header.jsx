@@ -43,8 +43,8 @@ const Header = () => {
               <Link to="/services/return-to-work-and-sport" className="px-6 py-3 hover:bg-slate-50 hover:text-secondary text-primary font-display font-normal uppercase tracking-widest text-base transition-colors text-left border-t border-slate-100">
                 Return to Work and Sport
               </Link>
-              <Link to="/services/sports-taping" className="px-6 py-3 hover:bg-slate-50 hover:text-secondary text-primary font-display font-normal uppercase tracking-widest text-base transition-colors text-left border-t border-slate-100">
-                Sports Taping
+              <Link to="/services/education" className="px-6 py-3 hover:bg-slate-50 hover:text-secondary text-primary font-display font-normal uppercase tracking-widest text-base transition-colors text-left border-t border-slate-100">
+                Education &amp; Sports Taping
               </Link>
             </div>
           </div>
@@ -107,13 +107,21 @@ const Header = () => {
           </NavLink>
           
           <div className="flex flex-col items-center text-center w-full shrink-0">
-            <button 
-              className="text-4xl font-display font-bold text-white tracking-[0.25em] hover:text-secondary transition-colors flex items-center justify-center gap-3 w-full" 
-              onClick={() => setIsServicesOpen(!isServicesOpen)}
-            >
-              SERVICES
-              <svg className={`w-8 h-8 text-secondary transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
+            <div className="flex items-center justify-center gap-3 w-full">
+              <NavLink 
+                className="text-4xl font-display font-bold text-white tracking-[0.25em] hover:text-secondary transition-colors" 
+                to="/services" 
+                onClick={() => setIsMenuOpen(false)}
+              >
+                SERVICES
+              </NavLink>
+              <button 
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                className="p-1"
+              >
+                <svg className={`w-8 h-8 text-secondary transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+            </div>
             
             {/* Submenu */}
             <div className={`flex flex-col items-center gap-6 overflow-hidden transition-all duration-300 w-full ${isServicesOpen ? 'max-h-[500px] opacity-100 mt-6 mb-2' : 'max-h-0 opacity-0 m-0'}`}>
@@ -129,8 +137,8 @@ const Header = () => {
               <NavLink className="text-sm font-display font-bold text-white/70 tracking-[0.2em] hover:text-white transition-colors" to="/services/return-to-work-and-sport" onClick={() => setIsMenuOpen(false)}>
                 RETURN TO WORK & SPORT
               </NavLink>
-              <NavLink className="text-sm font-display font-bold text-white/70 tracking-[0.2em] hover:text-white transition-colors" to="/services/sports-taping" onClick={() => setIsMenuOpen(false)}>
-                SPORTS TAPING
+              <NavLink className="text-sm font-display font-bold text-white/70 tracking-[0.2em] hover:text-white transition-colors" to="/services/education" onClick={() => setIsMenuOpen(false)}>
+                EDUCATION & SPORTS TAPING
               </NavLink>
             </div>
           </div>

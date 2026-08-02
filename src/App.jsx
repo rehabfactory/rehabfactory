@@ -33,6 +33,7 @@ function App() {
             <Route path="/services/manual-therapy" element={<ManualTherapy />} />
             <Route path="/services/return-to-work-and-sport" element={<ReturnToWorkAndSport />} />
             <Route path="/services/education" element={<Education />} />
+            <Route path="/services/sports-taping" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/clinics" element={<About />} />
             <Route path="/philosophy" element={<About />} />
