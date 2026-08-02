@@ -59,12 +59,12 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start">
             <div className="lg:col-span-5 reveal">
               <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4 md:mb-6">OUR STORY</span>
-              <h2 className="text-4xl md:text-6xl font-display text-primary tracking-normal leading-[0.9] uppercase">
-                A different <br />kind of <br />physiotherapy <br />clinic.
+              <h2 className="text-4xl md:text-6xl font-display font-bold text-primary tracking-normal leading-[0.9] uppercase">
+                A different <br />kind of <br /><span className="text-secondary">physiotherapy</span> <br />clinic.
               </h2>
             </div>
             <div className="lg:col-span-7 space-y-4 md:space-y-8 text-slate-500 font-poppins text-lg leading-tight reveal-fade-up">
-              <p className="text-xl md:text-2xl text-primary font-semibold">
+              <p className="text-lg md:text-2xl text-primary font-semibold leading-tight">
                 Rehab Factory Physiotherapy was founded on a simple belief: exercise is medicine. Most clinics focus on the treatment bed. We built a gym.
               </p>
               <p className="text-base md:text-lg">
@@ -84,7 +84,7 @@ const About = () => {
           <div className="mb-12 md:mb-20 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4 md:mb-6">THE TEAM</span>
             <h2 className="text-4xl md:text-7xl font-display text-primary tracking-normal leading-[0.9] uppercase mb-2 md:mb-6">Your practitioners.</h2>
-            <p className="text-sm md:text-xl text-slate-500 font-poppins font-normal uppercase tracking-[0.25em] leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-500 font-poppins font-normal leading-relaxed">
               All practitioners are registered with the Physiotherapy Board of Australia.
             </p>
           </div>

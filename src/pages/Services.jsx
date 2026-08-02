@@ -149,13 +149,13 @@ const Services = () => {
               </h2>
             </div>
             <div className="lg:col-span-7 space-y-10 text-slate-500 font-poppins leading-tight reveal-fade-up">
-              <p className="text-2xl md:text-4xl text-primary font-semibold leading-tight">
+              <p className="text-lg md:text-2xl text-primary font-semibold leading-tight">
                 At Rehab Factory, every service starts with a thorough clinical assessment. We take the time to understand your injury, your history, your goals, and your lifestyle before designing your program.
               </p>
-              <p className="text-lg md:text-2xl leading-relaxed">
+              <p className="text-base md:text-lg leading-relaxed">
                 Hands-on treatment is part of the plan, but exercise rehabilitation is the foundation. We use manual therapy to reduce pain and restore movement so you can get back to the work that supports your recovery.
               </p>
-              <p className="text-lg md:text-2xl leading-relaxed">
+              <p className="text-base md:text-lg leading-relaxed">
                 We do not believe in passive treatment. We believe in building you up. That means every service we offer is connected to a broader plan, and every plan is built around you as an individual.
               </p>
             </div>
