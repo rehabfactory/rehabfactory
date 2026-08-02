@@ -1,6 +1,20 @@
 import { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, Check, AlertCircle } from 'lucide-react';
 
+const FacebookIcon = ({ size = 16 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+  </svg>
+);
+
+const InstagramIcon = ({ size = 16 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -201,6 +215,28 @@ const Contact = () => {
                       <span className="font-display font-bold text-primary uppercase tracking-wide">{item.hours}</span>
                     </div>
                   ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">FOLLOW US</h3>
+                <div className="flex gap-4">
+                  <a 
+                    href="https://www.facebook.com/people/Rehab-Factory-Physiotherapy/61583085661831/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-3 px-5 py-3 rounded-md bg-white border border-slate-200 text-primary font-display font-bold text-xs uppercase tracking-widest hover:bg-secondary hover:text-white hover:border-secondary transition-all shadow-sm"
+                  >
+                    <FacebookIcon size={16} /> Facebook
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/rehab.factory/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-3 px-5 py-3 rounded-md bg-white border border-slate-200 text-primary font-display font-bold text-xs uppercase tracking-widest hover:bg-secondary hover:text-white hover:border-secondary transition-all shadow-sm"
+                  >
+                    <InstagramIcon size={16} /> Instagram
+                  </a>
                 </div>
               </div>
             </div>
