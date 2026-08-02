@@ -41,7 +41,7 @@ const About = () => {
         <div className="container relative z-10">
           <div className="max-w-[1000px] reveal-fade-up text-white">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6 md:mb-10">ABOUT US</span>
-            <h1 className="text-4xl md:text-8xl lg:text-[100px] font-display tracking-normal leading-[0.95] md:leading-[0.9] uppercase mb-4 md:mb-12">
+            <h1 className="text-4xl md:text-8xl lg:text-[100px] font-display font-bold tracking-normal leading-[0.95] md:leading-[0.9] uppercase mb-4 md:mb-12">
               Meet the Team <br />
               Behind the <br className="hidden md:block" />
               <span className="text-secondary">Rehab.</span>
@@ -83,7 +83,7 @@ const About = () => {
         <div className="container">
           <div className="mb-12 md:mb-20 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4 md:mb-6">THE TEAM</span>
-            <h2 className="text-4xl md:text-7xl font-display text-primary tracking-normal leading-[0.9] uppercase mb-2 md:mb-6">Your practitioners.</h2>
+            <h2 className="text-4xl md:text-7xl font-display font-bold text-primary tracking-normal leading-[0.9] uppercase mb-2 md:mb-6">Your practitioners.</h2>
             <p className="text-lg md:text-xl text-slate-500 font-poppins font-normal leading-relaxed">
               All practitioners are registered with the Physiotherapy Board of Australia.
             </p>
@@ -160,7 +160,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
             <div className="reveal">
               <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4 md:mb-6">OUR SPACE</span>
-              <h2 className="text-4xl md:text-7xl font-display text-white tracking-normal leading-[0.9] uppercase mb-4 md:mb-8">Where Recovery <br />Gets to Work.</h2>
+              <h2 className="text-4xl md:text-7xl font-display font-bold text-white tracking-normal leading-[0.9] uppercase mb-4 md:mb-8">Where Recovery <br />Gets to Work.</h2>
               <p className="text-lg md:text-2xl text-slate-400 font-poppins font-normal leading-relaxed mb-6 md:mb-12">
                 Our clinic is built around a fully equipped gym. This is where the real rehabilitation happens.
               </p>
@@ -183,7 +183,7 @@ const About = () => {
         <div className="container">
           <div className="mb-12 md:mb-24 reveal text-center max-w-3xl mx-auto">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4 md:mb-6">WHAT WE STAND FOR</span>
-            <h2 className="text-4xl md:text-7xl font-display text-primary tracking-normal leading-[0.9] uppercase">The way we work.</h2>
+            <h2 className="text-4xl md:text-7xl font-display font-bold text-primary tracking-normal leading-[0.9] uppercase">The way we work.</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">

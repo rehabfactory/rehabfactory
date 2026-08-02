@@ -124,7 +124,7 @@ const Contact = () => {
         <div className="container relative z-10">
           <div className="max-w-[1000px] reveal-fade-up text-white">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">ENQUIRY</span>
-            <h1 className="text-4xl md:text-8xl lg:text-[100px] font-display tracking-normal leading-[0.95] md:leading-[0.9] uppercase mb-8 md:mb-12">
+            <h1 className="text-4xl md:text-8xl lg:text-[100px] font-display font-bold tracking-normal leading-[0.95] md:leading-[0.9] uppercase mb-8 md:mb-12">
               Book your <br />
               <span className="text-secondary">assessment.</span>
             </h1>

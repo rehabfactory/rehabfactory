@@ -29,7 +29,7 @@ const ArticleDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white text-primary">
         <div className="text-center">
-          <h1 className="text-4xl font-display mb-8">ARTICLE NOT FOUND</h1>
+          <h1 className="text-4xl font-display font-bold mb-8">ARTICLE NOT FOUND</h1>
           <Link to="/insights" className="text-secondary font-black tracking-[0.25em] uppercase hover:text-primary transition-colors">
             BACK TO INSIGHTS
           </Link>
@@ -54,7 +54,7 @@ const ArticleDetail = () => {
             <span className="text-[13px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8 reveal">
               {article.category}
             </span>
-            <h1 className="text-[42px] leading-[0.95] md:text-7xl lg:text-8xl font-display tracking-normal uppercase mb-8 md:mb-12 reveal-fade-up">
+            <h1 className="text-[42px] leading-[0.95] md:text-7xl lg:text-8xl font-display font-bold tracking-normal uppercase mb-8 md:mb-12 reveal-fade-up">
               {article.title}
             </h1>
             
@@ -179,7 +179,7 @@ const ArticleDetail = () => {
           <div className="flex justify-between items-end mb-12 md:mb-16 reveal">
             <div>
               <span className="text-[13px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4">KEEP READING</span>
-              <h2 className="text-4xl md:text-6xl font-display text-primary tracking-normal uppercase">Recent Insights</h2>
+              <h2 className="text-4xl md:text-6xl font-display font-bold text-primary tracking-normal uppercase">Recent Insights</h2>
             </div>
             <Link to="/insights" className="hidden md:flex items-center gap-3 text-secondary font-bold text-sm tracking-[0.18em] uppercase hover:text-primary transition-colors">
               VIEW ALL <BookOpen size={16} />

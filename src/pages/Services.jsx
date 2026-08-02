@@ -126,7 +126,7 @@ const Services = () => {
         <div className="container relative z-10">
           <div className="max-w-[1000px] reveal-fade-up text-white">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">OUR SERVICES</span>
-            <h1 className="text-4xl md:text-8xl lg:text-[100px] font-display tracking-normal leading-[0.95] md:leading-[0.9] uppercase mb-8 md:mb-12">
+            <h1 className="text-4xl md:text-8xl lg:text-[100px] font-display font-bold tracking-normal leading-[0.95] md:leading-[0.9] uppercase mb-8 md:mb-12">
               Everything we do <br />
               is built <br className="hidden md:block" />
               <span className="text-secondary">around you.</span>
@@ -144,7 +144,7 @@ const Services = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16 items-start">
             <div className="lg:col-span-5 reveal">
               <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">OUR APPROACH</span>
-              <h2 className="text-4xl md:text-6xl font-display text-primary tracking-normal leading-[0.9] uppercase">
+              <h2 className="text-4xl md:text-6xl font-display font-bold text-primary tracking-normal leading-[0.9] uppercase">
                 Exercise first. <br /><span className="text-secondary">Always.</span>
               </h2>
             </div>
@@ -168,7 +168,7 @@ const Services = () => {
         <div className="container">
           <div className="mb-16 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHAT WE OFFER</span>
-            <h2 className="text-5xl md:text-7xl font-display text-primary tracking-normal leading-[0.9] uppercase">Our services.</h2>
+            <h2 className="text-5xl md:text-7xl font-display font-bold text-primary tracking-normal leading-[0.9] uppercase">Our services.</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
@@ -211,7 +211,7 @@ const Services = () => {
             <div className="flex flex-col gap-6">
               <div>
                 <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHY CHOOSE US</span>
-                <h2 className="text-4xl md:text-8xl font-display tracking-normal leading-[0.9] uppercase mb-6">What makes us <br /><span className="text-secondary">different.</span></h2>
+                <h2 className="text-4xl md:text-8xl font-display font-bold tracking-normal leading-[0.9] uppercase mb-6">What makes us <br /><span className="text-secondary">different.</span></h2>
                 <p className="text-xl text-slate-400 font-poppins leading-tight max-w-2xl mt-6">
                   Built for peak performance.<br />
                   Gym-based physiotherapy and rehabilitation.
@@ -270,7 +270,7 @@ const Services = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-5 reveal">
               <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">YOUR FIRST VISIT</span>
-              <h2 className="text-4xl md:text-7xl font-display text-primary tracking-normal leading-[0.9] uppercase mb-8">
+              <h2 className="text-4xl md:text-7xl font-display font-bold text-primary tracking-normal leading-[0.9] uppercase mb-8">
                 Here is what <br />happens when <br className="hidden md:block" /><span className="text-secondary">you come in.</span>
               </h2>
               <p className="text-lg md:text-xl text-slate-500 font-poppins leading-relaxed">
@@ -303,7 +303,7 @@ const Services = () => {
         <div className="container max-w-7xl">
           <div className="mb-16 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHO WE SEE</span>
-            <h2 className="text-4xl md:text-6xl font-display text-primary tracking-normal leading-[0.9] uppercase">Rehab Factory is for <br className="hidden md:block" />anyone who wants to <br className="hidden md:block" /><span className="text-secondary">recover properly.</span></h2>
+            <h2 className="text-4xl md:text-6xl font-display font-bold text-primary tracking-normal leading-[0.9] uppercase">Rehab Factory is for <br className="hidden md:block" />anyone who wants to <br className="hidden md:block" /><span className="text-secondary">recover properly.</span></h2>
           </div>
 
           <div className="flex flex-col md:flex-row h-[800px] md:h-[600px] gap-4 md:gap-6">
@@ -402,7 +402,7 @@ const Services = () => {
             {/* Left Column */}
             <div className="lg:col-span-5 lg:sticky lg:top-32 reveal">
               <span className="text-[15px] font-bold tracking-[0.4em] text-[#E49E73] uppercase font-poppins block mb-4">FAQS</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-white tracking-normal leading-[0.9] uppercase mb-6">Common questions <br className="hidden lg:block" /><span className="text-secondary">about our services.</span></h2>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white tracking-normal leading-[0.9] uppercase mb-6">Common questions <br className="hidden lg:block" /><span className="text-secondary">about our services.</span></h2>
               <p className="text-white/60 font-poppins text-lg max-w-md mb-8">Can't find what you're looking for? Reach out to our clinic directly and our team will be happy to assist.</p>
               <Link to="/contact" className="inline-flex items-center justify-center bg-[#E49E73] text-primary hover:bg-white px-6 py-3 font-display font-bold uppercase tracking-widest transition-colors duration-300">
                 Have your own questions?

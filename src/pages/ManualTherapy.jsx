@@ -132,7 +132,7 @@ const ManualTherapy = () => {
         <div className="container relative z-10 pt-24 md:pt-32">
           <div className="max-w-3xl">
             <span className="hero-anim text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6 drop-shadow-md">OUR SERVICES</span>
-            <h1 className="hero-anim font-display leading-[0.85] tracking-normal uppercase text-white mb-8" style={{ fontSize: 'clamp(42px, 11vw, 150px)' }}>
+            <h1 className="hero-anim font-display font-bold leading-[0.85] tracking-normal uppercase text-white mb-8" style={{ fontSize: 'clamp(42px, 11vw, 150px)' }}>
               Manual<br /><span className="text-secondary">Therapy.</span>
             </h1>
             <p className="hero-anim text-2xl md:text-3xl text-white/80 font-poppins font-light leading-relaxed max-w-2xl mb-12 drop-shadow-lg">
@@ -151,7 +151,7 @@ const ManualTherapy = () => {
         <div className="container reveal">
           <div className="max-w-5xl mx-auto text-center">
             <span className="text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8">THE REHAB FACTORY WAY</span>
-            <h2 className="font-display text-5xl md:text-7xl lg:text-[100px] uppercase tracking-normal leading-[0.85] text-white mb-10">
+            <h2 className="font-display font-bold text-5xl md:text-7xl lg:text-[100px] uppercase tracking-normal leading-[0.85] text-white mb-10">
               Four Clinical <br className="hidden md:block" />
               <span className="text-secondary">Techniques.</span>
             </h2>
@@ -192,7 +192,7 @@ const ManualTherapy = () => {
                     }}>
                     {t.num}
                   </div>
-                  <h2 className={`anim-title font-display text-white uppercase tracking-normal mt-2 mb-6 drop-shadow-md opacity-0 ${idx % 2 === 0 ? 'text-left' : 'text-right'}`}
+                  <h2 className={`anim-title font-display font-bold text-white uppercase tracking-normal mt-2 mb-6 drop-shadow-md opacity-0 ${idx % 2 === 0 ? 'text-left' : 'text-right'}`}
                     style={{ 
                       fontSize: 'clamp(42px, 5.5vw, 90px)', 
                       lineHeight: 0.9,
@@ -232,7 +232,7 @@ const ManualTherapy = () => {
 
             <div className="relative z-10">
               <span className="text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">INTEGRATED REHABILITATION</span>
-              <h2 className="font-display text-4xl md:text-6xl lg:text-7xl uppercase tracking-normal leading-[0.9] mb-8 text-white">
+              <h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl uppercase tracking-normal leading-[0.9] mb-8 text-white">
                 Manual therapy prepares your body.<br />Exercise completes it.
               </h2>
               <p className="text-white/70 font-poppins text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-12">
@@ -252,7 +252,7 @@ const ManualTherapy = () => {
         <div className="container">
           <div className="mb-16 text-center reveal">
             <span className="text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4">EXPLORE MORE</span>
-            <h2 className="font-display text-4xl md:text-6xl text-primary leading-[0.9] uppercase tracking-normal">Other services.</h2>
+            <h2 className="font-display font-bold text-4xl md:text-6xl text-primary leading-[0.9] uppercase tracking-normal">Other services.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 reveal-fade-up">
             {[

@@ -42,7 +42,7 @@ const Insights = () => {
             <span className="text-[13px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8">
               KNOWLEDGE HUB
             </span>
-            <h1 className="text-[42px] leading-[0.95] md:text-8xl lg:text-[100px] font-display tracking-normal uppercase mb-8 md:mb-12">
+            <h1 className="text-[42px] leading-[0.95] md:text-8xl lg:text-[100px] font-display font-bold tracking-normal uppercase mb-8 md:mb-12">
               Insights for <br className="hidden md:block" />
               sustainable <br className="hidden md:block" />
               <span className="text-secondary">recovery.</span>
@@ -91,7 +91,7 @@ const Insights = () => {
           <div className="flex justify-between items-end mb-12 md:mb-20 reveal">
             <div>
               <span className="text-[13px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4">LATEST ARTICLES</span>
-              <h2 className="text-4xl md:text-7xl font-display text-primary tracking-normal uppercase">Recent Updates</h2>
+              <h2 className="text-4xl md:text-7xl font-display font-bold text-primary tracking-normal uppercase">Recent Updates</h2>
             </div>
           </div>
 

@@ -14,7 +14,7 @@ const TermsAndConditions = () => {
           <span className="text-[13px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8 reveal">
             LEGAL
           </span>
-          <h1 className="text-5xl md:text-8xl font-display tracking-normal leading-[0.95] uppercase mb-12 reveal-fade-up">
+          <h1 className="text-5xl md:text-8xl font-display font-bold tracking-normal leading-[0.95] uppercase mb-12 reveal-fade-up">
             Terms & <span className="text-secondary">Conditions</span>
           </h1>
           <div className="flex items-center justify-center gap-4 text-slate-400 text-xs font-black tracking-[0.25em] uppercase reveal">

@@ -154,7 +154,7 @@ const Home = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
               <div className="lg:col-span-7">
                 <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8">THE DIFFERENCE</span>
-                <h2 className="text-4xl md:text-7xl font-display text-primary tracking-normal leading-[1.0] uppercase mb-8 md:mb-10">
+                <h2 className="text-4xl md:text-7xl font-display font-bold text-primary tracking-normal leading-[1.0] uppercase mb-8 md:mb-10">
                   Most clinics focus on the <br />
                   <span className="text-secondary">treatment bed.</span> <br />
                   We focus on the <br />
@@ -333,7 +333,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div className="reveal">
               <span className="text-[12px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4 md:mb-6">FIND US</span>
-              <h2 className="text-[40px] md:text-8xl font-display text-primary tracking-normal leading-[0.9] uppercase mb-6 md:mb-10">Based in <br className="hidden md:block" />Narre Warren, <br /><span className="text-secondary">Victoria.</span></h2>
+              <h2 className="text-[40px] md:text-8xl font-display font-bold text-primary tracking-normal leading-[0.9] uppercase mb-6 md:mb-10">Based in <br className="hidden md:block" />Narre Warren, <br /><span className="text-secondary">Victoria.</span></h2>
               <div className="flex items-center gap-4 text-slate-500 mb-8 md:mb-10">
                 <MapPin size={24} className="text-secondary shrink-0" />
                 <span className="font-poppins font-bold tracking-widest text-[11px] md:text-sm uppercase">Serving the South East, Victoria.</span>
