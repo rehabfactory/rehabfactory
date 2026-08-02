@@ -28,6 +28,7 @@ import manualTherapyImg from '../assets/manual-therapy.webp';
 import workcoverRehabImg from '../assets/workcover-rehab.webp';
 import returnToSport from '../assets/return-to-sport.webp';
 import sportsTaping from '../assets/sports-taping.webp';
+import CTA from '../components/CTA';
 
 const Services = () => {
   const [openFaq, setOpenFaq] = useState(null);
