@@ -32,7 +32,7 @@ const PrivacyPolicy = () => {
             <div className="prose-custom text-slate-600 font-poppins">
               
               <h2 className="text-3xl font-display font-bold text-primary mb-8 uppercase tracking-wide">1. Introduction and Our Commitment</h2>
-              <p>Rehab Factory Physiotherapy Pty Ltd (ABN 47 279 025 634) ("we", "us", "our") is committed to protecting the privacy and confidentiality of every patient, website visitor, and individual whose personal information we handle.</p>
+              <p>Rehab Factory Physiotherapy Pty Ltd (ABN 12 695 148 791) ("we", "us", "our") is committed to protecting the privacy and confidentiality of every patient, website visitor, and individual whose personal information we handle.</p>
               <p>We are bound by the following legislation and frameworks:</p>
               <ul>
                 <li>The Privacy Act 1988 (Cth) and the Australian Privacy Principles (APPs)</li>
@@ -208,7 +208,7 @@ const PrivacyPolicy = () => {
               <p>If you have a concern about the way we have collected, used, stored, or disclosed your personal or health information, we encourage you to contact us in the first instance so that we can attempt to resolve the matter directly.</p>
               
               <p className="font-bold mt-8 mb-4 text-slate-800">Contact details:</p>
-              <p>Rehab Factory Physiotherapy Pty Ltd<br />9/25-35 Cranbourne Road, Narre Warren VIC 3805<br />Phone: (03) 9704 6111<br />Email: admin@rehabfactory.com.au</p>
+              <p>Rehab Factory Physiotherapy Pty Ltd<br />9/25-35 Cranbourne Road, Narre Warren VIC 3805<br />Phone: 0428 046 819<br />Email: admin@rehabfactory.com.au</p>
               
               <p>We will acknowledge your complaint within five business days and aim to resolve it within 30 days. If the matter is complex, we will keep you informed of progress.</p>
               <p>If you are not satisfied with our response, you may lodge a complaint with:</p>

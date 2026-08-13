@@ -88,7 +88,7 @@ const TermsAndConditions = () => {
                 <div className="space-y-2 text-slate-500 font-poppins">
                   <p className="font-bold">Rehab Factory Physiotherapy Pty Ltd</p>
                   <p>9/25-35 Cranbourne Road, Narre Warren VIC 3805</p>
-                  <p>Phone: (03) 9704 6111</p>
+                  <p>Phone: 0428 046 819</p>
                   <p>Email: admin@rehabfactory.com.au</p>
                 </div>
               </div>

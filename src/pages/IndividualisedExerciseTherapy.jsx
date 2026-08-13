@@ -150,7 +150,7 @@ const IndividualisedExerciseTherapy = () => {
       <section className="bg-primary py-24 md:py-32 relative z-20 border-b border-white/5">
         <div className="container reveal">
           <div className="max-w-5xl mx-auto text-center">
-            <span className="text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8">THE REHAB FACTORY WAY</span>
+            <span className="text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8">THE RFP WAY</span>
             <h2 className="font-display font-bold text-5xl md:text-7xl lg:text-[100px] uppercase tracking-normal leading-[0.85] text-white mb-10">
               Four Stages of <br className="hidden md:block" />
               <span className="text-secondary">Conditioning.</span>

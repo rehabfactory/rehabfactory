@@ -139,11 +139,11 @@ const Contact = () => {
           <div className="max-w-[1000px] reveal-fade-up text-white">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-10">ENQUIRY</span>
             <h1 className="text-4xl md:text-8xl lg:text-[100px] font-display font-bold tracking-normal leading-[0.95] md:leading-[0.9] uppercase mb-8 md:mb-12">
-              Book your <br />
-              <span className="text-secondary">assessment.</span>
+              Join the <br />
+              <span className="text-secondary">community.</span>
             </h1>
             <p className="text-lg md:text-3xl text-slate-300 font-poppins font-normal leading-tight max-w-3xl">
-              Ready to start your recovery? Get in touch and let our team build your treatment plan.
+              Ready to start your recovery? Get in touch and let's build your treatment plan.
             </p>
           </div>
         </div>

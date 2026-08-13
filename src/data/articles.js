@@ -17,11 +17,11 @@ export const articles = [
       },
       {
         type: 'heading',
-        text: 'Searching for compatibility'
+        text: 'Searching for rapport'
       },
       {
         type: 'paragraph',
-        text: 'The aim here is not to get you on the table and start treating the area aimlessly for as many times as we can convince you to come in. We are genuine about what we do. Just like you, we want to know whether we can help!'
+        text: 'We do not wish to sell you aimless and continuous temporary relief convincing you that a set number of sessions will get you right. We are genuine about what we do and just like you, we would like to know whether we are the right fit.'
       },
       {
         type: 'heading',
@@ -29,7 +29,7 @@ export const articles = [
       },
       {
         type: 'paragraph',
-        text: 'This is when we delve deep into your injury. How, when and why did it happen, as well as a detailed history to give us a get base to start with. Then we assess your body. What separates us is that we get you involved from the get go. We explain everything as we believe this will get you more invested into your rehabilitation.'
+        text: 'This is when we delve deep into your injury. How, when and why did it happen, as well as a detailed history to give us a good understanding of you to guide patient-centred care. Then we assess your body. What separates us is that we get you involved from the get go. We explain everything as we believe this will get you more invested into your rehabilitation.'
       },
       {
         type: 'heading',
@@ -37,7 +37,7 @@ export const articles = [
       },
       {
         type: 'paragraph',
-        text: 'Once we have a better understanding of your condition, we will explore treatment options in line with the goals you want to achieve. This is an active process that both you and our clinician will discuss carefully so that we can come up with shared goals to work towards. Expect a detailed follow up plan from us that depicts the journey of your rehabilitation with purposely structured checkpoints to ensure you are on track.'
+        text: 'Once we have a better understanding of your condition, we will explore treatment options in line with the goals you want to achieve. This is an active process that both you and our clinician will discuss and negotiate so that we can come up with shared goals to work towards. Expect a detailed follow up plan from us depicting the journey of your rehabilitation with purposely structured checkpoints to ensure you are on track.'
       },
       {
         type: 'heading',
@@ -53,7 +53,7 @@ export const articles = [
       },
       {
         type: 'paragraph',
-        text: 'Your first appointment is not just for us to assess you. It is for you to assess us. We want you to feel confident that the approach we are taking makes sense for your situation. If you have questions at any point, ask them. The more we understand each other from the start, the better your Program and journey will be.'
+        text: 'Your first appointment is not just for us to assess you. It is for you to assess us. We want you to feel confident that our approach meets your needs. If you have questions at any point, ask them. The more we understand each other from the start, the better your program and journey will be.'
       }
     ]
   },
@@ -100,7 +100,7 @@ export const articles = [
       },
       {
         type: 'paragraph',
-        text: '*Please note that dry needling is not for you if you are on blood thinners, pregnant or suffer from epilepsy/seizures. For more information reach out to us and we can guide you further'
+        text: '*Please note that dry needling is not for you if you are on blood thinners, pregnant or suffer from epilepsy/seizures. For more information reach out to us and we can guide you further.'
       },
       {
         type: 'heading',
@@ -108,7 +108,7 @@ export const articles = [
       },
       {
         type: 'paragraph',
-        text: 'Massage involves soft and deep tissue effleurage of muscles with high tone. The aim is to reduce sensitisation and spasm to prevent over activity of muscles.'
+        text: 'Massage involves soft and deep tissue gliding strokes of muscles with high tone. The aim is to reduce sensitisation and spasm to prevent over activity of muscles.'
       },
       {
         type: 'heading',
@@ -137,7 +137,7 @@ export const articles = [
       },
       {
         type: 'paragraph',
-        text: 'Manual therapy is a powerful tool when utilised correctly. Evidence is most consistent with a combination of manual therapy and exercise rehabilitation. Manual therapy is particularly useful in the early stages of rehabilitation, when you are too sore to move. We use it to get you moving, but once you get momentum we want your muscles to do the hard work. That is how we achieve long-term benefits'
+        text: 'Manual therapy is a powerful tool when utilised correctly. Evidence is most consistent with a combination of manual therapy and exercise rehabilitation. Manual therapy is particularly useful in the early stages of rehabilitation, when you are too sore to move. We use it to get you moving, but once you get momentum we want your muscles to do the hard work. That is how we achieve long-term benefits.'
       },
       {
         type: 'heading',
@@ -161,7 +161,7 @@ export const articles = [
       },
       {
         type: 'paragraph',
-        text: 'We support some use of manual therapy in our treatment plan as a kick-start. However, we warn our patients from becoming overly dependent on it as it only has short-term effects and may subconsciously lead to passively waiting for the injury to resolve. It is in your best interest to take an active role in your rehabilitation. We will equip you with the knowledge, tools and Programs to get you on track, but we need YOU to take responsibility for your own progress.'
+        text: 'We support some use of manual therapy in our treatment plan as a kick-start. However, we warn our patients from becoming overly dependent on it as it only has short-term effects and may subconsciously lead to passively waiting for the injury to resolve. It is in your best interest to take an active role in your rehabilitation. We will equip you with the knowledge, tools and programs to get you on track, but we need YOU to take responsibility for your own progress.'
       }
     ]
   },
@@ -176,7 +176,7 @@ export const articles = [
     content: [
       {
         type: 'intro',
-        text: 'If you play sports, chances are you would have dealt with tendon injuries at some point. They are common in sports that involve lots of high intensity running and jumping. While they are serious injuries, they often do not receive the attention they deserve as most people will play through the pain. Here are five signs that your tendons need some love.'
+        text: 'If you play sports, chances are you would have dealt with tendon injuries at some point. They are common in sports that involve lots of high intensity running and jumping. Despite their seriousness, they often do not receive the attention they deserve as most people will play through the pain. Here are five signs that your tendons need some love.'
       },
       {
         type: 'paragraph',
@@ -192,7 +192,7 @@ export const articles = [
       },
       {
         type: 'paragraph',
-        text: 'True tendon pain is always load related. The more intensely and frequently you play, the worse the pain. Additionally, once you rest, the pain subsides. Having said that, we know you love your sport, and a bit of pain will not convince you to sit out for the rest of your season. That is why our tendon rehabilitation Program is designed to keep you active as we strengthen the tendon.'
+        text: 'True tendon pain is always load related. The more intensely and frequently you play, the worse the pain. Additionally, once you rest, the pain subsides. Having said that, we know you love your sport, and a bit of pain will not convince you to sit out for the rest of your season. That is why our tendon rehabilitation program is designed to keep you active as we strengthen the tendon.'
       },
       {
         type: 'heading',
@@ -224,7 +224,7 @@ export const articles = [
       },
       {
         type: 'paragraph',
-        text: 'Maximum effort sprinting, jumping and change of direction are all highly intense movements that place lots of load on the tendons. If you are dealing with tendon pathology, your brain will inhibit your muscles and force you to reduce your intensity when you play. It is your brain’s way of keeping you safe,'
+        text: 'Maximum effort sprinting, jumping and change of direction are all highly intense movements that place lots of load on the tendons. If you are dealing with tendon pathology, your brain will activate its defensive mode, alerting your body to inhibit your muscles, affecting your performance in sports.'
       },
       {
         type: 'heading',
@@ -232,7 +232,7 @@ export const articles = [
       },
       {
         type: 'paragraph',
-        text: 'Isometric exercises refer to exercises where the length of your muscle does not change. This can be performed by holding a heavy weight at a specific angle, or by trying to move an immovable object. Both are highly effective in reducing tendon pain. However, this is just the beginning. That is not enough in preparing you for your sport.'
+        text: 'Isometric exercises refer to exercises where the length of your muscle does not change. This can be performed by holding a heavy weight at a specific angle, or by trying to move an immovable object. Both are highly effective in reducing tendon pain. However, this is only the first step of your road to recovery. That is not enough in preparing you for your sport.'
       },
       {
         type: 'heading',
@@ -240,7 +240,7 @@ export const articles = [
       },
       {
         type: 'paragraph',
-        text: 'If the above signs seem relatable, you can probably use our help. Our tendon rehabilitation Programs are specific to you. We take into consideration your age, level of athleticism, history of injuries and many more. Although managing your pain is a great achievement, we do not stop there. Our tendon Programs are designed to get you more athletic than ever. Reach out to us and see if we can help.'
+        text: 'If the above signs seem relatable, you can probably use our help. Our tendon rehabilitation programs are specific to you. We take into consideration your age, level of athleticism and history of injuries for a holistic approach. Although managing your pain is a great achievement, we do not stop there. Our tendon programs are designed to get you more athletic than ever. Reach out to us and see if we can help.'
       }
     ]
   }

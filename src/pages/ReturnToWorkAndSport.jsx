@@ -136,7 +136,7 @@ const ReturnToWorkAndSport = () => {
               Return to<br /><span className="text-secondary">Function.</span>
             </h1>
             <p className="hero-anim text-2xl md:text-3xl text-white/80 font-poppins font-light leading-relaxed max-w-2xl mb-12 drop-shadow-lg">
-              A structured, evidence-based pathway designed to safely transition you back into your workplace, sport, or daily life.
+              We offer guided recovery to your desired level of function in a gradual and measurable manner.
             </p>
             <a href="https://book.nookal.com/bookings/book/e1AbE0C0-AD43-9c68-3AFa-cEFB7EE18217/location" target="_blank" rel="noopener noreferrer"
               className="hero-anim inline-block bg-secondary text-white px-6 md:px-8 py-3 md:py-4 whitespace-nowrap font-normal text-base md:text-lg tracking-[0.2em] uppercase hover:bg-white hover:text-primary transition-colors rounded-[16px] shadow-2xl">
@@ -150,13 +150,13 @@ const ReturnToWorkAndSport = () => {
       <section className="bg-primary py-24 md:py-32 relative z-20 border-b border-white/5">
         <div className="container reveal">
           <div className="max-w-5xl mx-auto text-center">
-            <span className="text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8">THE REHAB FACTORY WAY</span>
+            <span className="text-[13px] md:text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8">WHAT NEXT</span>
             <h2 className="font-display font-bold text-5xl md:text-7xl lg:text-[100px] uppercase tracking-normal leading-[0.85] text-white mb-10">
-              Four Phases of <br className="hidden md:block" />
-              <span className="text-secondary">Return.</span>
+              Regain <br className="hidden md:block" />
+              <span className="text-secondary">Function.</span>
             </h2>
             <p className="text-slate-400 font-poppins text-xl md:text-3xl leading-tight font-normal max-w-3xl mx-auto mb-16">
-              We don't just treat the pain. We condition your body specifically for the loads and demands you are returning to.
+              We offer guided recovery to your desired level of function in a gradual and measurable manner.
             </p>
             <div className="inline-flex flex-col items-center justify-center gap-4 opacity-70 hover:opacity-100 transition-opacity">
               <span className="text-xs tracking-[0.3em] uppercase font-bold text-white">

@@ -11,7 +11,7 @@ const CTA = () => {
             Your recovery <br /><span className="text-secondary">starts here.</span>
           </h2>
           <p className="text-base md:text-xl text-slate-400 font-poppins font-normal leading-tight mb-8 md:mb-12 max-w-2xl mx-auto">
-            Book your initial assessment at Rehab Factory Physiotherapy in Narre Warren and let us build your program.
+            Ready to start your rehab journey? Book your initial assessment to join the RFP community
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 mb-10 md:mb-16">
             <a 

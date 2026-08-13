@@ -49,31 +49,31 @@ const Home = () => {
 
   const services = [
     {
-      icon: <Dumbbell size={40} />,
-      title: 'Individualised Exercise Therapy',
-      desc: 'Following your clinical assessment, we design and supervise a structured exercise program built entirely around your body, your injury, and where you want to get to.',
-      link: '/services/individualised-exercise-therapy',
+      icon: <BookOpen size={40} />,
+      title: 'Education',
+      desc: 'Education is an empowering tool that is often overlooked. The more you understand your body and nature of your injury, the better you can help yourself. Hence, our initial focus is to examine and explain our findings to you. This collaborative approach allows us to guide you through the necessary steps and equip you with the understanding and confidence required for your road to recovery.',
+      link: '/services/education',
       img: individualisedExercise
     },
     {
       icon: <HandHelping size={40} />,
-      title: 'Manual Therapy',
-      desc: 'Soft tissue massage, dry needling, joint mobilisation and manipulation, and trigger point release. Used to reduce pain and restore movement so you can train.',
+      title: 'Manual therapy',
+      desc: 'Exercise is the ultimate goal, however, recovery often begins with hands-on treatment to facilitate rehabilitation. We utilise a range of skills including soft and deep tissue massage, sports taping, dry needling, joint mobilisation and trigger point release to help you get started.',
       link: '/services/manual-therapy',
       img: manualTherapyImg
     },
     {
-      icon: <Activity size={40} />,
-      title: 'Return to Work and Sport',
-      desc: 'A staged, objective return-to-sport or return-to-work pathway. We use functional testing and sport-specific screening to help assess your readiness before you return.',
-      link: '/services/return-to-work-and-sport',
+      icon: <Dumbbell size={40} />,
+      title: 'Tailored exercise program',
+      desc: 'The stronger the muscle, the less load there is on your joints. We first find deficits contributing to your injury, then manage your symptoms, then take you through exercises appropriate to your body and level of function. It is simple, and it works!',
+      link: '/services/individualised-exercise-therapy',
       img: returnToSport
     },
     {
-      icon: <Bandage size={40} />,
-      title: 'Sports Taping',
-      desc: 'Protective and supportive taping applied to help manage joint stress during training and competition. Speak to our team about whether taping is right for your injury.',
-      link: '/services/sports-taping',
+      icon: <Activity size={40} />,
+      title: 'Return to function',
+      desc: 'We collect measurable data that we review periodically to ensure we are progressing well. Your rehab program is guided by this data, with clear checkpoints for when to return to work/sports.',
+      link: '/services/return-to-work-and-sport',
       img: sportsTaping
     }
   ];
@@ -107,7 +107,7 @@ const Home = () => {
 
             <div className="max-w-2xl">
               <p className="text-xl md:text-3xl text-slate-300 font-poppins font-normal leading-tight mb-10 md:mb-16">
-                At Rehab Factory, the gym is the treatment room. We use hands-on physiotherapy to get you moving, then we put you to work.
+                At Rehab Factory Physiotherapy (RFP), the gym is the treatment room. We use hands-on physiotherapy to get you moving, then we put you to work.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
@@ -133,7 +133,7 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-center text-center">
               {[
                 { icon: <Target className="text-secondary mx-auto mb-3 md:mb-4" size={24} />, title: 'Gym-Based Rehabilitation' },
-                { icon: <ShieldCheck className="text-secondary mx-auto mb-3 md:mb-4" size={24} />, title: 'Athlete and Patient Focused' },
+                { icon: <ShieldCheck className="text-secondary mx-auto mb-3 md:mb-4" size={24} />, title: 'Individualised and patient focused' },
                 { icon: <Zap className="text-secondary mx-auto mb-3 md:mb-4" size={24} />, title: 'AHPRA Registered Practitioners' }
               ].map((item, i) => (
                 <div key={i} className="reveal-fade-up" style={{ transitionDelay: `${0.5 + i * 0.1}s` }}>
@@ -153,7 +153,7 @@ const Home = () => {
           <div className="mb-16 reveal">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
               <div className="lg:col-span-7">
-                <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8">THE DIFFERENCE</span>
+                <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-8">What makes us different</span>
                 <h2 className="text-4xl md:text-7xl font-display font-bold text-primary tracking-normal leading-[1.0] uppercase mb-8 md:mb-10">
                   Most clinics focus on the <br />
                   <span className="text-secondary">treatment bed.</span> <br />
@@ -178,9 +178,9 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-slate-200">
             {[
-              { title: 'We assess before we assume.', desc: 'Your first appointment is a thorough clinical assessment. We take the time to understand your injury, your history, your lifestyle, and your goals before we design a single exercise.' },
-              { title: 'Your program is built for you, not copied from a template.', desc: 'Every patient at Rehab Factory receives an individualised exercise program. No generic plans. No one-size-fits-all approaches. Your program evolves as your recovery progresses.' },
-              { title: 'Returning to function is a milestone, not the finish line.', desc: 'We do not consider your rehabilitation complete when symptoms settle. We work with you until you are stronger, more capable, and more confident than you were before your injury.' }
+              { title: 'We assess before we assume.', desc: 'Your first appointment is a thorough clinical assessment. We take the time to understand your injury, your history, your lifestyle, and your goals before we prescribe a single exercise.' },
+              { title: 'Our programs are specific and evolve with you', desc: 'Generic programs yield generic results. At RFP every exercise serves a purpose. Your program is prescribed after careful consideration of your condition. The management plan includes specific goals and we constantly modify your program to achieve them' },
+              { title: 'Returning to function is a milestone, not the finish line.', desc: 'Managing pain and returning to function are just milestones. We are not satisfied till we equip you with the knowledge and skills to stay healthy and avoid future injuries' }
             ].map((feature, i) => (
               <div key={i} className="reveal-fade-up p-8 md:p-16 border-b md:border-b-0 md:border-r border-slate-200 last:border-b-0 last:border-r-0 hover:bg-slate-50 transition-all group flex flex-col h-full" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <div className="md:min-h-[100px] lg:min-h-[120px] mb-4">
@@ -201,10 +201,10 @@ const Home = () => {
           <div className="mb-20 reveal">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHAT WE DO</span>
             <h2 className="text-4xl md:text-7xl font-display font-bold text-primary tracking-normal leading-[1.1] uppercase mb-8 md:mb-12">
-              Four services. One goal:<br /><span className="text-secondary">get you back stronger.</span>
+              One objective:<br /><span className="text-secondary">get you back stronger.</span>
             </h2>
             <p className="text-lg md:text-2xl text-slate-500 font-poppins font-normal leading-tight max-w-2xl mt-6 md:mt-10">
-              Every service at Rehab Factory is connected. Manual therapy prepares the body. Exercise rehabilitation rebuilds it.
+              Rehabilitation at RFP follows a simple formula, Treatment + Exercise = Recovery
             </p>
           </div>
 
@@ -251,15 +251,15 @@ const Home = () => {
               From junior athletes to <br className="hidden md:block" />weekend warriors to <br className="hidden md:block" /><span className="text-secondary">WorkCover patients.</span>
             </h2>
             <p className="text-lg md:text-2xl text-slate-500 font-poppins font-normal leading-tight max-w-2xl mt-6 md:mt-10">
-              Rehab Factory is not just for elite athletes. It is for anyone who wants to recover properly and work towards coming back stronger.
+              Rehab Factory Physiotherapy (RFP) is not just for elite athletes. It is for anyone who wants to recover properly and work towards coming back stronger.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { title: 'Athletes at Every Level', desc: 'Whether you are a junior player, a semi-professional competitor, or an established athlete, we build rehabilitation programs designed to support your return to the level of performance you are working towards.', tags: ['Sports Injuries', 'Return to Sport', 'Exercise Rehab'] },
-              { title: 'Active Adults and Weekend Warriors', desc: 'Injured playing social footy? Tweaked your back at the gym? You do not have to be an elite athlete to deserve a proper rehabilitation program.', tags: ['Injury Recovery', 'Chronic Pain', 'Exercise Therapy'] },
-              { title: 'WorkCover and TAC Patients', desc: 'We work with patients recovering from workplace and motor vehicle injuries, supporting a structured and sustainable return to full work capacity.', tags: ['WorkCover', 'TAC', 'Return to Work'] }
+              { title: 'Athletes at Every Level', desc: 'Whether you are a junior athlete, a semi-professional or an established athlete, we create rehab programs designed to support your return to sport', tags: ['Sports Injuries', 'Return to Sport', 'Exercise Rehab'] },
+              { title: 'Active Adults and Weekend Warriors', desc: 'Injured playing social footy? Tweaked your back at the gym? You don\'t need to be a professional athlete to train like one', tags: ['Injury Recovery', 'Chronic Pain', 'Exercise Therapy'] },
+              { title: 'WorkCover and TAC Patients', desc: 'Work injuries and road accidents alike are many times out of your control and can be frustrating. We understand your frustration and aspire to support you through a structured and suitable return to full work capacity and pre-injury lifestyle', tags: ['WorkCover', 'TAC', 'Return to Work'] }
             ].map((item, i) => (
               <div key={i} className="bg-white p-8 md:p-14 border border-slate-200 rounded-[25px] hover:border-secondary/30 transition-all reveal-fade-up shadow-sm flex flex-col" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <div className="md:min-h-[120px] lg:min-h-[140px] mb-4">
@@ -300,7 +300,7 @@ const Home = () => {
                 name: 'Abdelrahman Elsamman',
                 role: 'Physiotherapist',
                 img: '/team/practitioner-abdelrahman-elsamman.webp',
-                bio: 'Abdelrahman has a strong focus on sports and musculoskeletal physiotherapy, working with athletes and everyday patients through injuries, work claims, DVA and NDIS. With additional qualifications in strength and conditioning, he builds progressive, goal-driven programs to restore function and performance. Off the court, he is a passionate basketball player and professional referee.'
+                bio: 'Abdelrahman has a strong focus on sports and musculoskeletal physiotherapy, working with athletes and everyday patients through injuries, work claims, DVA and NDIS. With additional qualifications in strength and conditioning, he builds progressive, goal-driven programs to restore function and performance. Outside of the clinic, he is a passionate basketball player and professional referee.'
               },
               {
                 name: 'Amr Elsamman',

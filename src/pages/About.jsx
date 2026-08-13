@@ -60,18 +60,18 @@ const About = () => {
             <div className="lg:col-span-5 reveal">
               <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4 md:mb-6">OUR STORY</span>
               <h2 className="text-4xl md:text-6xl font-display font-bold text-primary tracking-normal leading-[0.9] uppercase">
-                A different <br />kind of <br /><span className="text-secondary">physiotherapy</span> <br />clinic.
+                A collaborative <br /><span className="text-secondary">physiotherapy</span> <br />environment.
               </h2>
             </div>
             <div className="lg:col-span-7 space-y-4 md:space-y-8 text-slate-500 font-poppins text-lg leading-tight reveal-fade-up">
               <p className="text-lg md:text-2xl text-primary font-semibold leading-tight">
-                Rehab Factory Physiotherapy was founded on a simple belief: exercise is medicine. Most clinics focus on the treatment bed. We built a gym.
+                RFP was founded on a simple belief: exercise is medicine. Most clinics focus on the treatment bed. We focus on equipping you with the tools to build resilience.
               </p>
               <p className="text-base md:text-lg">
                 Our approach centres on individualised exercise rehabilitation. We use hands-on therapy to reduce pain and restore movement, then we get patients working. Hard, structured, and goal-driven. Because the most sustainable recoveries are built on the gym floor.
               </p>
               <p className="text-base md:text-lg">
-                Based in Narre Warren, we work with patients of all ages and activity levels, from junior athletes and weekend sport participants to WorkCover patients and people managing long-term musculoskeletal conditions.
+                Based in Narre Warren, we work with patients of all ages and activity levels, from junior and recreational athletes to WorkCover patients and people struggling with musculoskeletal conditions.
               </p>
             </div>
           </div>
@@ -100,7 +100,7 @@ const About = () => {
                 ],
                 servicesTitle: 'His services include:',
                 services: [
-                  'Detailed exercise programs with progressive return to sport and work capacity pathways',
+                  'Advanced exercise prescription and tailored programs',
                   'Manual therapy',
                   'Dry needling',
                   'Mobilisations and manipulations',
@@ -160,13 +160,13 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
             <div className="reveal">
               <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4 md:mb-6">OUR SPACE</span>
-              <h2 className="text-4xl md:text-7xl font-display font-bold text-white tracking-normal leading-[0.9] uppercase mb-4 md:mb-8">Where Recovery <br />Gets to Work.</h2>
+              <h2 className="text-4xl md:text-7xl font-display font-bold text-white tracking-normal leading-[0.9] uppercase mb-4 md:mb-8">Where hard work is spent.</h2>
               <p className="text-lg md:text-2xl text-slate-400 font-poppins font-normal leading-relaxed mb-6 md:mb-12">
-                Our clinic is built around a fully equipped gym. This is where the real rehabilitation happens.
+                From free weights, to machines to open space for drills, we are fully equipped to get you back on track.
               </p>
               <div className="border-l-4 border-secondary pl-6 md:pl-8 py-3 md:py-4">
                 <blockquote className="text-xl md:text-3xl font-display font-medium text-white uppercase tracking-normal leading-relaxed italic">
-                  "Returning to function is a milestone, not the finish line."
+                  "Our method is clear: Restore, Reload, Return"
                 </blockquote>
               </div>
             </div>
@@ -183,14 +183,14 @@ const About = () => {
         <div className="container">
           <div className="mb-12 md:mb-24 reveal text-center max-w-3xl mx-auto">
             <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-4 md:mb-6">WHAT WE STAND FOR</span>
-            <h2 className="text-4xl md:text-7xl font-display font-bold text-primary tracking-normal leading-[0.9] uppercase">The way we work.</h2>
+            <h2 className="text-4xl md:text-7xl font-display font-bold text-primary tracking-normal leading-[0.9] uppercase">RFP standards</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
             {[
-              { icon: <Zap size={32} className="text-secondary mb-4 md:mb-8 mx-auto" />, title: 'Work Hard', desc: 'We do not believe in passive recovery. Every session is purposeful, progressive, and built around your goals.' },
-              { icon: <Target size={32} className="text-secondary mb-4 md:mb-8 mx-auto" />, title: 'Be Specific', desc: 'Generic Programs produce generic results. Every patient gets a plan designed around their body, their injury, and their timeline.' },
-              { icon: <ShieldCheck size={32} className="text-secondary mb-4 md:mb-8 mx-auto" />, title: 'Aim Higher', desc: 'Our goal is not just to get you back to where you were. We aim to work with you to build towards something stronger.' }
+              { icon: <Zap size={32} className="text-secondary mb-4 md:mb-8 mx-auto" />, title: 'Collaborative rehabilitation', desc: 'We can only guide your rehab, the hard work comes from you' },
+              { icon: <Target size={32} className="text-secondary mb-4 md:mb-8 mx-auto" />, title: 'Individualised treatment', desc: 'Our management plans are tailored to the individual and based on building a healthy client-clinician relationship' },
+              { icon: <ShieldCheck size={32} className="text-secondary mb-4 md:mb-8 mx-auto" />, title: 'Exceeding expectations', desc: 'You can expect to walk away from us not only pain-free, but having a clearer understanding of your injury and how to actively manage it' }
             ].map((value, i) => (
               <div key={i} className="text-center reveal-fade-up" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <div className="flex justify-center">{value.icon}</div>

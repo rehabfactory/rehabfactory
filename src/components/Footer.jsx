@@ -56,7 +56,7 @@ const Footer = () => {
             />
           </Link>
           <p className="text-slate-400 max-w-sm text-base md:text-lg leading-relaxed mb-8 font-poppins">
-            Built for peak performance.<br />
+            Restore, Reload, Return.<br />
             Gym-based physiotherapy and rehabilitation.
           </p>
           <div className="mb-8">
@@ -86,7 +86,7 @@ const Footer = () => {
         <div className="col-span-12 lg:col-span-2">
           <h4 className="font-bold text-[12px] md:text-[15px] tracking-[0.25em] uppercase mb-8 text-secondary">SERVICES</h4>
           <ul className="space-y-2">
-            {['Individualised Exercise Therapy', 'Manual Therapy', 'Return to Work and Sport', 'Sports Taping'].map((item) => (
+            {['Education', 'Manual therapy', 'Tailored Exercise', 'Return to Function'].map((item) => (
               <li key={item}>
                 <Link className="text-slate-400 hover:text-white transition-colors text-[13px] md:text-sm uppercase tracking-[0.18em] block font-poppins leading-tight" to="/services">
                   {item}
@@ -164,7 +164,7 @@ const Footer = () => {
 
       <div className="w-full px-6 md:px-12 lg:px-20 2xl:px-32 mt-8 md:mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
         <p className="text-[10px] text-slate-500 tracking-[0.25em] uppercase text-center md:text-left leading-relaxed">
-          Copyright © {new Date().getFullYear()} Rehab Factory Physiotherapy PTY LTD - All Rights Reserved. <span className="hidden md:inline mx-2">|</span> <span className="block md:inline mt-2 md:mt-0">ABN 47 279 025 634</span>
+          Copyright © {new Date().getFullYear()} Rehab Factory Physiotherapy PTY LTD - All Rights Reserved. <span className="hidden md:inline mx-2">|</span> <span className="block md:inline mt-2 md:mt-0">ABN 12 695 148 791</span>
         </p>
         <div className="flex flex-wrap justify-center gap-8">
           <Link to="/terms-and-conditions" className="text-[10px] text-slate-500 hover:text-white transition-colors uppercase tracking-[0.25em]">TERMS</Link>

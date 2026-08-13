@@ -150,10 +150,10 @@ const Services = () => {
             </div>
             <div className="lg:col-span-7 space-y-10 text-slate-500 font-poppins leading-tight reveal-fade-up">
               <p className="text-lg md:text-2xl text-primary font-semibold leading-tight">
-                At Rehab Factory, every service starts with a thorough clinical assessment. We take the time to understand your injury, your history, your goals, and your lifestyle before designing your program.
+                At Rehab Factory Physiotherapy (RFP), we conduct a thorough clinical assessment to help guide our treatment. We take the time to understand your injury, your history and your goals then negotiate the most suitable route to achieve those goals.
               </p>
               <p className="text-base md:text-lg leading-relaxed">
-                Hands-on treatment is part of the plan, but exercise rehabilitation is the foundation. We use manual therapy to reduce pain and restore movement so you can get back to the work that supports your recovery.
+                Hands on treatment is an important kick starter but rehabilitation takes place in the gym. Manual therapy, taping and dry needling are great for improving symptoms. Whereas specific, individualised rehabilitation promotes longevity and long-term health benefits.
               </p>
               <p className="text-base md:text-lg leading-relaxed">
                 We do not believe in passive treatment. We believe in building you up. That means every service we offer is connected to a broader plan, and every plan is built around you as an individual.
@@ -213,7 +213,7 @@ const Services = () => {
                 <span className="text-[15px] font-black tracking-[0.4em] text-secondary uppercase font-poppins block mb-6">WHY CHOOSE US</span>
                 <h2 className="text-4xl md:text-8xl font-display font-bold tracking-normal leading-[0.9] uppercase mb-6">What makes us <br /><span className="text-secondary">different.</span></h2>
                 <p className="text-xl text-slate-400 font-poppins leading-tight max-w-2xl mt-6">
-                  Built for peak performance.<br />
+                  Restore, Reload, Return.<br />
                   Gym-based physiotherapy and rehabilitation.
                 </p>
               </div>

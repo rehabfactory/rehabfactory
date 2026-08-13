@@ -150,10 +150,9 @@ const CursorReactiveConditions = () => {
   }, []);
 
   const conditions = [
-    { title: 'Injury Management & Recovery', desc: 'We work with patients managing musculoskeletal injuries from acute sprains and strains to post-surgical rehabilitation, developing a personalised plan built around your recovery timeline and goals.', icon: <Activity size={40} /> },
-    { title: 'Chronic Pain & Ongoing Conditions', desc: 'Ongoing pain does not have to mean ongoing limitation. We work with patients managing long-term musculoskeletal conditions to support improved movement, strength, and quality of life.', icon: <ShieldCheck size={40} /> },
-    { title: 'Patient Education & Self-Management', desc: 'Understanding your injury is part of recovering from it. We give every patient the knowledge and tools they need to take an active role in their own health and long-term wellbeing.', icon: <Target size={40} /> },
-    { title: 'Sports Performance & Injury Prevention', desc: 'For athletes looking to build capacity and reduce injury risk, we provide individualised assessment and targeted exercise programs designed around the demands of your sport.', icon: <Zap size={40} /> }
+    { title: 'Sports Injuries', desc: 'These can include soft tissue tears and strains, joint instability, fractures, tendon overuse and many more. For athletes looking to elevate their performance and reduce injury risk, we provide individualised assessment and targeted exercise programs designed around the demands of your sport.', icon: <Zap size={40} /> },
+    { title: 'Musculoskeletal Injuries', desc: 'Whether it be an overuse injury that you have been neglecting at work, a fall, an accident, or sudden pain with no apparent cause, we can help assess and guide your management with personalised goals and timelines.', icon: <Activity size={40} /> },
+    { title: 'Chronic and Ongoing Conditions', desc: 'Degenerative conditions are common and often irreversible, but pain and function can be improved. We help with old and persisting injuries that have become a part of your life.', icon: <ShieldCheck size={40} /> }
   ];
 
   return (

@@ -48,7 +48,7 @@ const Insights = () => {
               <span className="text-secondary">recovery.</span>
             </h1>
             <p className="text-xl md:text-3xl text-slate-300 font-poppins font-normal leading-tight max-w-3xl">
-              Practical resources from our clinical team to help you understand your injury and get back to doing what you love.
+              Practical resource from our experts to help you understand your injury and empower you to get back to doing what you love.
             </p>
           </div>
         </div>
