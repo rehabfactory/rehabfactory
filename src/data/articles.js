@@ -172,7 +172,7 @@ export const articles = [
     readTime: '5 min',
     title: 'Five signs your tendons need rehabilitation',
     desc: 'Tendon injuries are common in sports at all levels. Here are five signs that your tendons need some love.',
-    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop',
+    img: '/articles/five-signs.webp',
     content: [
       {
         type: 'intro',
