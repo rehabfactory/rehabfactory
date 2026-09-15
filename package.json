@@ -15,7 +15,7 @@
     "express": "^4.22.2",
     "gsap": "^3.15.0",
     "lucide-react": "^1.14.0",
-    "nodemailer": "^9.0.3",
+    "nodemailer": "^9.1.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-router-dom": "^7.18.2"
@@ -36,6 +36,6 @@
   },
   "overrides": {
     "react-router": "8.3.0",
-    "nanoid": "^3.3.17"
+    "nanoid": "^3.3.19"
   }
 }
