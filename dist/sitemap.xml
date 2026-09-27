@@ -26,6 +26,21 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://rehabfactory.com.au/insights/first-physiotherapy-appointment</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rehabfactory.com.au/insights/our-take-on-manual-therapy</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rehabfactory.com.au/insights/five-signs-your-tendons-need-rehabilitation</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://rehabfactory.com.au/contact</loc>
     <priority>0.7</priority>
     <changefreq>yearly</changefreq>
@@ -50,21 +65,7 @@
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-  <url>
-    <loc>https://rehabfactory.com.au/clinics</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rehabfactory.com.au/philosophy</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rehabfactory.com.au/team</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
+
   <url>
     <loc>https://rehabfactory.com.au/privacy-policy</loc>
     <priority>0.3</priority>

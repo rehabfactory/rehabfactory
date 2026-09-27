@@ -227,7 +227,35 @@ app.post('/api/subscribe', async (req, res) => {
 
 // ─── Serve React App ─────────────────────────────────────────────────────────
 
-app.use(express.static(path.join(__dirname, 'dist')));
+// ─── 301 Permanent Redirects for Legacy / Typo URLs ─────────────────────────
+const redirects = {
+  '/learn-more': '/about',
+  '/clinics': '/about',
+  '/philosophy': '/about',
+  '/team': '/about',
+  '/terms': '/terms-and-conditions',
+  '/terms-and%20conditions': '/terms-and-conditions',
+  '/privacy': '/privacy-policy',
+  '/insights/dry-needling-muscle-pain-tightness': '/insights/our-take-on-manual-therapy',
+  '/insights/five-signs-back-pain-needs-physio': '/insights/five-signs-your-tendons-need-rehabilitation'
+};
+
+app.use((req, res, next) => {
+  const decodedPath = decodeURIComponent(req.path);
+  if (redirects[req.path]) {
+    return res.redirect(301, redirects[req.path]);
+  }
+  if (redirects[decodedPath]) {
+    return res.redirect(301, redirects[decodedPath]);
+  }
+  if (decodedPath === '/terms-and conditions') {
+    return res.redirect(301, '/terms-and-conditions');
+  }
+  if (req.path.startsWith('/learn-more/')) {
+    return res.redirect(301, '/about');
+  }
+  next();
+});
 
 // Handle all React Router routes
 app.get('*', function (req, res) {

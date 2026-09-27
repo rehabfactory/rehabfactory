@@ -1,0 +1,11 @@
+/learn-more/* /about 301!
+/learn-more /about 301!
+/clinics /about 301!
+/philosophy /about 301!
+/team /about 301!
+/terms-and%20conditions /terms-and-conditions 301!
+/terms /terms-and-conditions 301!
+/privacy /privacy-policy 301!
+/insights/dry-needling-muscle-pain-tightness /insights/our-take-on-manual-therapy 301!
+/insights/five-signs-back-pain-needs-physio /insights/five-signs-your-tendons-need-rehabilitation 301!
+/* /index.html 200

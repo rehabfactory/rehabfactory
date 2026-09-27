@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 301 Redirects for Legacy / Typo / Alias URLs
+  RewriteRule ^learn-more(/.*)?$ /about [R=301,L]
+  RewriteRule ^clinics/?$ /about [R=301,L]
+  RewriteRule ^philosophy/?$ /about [R=301,L]
+  RewriteRule ^team/?$ /about [R=301,L]
+  RewriteRule ^terms-and(\s|%20)conditions/?$ /terms-and-conditions [R=301,L,NE]
+  RewriteRule ^terms/?$ /terms-and-conditions [R=301,L]
+  RewriteRule ^privacy/?$ /privacy-policy [R=301,L]
+  RewriteRule ^insights/dry-needling-muscle-pain-tightness/?$ /insights/our-take-on-manual-therapy [R=301,L]
+  RewriteRule ^insights/five-signs-back-pain-needs-physio/?$ /insights/five-signs-your-tendons-need-rehabilitation [R=301,L]
+
+  # SPA Routing
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
